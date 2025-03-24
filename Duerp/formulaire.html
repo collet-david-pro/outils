@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Évaluation des risques - DUERP</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      padding: 0;
+      background-color: #f5f5f5;
+    }
+    h1, h2 {
+      color: #333;
+    }
+    select, input[type="text"], textarea {
+      padding: 8px;
+      width: 100%;
+      margin: 10px 0;
+    }
+    textarea {
+      resize: vertical;
+      min-height: 40px;
+      overflow-y: hidden;
+    }
+    .section {
+      background-color: white;
+      padding: 15px;
+      margin-bottom: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 10px;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 8px;
+      text-align: center;
+    }
+    th {
+      background-color: #eee;
+    }
+    .btn {
+      background-color: #007BFF;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    .btn:hover {
+      background-color: #0056b3;
+    }
+    .hidden {
+      display: none;
+    }
+    /* Notice styling */
+    .no-print {
+      background: #fff9e6;
+      border-left: 6px solid #ffc107;
+      padding: 15px;
+      margin-bottom: 20px;
+    }
+    @media print {
+      .no-print {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  
+  <div class="notice no-print">
+    <h2>🔍 Notice d'utilisation</h2>
+    <p><strong>Objectif :</strong> Ce formulaire permet de recenser et d’évaluer les risques professionnels identifiés dans chaque unité de travail du collège, conformément à la réglementation (Code du travail et fonction publique).</p>
+    <p>Dans la fonction publique, la démarche d’évaluation des risques est une obligation de l’employeur. Elle contribue à améliorer la prévention et la protection de la santé et la sécurité de tous (agents, élèves, public), conformément aux principes généraux de prévention.</p>
+
+    <ul>
+      <li><strong>1. Choisir l’unité de travail :</strong> Sélectionnez dans la liste le périmètre concerné (lieu + activité).</li>
+      <li><strong>2. Nom du référent :</strong> Indiquez vos nom et prénom pour le suivi du document unique.</li>
+      <li><strong>3. Identifier les dangers :</strong> Cochez « Présent » si le danger existe dans l’unité.</li>
+      <li><strong>4. Fréquence :</strong> Sélectionnez la fréquence d’exposition (Rare, Occasionnelle, etc.).</li>
+      <li><strong>5. Gravité :</strong> Estimez l’impact potentiel (Mineure, Grave, Critique...).</li>
+      <li><strong>6. Commentaires :</strong> Soyez concrets : description de situations dangereuses, lieux précis, suggestions de prévention. Cette zone s’agrandit automatiquement.</li>
+    </ul>
+
+    <p>Vous pouvez vous référer au <em>Document Unique d’Évaluation des Risques (DUERP)</em>, aux <em>fiches méthodologiques</em> (Fiches 1 à 6) et à la <em>liste des dangers</em> INRS ED 840 pour plus de détails. L’objectif est de faciliter la mise à jour et la hiérarchisation des risques afin d’élaborer le <strong>programme annuel de prévention</strong>.</p>
+
+    <p><em>Note :</em> Cette notice ne sera pas imprimée lors de la génération du PDF, afin de rendre la fiche finale plus concise.</p>
+  </div>
+
+  <h1>Fiche d'évaluation des risques DUERP</h1>
+
+  <div class="section">
+    <label for="unite">Sélectionner l'unité de travail :</label>
+    <select id="unite">
+      <option value="">-- Choisir une unité --</option>
+      <option>Accueil (Bâtiment B)</option>
+      <option>Activité de gestion de magasin / maître ouvrier (Bâtiment D - Atelier OP)</option>
+      <option>Activités d’enseignement à l’EPS (Bâtiment C - RDC - Salle polyvalente)</option>
+      <option>Activités d’enseignement à l’EPS (Cour)</option>
+      <option>Activités d’enseignement en atelier (Bâtiment D - Ateliers)</option>
+      <option>Activités d’enseignement et préparation en laboratoire (Bâtiment A - R1 et R2)</option>
+      <option>Activités d’enseignement général (Bâtiment A - RDC R1 et R2)</option>
+      <option>Activités d’enseignement général (Bâtiment D - R1)</option>
+      <option>Activités d’enseignement général (Bâtiment C - R1)</option>
+      <option>Activités d’enseignement général (Bâtiment C - R1 - CDI)</option>
+      <option>Administratif / Direction (Bâtiment B - RDC)</option>
+      <option>Administratif / Direction (Bâtiment C - Pôle ASH)</option>
+      <option>Autre unité… (Parking)</option>
+      <option>Autre unité… (Véhicules de service)</option>
+      <option>Autre unité… (Sorties et voyages scolaires)</option>
+      <option>Cuisine (Bâtiment E - Cuisine)</option>
+      <option>Restauration scolaire (Bâtiment E - Self)</option>
+      <option>Entretien (Bâtiments A, B, C, D)</option>
+      <option>Maintenance (Collège entier)</option>
+      <option>Personnels Santé / Social (Bâtiment A - Infirmerie - RDC)</option>
+      <option>Personnels Santé / Social (Bâtiment A - RDC)</option>
+      <option>Vie scolaire (Bâtiment A - RDC)</option>
+    </select>
+
+    <label for="referent">Nom du référent :</label>
+    <input type="text" id="referent" placeholder="Prénom NOM">
+  </div>
+
+  <div class="section">
+    <h2>Dangers identifiés</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Danger</th>
+          <th>Présent</th>
+          <th>Fréquence</th>
+          <th>Gravité</th>
+          <th>Commentaires</th>
+        </tr>
+      </thead>
+      <tbody id="danger-table"></tbody>
+    </table>
+  </div>
+
+  <button class="btn" onclick="window.print()">📄 Générer PDF</button>
+
+  <script>
+    const dangers = [
+      "Chute de plein pied",
+      "Chute de hauteur",
+      "Manutention manuelle",
+      "Manutention mécanique",
+      "Circulation / déplacement",
+      "Chute d’objets",
+      "Machines et outils",
+      "Bruit",
+      "Produits / déchets / agents bio",
+      "Incendie / explosion",
+      "Électricité",
+      "Ambiance thermique",
+      "Hygiène",
+      "Manque de formation",
+      "Risque routier",
+      "Risques psychosociaux"
+    ];
+
+    const tableBody = document.getElementById('danger-table');
+    dangers.forEach((danger, index) => {
+      const row = document.createElement('tr');
+      row.innerHTML = `
+        <td>${danger}</td>
+        <td><input type="checkbox" id="present-${index}" onchange="toggleVisibility(${index})"></td>
+        <td><select id="freq-${index}" class="hidden">
+          <option>--</option>
+          <option>Rare</option>
+          <option>Occasionnelle</option>
+          <option>Fréquente</option>
+          <option>Quotidienne</option>
+        </select></td>
+        <td><select id="grav-${index}" class="hidden">
+          <option>--</option>
+          <option>Mineure</option>
+          <option>Significative</option>
+          <option>Grave</option>
+          <option>Critique</option>
+        </select></td>
+        <td><textarea id="comment-${index}" class="hidden" rows="1" oninput="autoGrow(this)"></textarea></td>
+      `;
+      tableBody.appendChild(row);
+    });
+
+    function toggleVisibility(index) {
+      const checked = document.getElementById(`present-${index}`).checked;
+      document.getElementById(`freq-${index}`).classList.toggle('hidden', !checked);
+      document.getElementById(`grav-${index}`).classList.toggle('hidden', !checked);
+      document.getElementById(`comment-${index}`).classList.toggle('hidden', !checked);
+    }
+
+    function autoGrow(textarea) {
+      textarea.style.height = "5px";
+      textarea.style.height = (textarea.scrollHeight) + "px";
+    }
+  </script>
+</body>
+</html>
