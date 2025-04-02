@@ -8,9 +8,6 @@
       font-family: Arial, sans-serif;
       margin: 20px;
     }
-    h1, h2, h3 {
-      color: #333;
-    }
     fieldset {
       border: 1px solid #ccc;
       padding: 10px 20px;
@@ -18,323 +15,311 @@
     }
     legend {
       font-weight: bold;
-      margin-left: 10px;
+    }
+    .risk-option {
+      border: 1px solid #ddd;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+    .risk-option .details {
+      margin-left: 20px;
+      margin-top: 5px;
+      display: none; /* Masqué par défaut */
     }
     label {
       display: block;
-      margin-top: 10px;
+      margin-top: 5px;
     }
-    input[type="text"],
-    textarea {
+    select, input[type="text"], textarea {
       width: 100%;
       padding: 5px;
       margin-top: 5px;
-    }
-    .checkbox-group label {
-      display: inline-block;
-      margin-right: 15px;
     }
     button {
       padding: 10px 20px;
       font-size: 16px;
     }
+    @media print {
+      .no-print {
+        display: none;
+      }
+    }
   </style>
 </head>
 <body>
   <h1>Fiche d'Identification des Risques</h1>
-  <p>Réf : document INRS ED 840</p>
-
-  <form action="submit_form.php" method="post">
-    <!-- Informations Générales -->
+  <form action="#" method="post">
+    <!-- Informations (Unité de travail et évaluateur) -->
     <fieldset>
-      <legend>Informations Générales</legend>
-      <label for="chef">Nom du Chef d'établissement ou du Directeur :</label>
-      <input type="text" id="chef" name="chef" required>
-
-      <label for="etablissement">Établissement scolaire :</label>
-      <input type="text" id="etablissement" name="etablissement" required>
-
-      <label for="secteur">Secteur d'activité :</label>
-      <input type="text" id="secteur" name="secteur" required>
-
-      <label for="redacteur">Rédacteur :</label>
-      <input type="text" id="redacteur" name="redacteur" required>
+      <legend>Informations</legend>
+      <label for="unite_travail">Unité de travail :</label>
+      <select id="unite_travail" name="unite_travail">
+        <option value="unite_a">Unité A</option>
+        <option value="unite_b">Unité B</option>
+        <option value="unite_c">Unité C</option>
+      </select>
+      <label for="evaluateur">Nom de l'évaluateur :</label>
+      <input type="text" id="evaluateur" name="evaluateur">
     </fieldset>
-
-    <!-- Risque 1: Chute de plein pied -->
-    <fieldset>
-      <legend>1. Risque de chute de plein pied</legend>
-      <div class="checkbox-group">
-        <label><input type="checkbox" name="risque1[]" value="sol_glissant"> Sol glissant (eau, huile, etc.)</label>
-        <label><input type="checkbox" name="risque1[]" value="sol_inegal"> Sol inégal (marches, etc.)</label>
-        <label><input type="checkbox" name="risque1[]" value="sol_defectueux"> Sol défectueux (trou, etc.)</label>
-        <label><input type="checkbox" name="risque1[]" value="passage_etroit"> Passage étroit</label>
-        <label><input type="checkbox" name="risque1[]" value="passage_encombre"> Passage encombré</label>
-      </div>
-      <label for="risque1_autre">Autre :</label>
-      <input type="text" id="risque1_autre" name="risque1_autre">
-      <label for="obs1">Observations :</label>
-      <textarea id="obs1" name="obs1" rows="3"></textarea>
-    </fieldset>
-
-    <!-- Risque 2: Chute de hauteur -->
-    <fieldset>
-      <legend>2. Risque de chute de hauteur</legend>
-      <div class="checkbox-group">
-        <label><input type="checkbox" name="risque2[]" value="parties_en_contrebas"> Parties en contrebas (escalier, quai, etc.)</label>
-        <label><input type="checkbox" name="risque2[]" value="acces_hautes"> Accès à des parties hautes (armoire, etc.)</label>
-        <label><input type="checkbox" name="risque2[]" value="dispositifs_mobiles"> Dispositifs mobiles (échelle, etc.)</label>
-        <label><input type="checkbox" name="risque2[]" value="objets_divers"> Objets divers (chaise, carton, etc.)</label>
-      </div>
-      <label for="risque2_autre">Autre :</label>
-      <input type="text" id="risque2_autre" name="risque2_autre">
-      <label for="obs2">Observations :</label>
-      <textarea id="obs2" name="obs2" rows="3"></textarea>
-    </fieldset>
-
-    <!-- Risque 3: Manutention manuelle -->
-    <fieldset>
-      <legend>3. Risque lié à la manutention manuelle</legend>
-      <div class="checkbox-group">
-        <label><input type="checkbox" name="risque3[]" value="charge_elevee"> Manutention charge élevée</label>
-        <label><input type="checkbox" name="risque3[]" value="repetitive"> Manutention répétitive</label>
-        <label><input type="checkbox" name="risque3[]" value="grande_dimension"> Charge de grande dimension</label>
-        <label><input type="checkbox" name="risque3[]" value="mauvaise_posture"> Mauvaise posture</label>
-      </div>
-      <label for="risque3_autre">Autre :</label>
-      <input type="text" id="risque3_autre" name="risque3_autre">
-      <label for="obs3">Observations :</label>
-      <textarea id="obs3" name="obs3" rows="3"></textarea>
-    </fieldset>
-
-    <!-- Risque 4: Manutention mécanique -->
-    <fieldset>
-      <legend>4. Risque lié à la manutention mécanique</legend>
-      <div class="checkbox-group">
-        <label><input type="checkbox" name="risque4[]" value="moyen_inadapté"> Utilisation de moyen inadapté</label>
-        <label><input type="checkbox" name="risque4[]" value="visibilite_insuffisante"> Visibilité insuffisante</label>
-        <label><input type="checkbox" name="risque4[]" value="vitesse_excessive"> Vitesse excessive</label>
-        <label><input type="checkbox" name="risque4[]" value="arrimage_instable"> Arrimage ou manutention instable</label>
-      </div>
-      <label for="risque4_autre">Autre :</label>
-      <input type="text" id="risque4_autre" name="risque4_autre">
-      <label for="obs4">Observations :</label>
-      <textarea id="obs4" name="obs4" rows="3"></textarea>
-    </fieldset>
-
-    <!-- Risque 5: Circulations -->
-    <fieldset>
-      <legend>5. Risque lié aux circulations</legend>
-      <div class="checkbox-group">
-        <label><input type="checkbox" name="risque5[]" value="zone_mal_definie"> Zone de circulation mal définie</label>
-        <label><input type="checkbox" name="risque5[]" value="voie_dangereuse"> Voie dangereuse (pente, mauvais état)</label>
-        <label><input type="checkbox" name="risque5[]" value="manoeuvre_dangereuse"> Manœuvre dangereuse</label>
-        <label><input type="checkbox" name="risque5[]" value="vehicule_defaillant"> Mauvais état du véhicule</label>
-      </div>
-      <label for="risque5_autre">Autre :</label>
-      <input type="text" id="risque5_autre" name="risque5_autre">
-      <label for="obs5">Observations :</label>
-      <textarea id="obs5" name="obs5" rows="3"></textarea>
-    </fieldset>
-
-    <!-- Risque 6: Chutes d’objets -->
-    <fieldset>
-      <legend>6. Risque lié aux chutes d’objets</legend>
-      <div class="checkbox-group">
-        <label><input type="checkbox" name="risque6[]" value="stockage_hauteur"> Stockage en hauteur</label>
-        <label><input type="checkbox" name="risque6[]" value="objets_empiles"> Objets empilés</label>
-        <label><input type="checkbox" name="risque6[]" value="travaux_hauteur"> Travaux en hauteur (chute d’objet)</label>
-        <label><input type="checkbox" name="risque6[]" value="travail_tranche"> Travail en tranchée (puits, etc.)</label>
-      </div>
-      <label for="risque6_autre">Autre :</label>
-      <input type="text" id="risque6_autre" name="risque6_autre">
-      <label for="obs6">Observations :</label>
-      <textarea id="obs6" name="obs6" rows="3"></textarea>
-    </fieldset>
-
-    <!-- Risque 7: Machines et outils -->
-    <fieldset>
-      <legend>7. Risques lié aux machines et aux outils</legend>
-      <div class="checkbox-group">
-        <label><input type="checkbox" name="risque7[]" value="partie_mobile"> Partie mobile (organe, pièce, outil)</label>
-        <label><input type="checkbox" name="risque7[]" value="projection"> Projection (fluide, copeaux, etc.)</label>
-        <label><input type="checkbox" name="risque7[]" value="outils_tranchants"> Outils tranchants</label>
-        <label><input type="checkbox" name="risque7[]" value="non_consignation"> Non consignation en maintenance</label>
-      </div>
-      <label for="risque7_autre">Autre :</label>
-      <input type="text" id="risque7_autre" name="risque7_autre">
-      <label for="obs7">Observations :</label>
-      <textarea id="obs7" name="obs7" rows="3"></textarea>
-    </fieldset>
-
-    <!-- Risque 8: Bruit -->
-    <fieldset>
-      <legend>8. Risque lié au bruit</legend>
-      <div class="checkbox-group">
-        <label><input type="checkbox" name="risque8[]" value="bruit_continu"> Bruit continu</label>
-        <label><input type="checkbox" name="risque8[]" value="bruit_intempestif"> Bruit intempestif et répétitif</label>
-      </div>
-      <label for="risque8_autre">Autre :</label>
-      <input type="text" id="risque8_autre" name="risque8_autre">
-      <label for="obs8">Observations :</label>
-      <textarea id="obs8" name="obs8" rows="3"></textarea>
-    </fieldset>
-
-    <!-- Risque 9: Produits et émissions de déchets -->
-    <fieldset>
-      <legend>9. Risque lié aux produits et émissions de déchets</legend>
-      <div class="checkbox-group">
-        <label><input type="checkbox" name="risque9[]" value="produit_non_etiquete"> Utilisation de produit non étiqueté</label>
-        <label><input type="checkbox" name="risque9[]" value="emission_gaz"> Émission de gaz</label>
-        <label><input type="checkbox" name="risque9[]" value="emission_poussiere"> Émission de poussières</label>
-        <label><input type="checkbox" name="risque9[]" value="emission_fumee"> Émission de fumées</label>
-        <label><input type="checkbox" name="risque9[]" value="micro_organisme"> Micro-organismes (bactéries, virus, etc.)</label>
-      </div>
-      <label for="risque9_autre">Autre :</label>
-      <input type="text" id="risque9_autre" name="risque9_autre">
-      <label for="obs9">Observations :</label>
-      <textarea id="obs9" name="obs9" rows="3"></textarea>
-    </fieldset>
-
-    <!-- Risque 10: Incendie, explosion -->
-    <fieldset>
-      <legend>10. Risque d’incendie, d’explosion</legend>
-      <div class="checkbox-group">
-        <label><input type="checkbox" name="risque10[]" value="produit_inflammable"> Utilisation de produit inflammable</label>
-        <label><input type="checkbox" name="risque10[]" value="atmosphere_explosive"> Atmosphère explosive</label>
-        <label><input type="checkbox" name="risque10[]" value="produits_incompatibles"> Produits incompatibles</label>
-      </div>
-      <label for="risque10_autre">Autre :</label>
-      <input type="text" id="risque10_autre" name="risque10_autre">
-      <label for="obs10">Observations :</label>
-      <textarea id="obs10" name="obs10" rows="3"></textarea>
-    </fieldset>
-
-    <!-- Risque 11: Électricité -->
-    <fieldset>
-      <legend>11. Risque lié à l’électricité</legend>
-      <div class="checkbox-group">
-        <label><input type="checkbox" name="risque11[]" value="conducteur_nu"> Conducteur nu accessible</label>
-        <label><input type="checkbox" name="risque11[]" value="materiel_defectueux"> Matériel défectueux (pas de terre, etc.)</label>
-        <label><input type="checkbox" name="risque11[]" value="non_consignation"> Non consignation en intervention</label>
-      </div>
-      <label for="risque11_autre">Autre :</label>
-      <input type="text" id="risque11_autre" name="risque11_autre">
-      <label for="obs11">Observations :</label>
-      <textarea id="obs11" name="obs11" rows="3"></textarea>
-    </fieldset>
-
-    <!-- Risque 12: Éclairage -->
-    <fieldset>
-      <legend>12. Risque lié à l’éclairage</legend>
-      <div class="checkbox-group">
-        <label><input type="checkbox" name="risque12[]" value="eclairage_insuffisant"> Éclairage insuffisant du local</label>
-        <label><input type="checkbox" name="risque12[]" value="eclairage_inadapté"> Éclairage inadapté au poste</label>
-        <label><input type="checkbox" name="risque12[]" value="eblouissement"> Éblouissement / réflexion</label>
-        <label><input type="checkbox" name="risque12[]" value="zone_peu_eclairee"> Zone de passage peu ou pas éclairée</label>
-      </div>
-      <label for="risque12_autre">Autre :</label>
-      <input type="text" id="risque12_autre" name="risque12_autre">
-      <label for="obs12">Observations :</label>
-      <textarea id="obs12" name="obs12" rows="3"></textarea>
-    </fieldset>
-
-    <!-- Risque 13: Utilisation d’écran -->
-    <fieldset>
-      <legend>13. Risque lié à l’utilisation d’écran</legend>
-      <div class="checkbox-group">
-        <label><input type="checkbox" name="risque13[]" value="eblouissement_eclairage"> Éblouissement dû à l’éclairage naturel</label>
-        <label><input type="checkbox" name="risque13[]" value="mobilier_inadapté"> Mobilier inadapté</label>
-        <label><input type="checkbox" name="risque13[]" value="mauvais_reglage"> Mauvais réglage de l’écran</label>
-        <label><input type="checkbox" name="risque13[]" value="difficulte_logiciel"> Difficulté à utiliser les logiciels</label>
-      </div>
-      <label for="risque13_autre">Autre :</label>
-      <input type="text" id="risque13_autre" name="risque13_autre">
-      <label for="obs13">Observations :</label>
-      <textarea id="obs13" name="obs13" rows="3"></textarea>
-    </fieldset>
-
-    <!-- Risque 14: Ambiances climatiques -->
-    <fieldset>
-      <legend>14. Risque lié aux ambiances climatiques</legend>
-      <div class="checkbox-group">
-        <label><input type="checkbox" name="risque14[]" value="temperature_inadaptée"> Température inadaptée</label>
-        <label><input type="checkbox" name="risque14[]" value="travail_intemperies"> Travail aux intempéries</label>
-        <label><input type="checkbox" name="risque14[]" value="ambiance_chaude"> Ambiance chaude (four, etc.)</label>
-        <label><input type="checkbox" name="risque14[]" value="ambiance_froide"> Ambiance froide (frigo, etc.)</label>
-      </div>
-      <label for="risque14_autre">Autre :</label>
-      <input type="text" id="risque14_autre" name="risque14_autre">
-      <label for="obs14">Observations :</label>
-      <textarea id="obs14" name="obs14" rows="3"></textarea>
-    </fieldset>
-
-    <!-- Risque 15: Manque d’hygiène -->
-    <fieldset>
-      <legend>15. Risque lié au manque d’hygiène</legend>
-      <div class="checkbox-group">
-        <label><input type="checkbox" name="risque15[]" value="aucun_moyen_hygiene"> Aucun moyen d’hygiène (savon, etc.)</label>
-        <label><input type="checkbox" name="risque15[]" value="pas_trousse_soins"> Pas de trousse de premiers soins</label>
-        <label><input type="checkbox" name="risque15[]" value="non_respect_hygiene"> Non-respect des règles d’hygiène</label>
-      </div>
-      <label for="risque15_autre">Autre :</label>
-      <input type="text" id="risque15_autre" name="risque15_autre">
-      <label for="obs15">Observations :</label>
-      <textarea id="obs15" name="obs15" rows="3"></textarea>
-    </fieldset>
-
-    <!-- Risque 16: Intervention d’entreprise extérieure -->
-    <fieldset>
-      <legend>16. Risque lié à l’intervention d’une entreprise extérieure</legend>
-      <div class="checkbox-group">
-        <label><input type="checkbox" name="risque16[]" value="mauvaise_connaissance"> Méconnaissance des risques par l’entreprise extérieure</label>
-        <label><input type="checkbox" name="risque16[]" value="coactivite"> Risque lié à la coactivité</label>
-      </div>
-      <label for="risque16_autre">Autre :</label>
-      <input type="text" id="risque16_autre" name="risque16_autre">
-      <label for="obs16">Observations :</label>
-      <textarea id="obs16" name="obs16" rows="3"></textarea>
-    </fieldset>
-
-    <!-- Risque 17: Manque de formation -->
-    <fieldset>
-      <legend>17. Risque lié au manque de formation</legend>
-      <div class="checkbox-group">
-        <label><input type="checkbox" name="risque17[]" value="formation_base_insuffisante"> Formation de base en sécurité insuffisante</label>
-        <label><input type="checkbox" name="risque17[]" value="formation_incomplete"> Formation incomplète au poste de travail</label>
-        <label><input type="checkbox" name="risque17[]" value="premiers_secours"> Absence de personnel formé aux premiers secours</label>
-      </div>
-      <label for="risque17_autre">Autre :</label>
-      <input type="text" id="risque17_autre" name="risque17_autre">
-      <label for="obs17">Observations :</label>
-      <textarea id="obs17" name="obs17" rows="3"></textarea>
-    </fieldset>
-
-    <!-- Risque 18: Risque routier -->
-    <fieldset>
-      <legend>18. Risque routier</legend>
-      <div class="checkbox-group">
-        <label><input type="checkbox" name="risque18[]" value="kilometrage_excessif"> Kilométrage parcouru excessif</label>
-        <label><input type="checkbox" name="risque18[]" value="mauvaise_organisation"> Mauvaise organisation du travail</label>
-        <label><input type="checkbox" name="risque18[]" value="vehicule_defaillant"> Véhicule défaillant</label>
-        <label><input type="checkbox" name="risque18[]" value="contraintes_communication"> Contraintes de communication (portable, etc.)</label>
-      </div>
-      <label for="risque18_autre">Autre :</label>
-      <input type="text" id="risque18_autre" name="risque18_autre">
-      <label for="obs18">Observations :</label>
-      <textarea id="obs18" name="obs18" rows="3"></textarea>
-    </fieldset>
-
-    <!-- Risque 19: Autres risques -->
-    <fieldset>
-      <legend>19. Autres risques</legend>
-      <label for="risque19">Description :</label>
-      <textarea id="risque19" name="risque19" rows="3"></textarea>
-      <label for="obs19">Observations :</label>
-      <textarea id="obs19" name="obs19" rows="3"></textarea>
-    </fieldset>
-
-    <button type="submit">Envoyer</button>
+    
+    <!-- Conteneur pour l'affichage des catégories de risques -->
+    <div id="risk-container"></div>
+    
+    <!-- Bouton d'impression uniquement -->
+    <button type="button" class="no-print" onclick="window.print()">Imprimer le formulaire</button>
   </form>
+  
+  <script>
+    // Définition des catégories et options de risques
+    const riskCategories = [
+      {
+        title: "1. Risque de chute de plein pied",
+        options: [
+          { name: "sol_glissant", label: "Sol glissant (eau, huile, etc.)" },
+          { name: "sol_inegal", label: "Sol inégal (marches, etc.)" },
+          { name: "sol_defectueux", label: "Sol défectueux (trou, etc.)" },
+          { name: "passage_etroit", label: "Passage étroit" },
+          { name: "passage_encombre", label: "Passage encombré" }
+        ]
+      },
+      {
+        title: "2. Risque de chute de hauteur",
+        options: [
+          { name: "parties_contrebas", label: "Parties en contrebas (escalier, quai, etc.)" },
+          { name: "acces_hautes", label: "Accès à des parties hautes (armoire, etc.)" },
+          { name: "dispositifs_mobiles", label: "Dispositifs mobiles (échelle, etc.)" },
+          { name: "objets_divers", label: "Objets divers (chaise, carton, etc.)" }
+        ]
+      },
+      {
+        title: "3. Risque lié à la manutention manuelle",
+        options: [
+          { name: "charge_elevee", label: "Manutention charge élevée" },
+          { name: "repetitive", label: "Manutention répétitive" },
+          { name: "grande_dimension", label: "Charge de grande dimension" },
+          { name: "mauvaise_posture", label: "Mauvaise posture" }
+        ]
+      },
+      {
+        title: "4. Risque lié à la manutention mécanique",
+        options: [
+          { name: "moyen_inadapte", label: "Utilisation de moyen inadapté" },
+          { name: "visibilite_insuffisante", label: "Visibilité insuffisante" },
+          { name: "vitesse_excessive", label: "Vitesse excessive" },
+          { name: "arrimage_instable", label: "Arrimage ou manutention instable" }
+        ]
+      },
+      {
+        title: "5. Risque lié aux circulations",
+        options: [
+          { name: "zone_mal_definie", label: "Zone de circulation mal définie" },
+          { name: "voie_dangereuse", label: "Voie dangereuse (pente, mauvais état)" },
+          { name: "manoeuvre_dangereuse", label: "Manœuvre dangereuse" },
+          { name: "vehicule_defaillant", label: "Mauvais état du véhicule" }
+        ]
+      },
+      {
+        title: "6. Risque lié aux chutes d’objets",
+        options: [
+          { name: "stockage_hauteur", label: "Stockage en hauteur" },
+          { name: "objets_empiles", label: "Objets empilés" },
+          { name: "travaux_hauteur", label: "Travaux en hauteur (chute d’objet)" },
+          { name: "travail_tranche", label: "Travail en tranchée (puits, etc.)" }
+        ]
+      },
+      {
+        title: "7. Risque lié aux machines et aux outils",
+        options: [
+          { name: "partie_mobile", label: "Partie mobile (organe, pièce, outil)" },
+          { name: "projection", label: "Projection (fluide, copeaux, etc.)" },
+          { name: "outils_tranchants", label: "Outils tranchants" },
+          { name: "non_consignation", label: "Non consignation en maintenance" }
+        ]
+      },
+      {
+        title: "8. Risque lié au bruit",
+        options: [
+          { name: "bruit_continu", label: "Bruit continu" },
+          { name: "bruit_intempestif", label: "Bruit intempestif et répétitif" }
+        ]
+      },
+      {
+        title: "9. Risque lié aux produits et émissions de déchets",
+        options: [
+          { name: "produit_non_etiquete", label: "Utilisation de produit non étiqueté" },
+          { name: "emission_gaz", label: "Émission de gaz" },
+          { name: "emission_poussiere", label: "Émission de poussières" },
+          { name: "emission_fumee", label: "Émission de fumées" },
+          { name: "micro_organisme", label: "Micro-organismes (bactéries, virus, etc.)" }
+        ]
+      },
+      {
+        title: "10. Risque d’incendie, d’explosion",
+        options: [
+          { name: "produit_inflammable", label: "Utilisation de produit inflammable" },
+          { name: "atmosphere_explosive", label: "Atmosphère explosive" },
+          { name: "produits_incompatibles", label: "Produits incompatibles" }
+        ]
+      },
+      {
+        title: "11. Risque lié à l’électricité",
+        options: [
+          { name: "conducteur_nu", label: "Conducteur nu accessible" },
+          { name: "materiel_defectueux", label: "Matériel défectueux (pas de terre, etc.)" },
+          { name: "non_consignation_electricite", label: "Non consignation en intervention" }
+        ]
+      },
+      {
+        title: "12. Risque lié à l’éclairage",
+        options: [
+          { name: "eclairage_insuffisant", label: "Éclairage insuffisant du local" },
+          { name: "eclairage_inadepte", label: "Éclairage inadapté au poste" },
+          { name: "eblouissement", label: "Éblouissement / réflexion" },
+          { name: "zone_peu_eclairee", label: "Zone de passage peu ou pas éclairée" }
+        ]
+      },
+      {
+        title: "13. Risque lié à l’utilisation d’écran",
+        options: [
+          { name: "eblouissement_eclairage", label: "Éblouissement dû à l’éclairage naturel" },
+          { name: "mobilier_inadepte", label: "Mobilier inadapté" },
+          { name: "mauvais_reglage", label: "Mauvais réglage de l’écran" },
+          { name: "difficulte_logiciel", label: "Difficulté à utiliser les logiciels" }
+        ]
+      },
+      {
+        title: "14. Risque lié aux ambiances climatiques",
+        options: [
+          { name: "temperature_inadaptée", label: "Température inadaptée" },
+          { name: "travail_intemperies", label: "Travail aux intempéries" },
+          { name: "ambiance_chaude", label: "Ambiance chaude (four, etc.)" },
+          { name: "ambiance_froide", label: "Ambiance froide (frigo, etc.)" }
+        ]
+      },
+      {
+        title: "15. Risque lié au manque d’hygiène",
+        options: [
+          { name: "aucun_moyen_hygiene", label: "Aucun moyen d’hygiène (savon, etc.)" },
+          { name: "pas_trousse_soins", label: "Pas de trousse de premiers soins" },
+          { name: "non_respect_hygiene", label: "Non-respect des règles d’hygiène" }
+        ]
+      },
+      {
+        title: "16. Risque lié à l’intervention d’une entreprise extérieure",
+        options: [
+          { name: "mauvaise_connaissance", label: "Méconnaissance des risques par l’entreprise extérieure" },
+          { name: "coactivite", label: "Risque lié à la coactivité" }
+        ]
+      },
+      {
+        title: "17. Risque lié au manque de formation",
+        options: [
+          { name: "formation_base_insuffisante", label: "Formation de base en sécurité insuffisante" },
+          { name: "formation_incomplete", label: "Formation incomplète au poste de travail" },
+          { name: "premiers_secours", label: "Absence de personnel formé aux premiers secours" }
+        ]
+      },
+      {
+        title: "18. Risque routier",
+        options: [
+          { name: "kilometrage_excessif", label: "Kilométrage parcouru excessif" },
+          { name: "mauvaise_organisation", label: "Mauvaise organisation du travail" },
+          { name: "vehicule_defaillant_routier", label: "Véhicule défaillant" },
+          { name: "contraintes_communication", label: "Contraintes de communication (portable, etc.)" }
+        ]
+      },
+      {
+        title: "19. Autres risques",
+        type: "free",
+        fields: [
+          { name: "description_autres", label: "Description" },
+          { name: "observations_autres", label: "Observations" }
+        ]
+      }
+    ];
+    
+    const frequencyOptions = [
+      { value: "quotidien", label: "Quotidien" },
+      { value: "1-2_semaine", label: "1 à 2 fois par semaine" },
+      { value: "1-2_mois", label: "1 à 2 fois par mois" },
+      { value: "1-2_an", label: "1 à 2 fois par an" }
+    ];
+    
+    const gravityOptions = [
+      { value: "sans_consequence", label: "Sans conséquence" },
+      { value: "consequence_legere", label: "Conséquence légère" },
+      { value: "consequence_grave", label: "Conséquence grave" },
+      { value: "consequence_mortelle", label: "Conséquence mortelle" }
+    ];
+    
+    // Fonction de création d'un menu déroulant
+    function createSelect(name, optionsArray) {
+      let selectHTML = `<select name="${name}">`;
+      optionsArray.forEach(opt => {
+        selectHTML += `<option value="${opt.value}">${opt.label}</option>`;
+      });
+      selectHTML += `</select>`;
+      return selectHTML;
+    }
+    
+    // Génération d'une option de risque avec checkbox et menus déroulants
+    function renderRiskOption(categoryIndex, option) {
+      const checkboxName = `risk_${categoryIndex}_${option.name}`;
+      const detailsId = "details_" + checkboxName;
+      let html = `<div class="risk-option">
+        <label>
+          <input type="checkbox" name="${checkboxName}" value="${option.name}" onchange="toggleDetails('${detailsId}', this.checked)">
+          ${option.label}
+        </label>
+        <div class="details" id="${detailsId}">
+          <label>Fréquence : ${createSelect(checkboxName + "_freq", frequencyOptions)}</label>
+          <label>Gravité : ${createSelect(checkboxName + "_grav", gravityOptions)}</label>
+        </div>
+      </div>`;
+      return html;
+    }
+    
+    // Génération d'un fieldset pour une catégorie de risque
+    function renderRiskCategory(category, index) {
+      let html = `<fieldset>
+        <legend>${category.title}</legend>`;
+      if (category.type === "free") {
+        category.fields.forEach(field => {
+          html += `<label for="${field.name}">${field.label} :</label>`;
+          if (field.name.includes("observations")) {
+            html += `<textarea id="${field.name}" name="${field.name}" rows="3"></textarea>`;
+          } else {
+            html += `<input type="text" id="${field.name}" name="${field.name}">`;
+          }
+        });
+      } else {
+        category.options.forEach(option => {
+          html += renderRiskOption(index + 1, option);
+        });
+      }
+      html += `</fieldset>`;
+      return html;
+    }
+    
+    // Rendu de l'ensemble du formulaire dans le conteneur
+    function renderForm() {
+      const container = document.getElementById("risk-container");
+      let html = "";
+      riskCategories.forEach((category, index) => {
+        html += renderRiskCategory(category, index);
+      });
+      container.innerHTML = html;
+    }
+    
+    // Fonction pour afficher ou masquer le bloc de détails
+    function toggleDetails(id, show) {
+      const elem = document.getElementById(id);
+      if (elem) {
+        elem.style.display = show ? "block" : "none";
+      }
+    }
+    
+    document.addEventListener("DOMContentLoaded", renderForm);
+  </script>
 </body>
 </html>

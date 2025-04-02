@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Fiche d'Identification des Risques</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    fieldset {
+      border: 1px solid #ccc;
+      padding: 10px 20px;
+      margin-bottom: 20px;
+    }
+    legend {
+      font-weight: bold;
+    }
+    .risk-option {
+      border: 1px solid #ddd;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+    .risk-option .details {
+      margin-left: 20px;
+      margin-top: 5px;
+      display: none; /* Masqué par défaut */
+    }
+    label {
+      display: block;
+      margin-top: 5px;
+    }
+    select, input[type="text"], textarea {
+      width: 100%;
+      padding: 5px;
+      margin-top: 5px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      margin-right: 10px;
+    }
+    @media print {
+      .no-print {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Fiche d'Identification des Risques</h1>
+  <form id="riskForm" action="#" method="post">
+    <!-- Informations (Unité de travail et évaluateur) -->
+    <fieldset>
+      <legend>Informations</legend>
+      <label for="unite_travail">Unité de travail :</label>
+      <select id="unite_travail" name="unite_travail">
+        <option value="unite_a">Unité A</option>
+        <option value="unite_b">Unité B</option>
+        <option value="unite_c">Unité C</option>
+      </select>
+      <label for="evaluateur">Nom de l'évaluateur :</label>
+      <input type="text" id="evaluateur" name="evaluateur">
+    </fieldset>
+    
+    <!-- Conteneur pour l'affichage des catégories de risques -->
+    <div id="risk-container"></div>
+    
+    <!-- Boutons : Générer CSV et Imprimer -->
+    <button type="button" class="no-print" onclick="generateCSV()">Générer CSV</button>
+    <button type="button" class="no-print" onclick="window.print()">Imprimer le formulaire</button>
+  </form>
+  
+  <script>
+    // Définition des catégories et options de risques
+    const riskCategories = [
+      {
+        title: "1. Risque de chute de plein pied",
+        options: [
+          { name: "sol_glissant", label: "Sol glissant (eau, huile, etc.)" },
+          { name: "sol_inegal", label: "Sol inégal (marches, etc.)" },
+          { name: "sol_defectueux", label: "Sol défectueux (trou, etc.)" },
+          { name: "passage_etroit", label: "Passage étroit" },
+          { name: "passage_encombre", label: "Passage encombré" }
+        ]
+      },
+      {
+        title: "2. Risque de chute de hauteur",
+        options: [
+          { name: "parties_contrebas", label: "Parties en contrebas (escalier, quai, etc.)" },
+          { name: "acces_hautes", label: "Accès à des parties hautes (armoire, etc.)" },
+          { name: "dispositifs_mobiles", label: "Dispositifs mobiles (échelle, etc.)" },
+          { name: "objets_divers", label: "Objets divers (chaise, carton, etc.)" }
+        ]
+      },
+      {
+        title: "3. Risque lié à la manutention manuelle",
+        options: [
+          { name: "charge_elevee", label: "Manutention charge élevée" },
+          { name: "repetitive", label: "Manutention répétitive" },
+          { name: "grande_dimension", label: "Charge de grande dimension" },
+          { name: "mauvaise_posture", label: "Mauvaise posture" }
+        ]
+      },
+      {
+        title: "4. Risque lié à la manutention mécanique",
+        options: [
+          { name: "moyen_inadapte", label: "Utilisation de moyen inadapté" },
+          { name: "visibilite_insuffisante", label: "Visibilité insuffisante" },
+          { name: "vitesse_excessive", label: "Vitesse excessive" },
+          { name: "arrimage_instable", label: "Arrimage ou manutention instable" }
+        ]
+      },
+      {
+        title: "5. Risque lié aux circulations",
+        options: [
+          { name: "zone_mal_definie", label: "Zone de circulation mal définie" },
+          { name: "voie_dangereuse", label: "Voie dangereuse (pente, mauvais état)" },
+          { name: "manoeuvre_dangereuse", label: "Manœuvre dangereuse" },
+          { name: "vehicule_defaillant", label: "Mauvais état du véhicule" }
+        ]
+      },
+      {
+        title: "6. Risque lié aux chutes d’objets",
+        options: [
+          { name: "stockage_hauteur", label: "Stockage en hauteur" },
+          { name: "objets_empiles", label: "Objets empilés" },
+          { name: "travaux_hauteur", label: "Travaux en hauteur (chute d’objet)" },
+          { name: "travail_tranche", label: "Travail en tranchée (puits, etc.)" }
+        ]
+      },
+      {
+        title: "7. Risque lié aux machines et aux outils",
+        options: [
+          { name: "partie_mobile", label: "Partie mobile (organe, pièce, outil)" },
+          { name: "projection", label: "Projection (fluide, copeaux, etc.)" },
+          { name: "outils_tranchants", label: "Outils tranchants" },
+          { name: "non_consignation", label: "Non consignation en maintenance" }
+        ]
+      },
+      {
+        title: "8. Risque lié au bruit",
+        options: [
+          { name: "bruit_continu", label: "Bruit continu" },
+          { name: "bruit_intempestif", label: "Bruit intempestif et répétitif" }
+        ]
+      },
+      {
+        title: "9. Risque lié aux produits et émissions de déchets",
+        options: [
+          { name: "produit_non_etiquete", label: "Utilisation de produit non étiqueté" },
+          { name: "emission_gaz", label: "Émission de gaz" },
+          { name: "emission_poussiere", label: "Émission de poussières" },
+          { name: "emission_fumee", label: "Émission de fumées" },
+          { name: "micro_organisme", label: "Micro-organismes (bactéries, virus, etc.)" }
+        ]
+      },
+      {
+        title: "10. Risque d’incendie, d’explosion",
+        options: [
+          { name: "produit_inflammable", label: "Utilisation de produit inflammable" },
+          { name: "atmosphere_explosive", label: "Atmosphère explosive" },
+          { name: "produits_incompatibles", label: "Produits incompatibles" }
+        ]
+      },
+      {
+        title: "11. Risque lié à l’électricité",
+        options: [
+          { name: "conducteur_nu", label: "Conducteur nu accessible" },
+          { name: "materiel_defectueux", label: "Matériel défectueux (pas de terre, etc.)" },
+          { name: "non_consignation_electricite", label: "Non consignation en intervention" }
+        ]
+      },
+      {
+        title: "12. Risque lié à l’éclairage",
+        options: [
+          { name: "eclairage_insuffisant", label: "Éclairage insuffisant du local" },
+          { name: "eclairage_inadepte", label: "Éclairage inadapté au poste" },
+          { name: "eblouissement", label: "Éblouissement / réflexion" },
+          { name: "zone_peu_eclairee", label: "Zone de passage peu ou pas éclairée" }
+        ]
+      },
+      {
+        title: "13. Risque lié à l’utilisation d’écran",
+        options: [
+          { name: "eblouissement_eclairage", label: "Éblouissement dû à l’éclairage naturel" },
+          { name: "mobilier_inadepte", label: "Mobilier inadapté" },
+          { name: "mauvais_reglage", label: "Mauvais réglage de l’écran" },
+          { name: "difficulte_logiciel", label: "Difficulté à utiliser les logiciels" }
+        ]
+      },
+      {
+        title: "14. Risque lié aux ambiances climatiques",
+        options: [
+          { name: "temperature_inadaptée", label: "Température inadaptée" },
+          { name: "travail_intemperies", label: "Travail aux intempéries" },
+          { name: "ambiance_chaude", label: "Ambiance chaude (four, etc.)" },
+          { name: "ambiance_froide", label: "Ambiance froide (frigo, etc.)" }
+        ]
+      },
+      {
+        title: "15. Risque lié au manque d’hygiène",
+        options: [
+          { name: "aucun_moyen_hygiene", label: "Aucun moyen d’hygiène (savon, etc.)" },
+          { name: "pas_trousse_soins", label: "Pas de trousse de premiers soins" },
+          { name: "non_respect_hygiene", label: "Non-respect des règles d’hygiène" }
+        ]
+      },
+      {
+        title: "16. Risque lié à l’intervention d’une entreprise extérieure",
+        options: [
+          { name: "mauvaise_connaissance", label: "Méconnaissance des risques par l’entreprise extérieure" },
+          { name: "coactivite", label: "Risque lié à la coactivité" }
+        ]
+      },
+      {
+        title: "17. Risque lié au manque de formation",
+        options: [
+          { name: "formation_base_insuffisante", label: "Formation de base en sécurité insuffisante" },
+          { name: "formation_incomplete", label: "Formation incomplète au poste de travail" },
+          { name: "premiers_secours", label: "Absence de personnel formé aux premiers secours" }
+        ]
+      },
+      {
+        title: "18. Risque routier",
+        options: [
+          { name: "kilometrage_excessif", label: "Kilométrage parcouru excessif" },
+          { name: "mauvaise_organisation", label: "Mauvaise organisation du travail" },
+          { name: "vehicule_defaillant_routier", label: "Véhicule défaillant" },
+          { name: "contraintes_communication", label: "Contraintes de communication (portable, etc.)" }
+        ]
+      },
+      {
+        title: "19. Autres risques",
+        type: "free",
+        fields: [
+          { name: "description_autres", label: "Description" },
+          { name: "observations_autres", label: "Observations" }
+        ]
+      }
+    ];
+    
+    const frequencyOptions = [
+      { value: "quotidien", label: "Quotidien" },
+      { value: "1-2_semaine", label: "1 à 2 fois par semaine" },
+      { value: "1-2_mois", label: "1 à 2 fois par mois" },
+      { value: "1-2_an", label: "1 à 2 fois par an" }
+    ];
+    
+    const gravityOptions = [
+      { value: "sans_consequence", label: "Sans conséquence" },
+      { value: "consequence_legere", label: "Conséquence légère" },
+      { value: "consequence_grave", label: "Conséquence grave" },
+      { value: "consequence_mortelle", label: "Conséquence mortelle" }
+    ];
+    
+    // Fonction de création d'un menu déroulant
+    function createSelect(name, optionsArray) {
+      let selectHTML = `<select name="${name}">`;
+      optionsArray.forEach(opt => {
+        selectHTML += `<option value="${opt.value}">${opt.label}</option>`;
+      });
+      selectHTML += `</select>`;
+      return selectHTML;
+    }
+    
+    // Génération d'une option de risque avec checkbox et menus déroulants
+    function renderRiskOption(categoryIndex, option) {
+      const checkboxName = `risk_${categoryIndex}_${option.name}`;
+      const detailsId = "details_" + checkboxName;
+      let html = `<div class="risk-option">
+        <label>
+          <input type="checkbox" name="${checkboxName}" value="${option.name}" onchange="toggleDetails('${detailsId}', this.checked)">
+          ${option.label}
+        </label>
+        <div class="details" id="${detailsId}">
+          <label>Fréquence : ${createSelect(checkboxName + "_freq", frequencyOptions)}</label>
+          <label>Gravité : ${createSelect(checkboxName + "_grav", gravityOptions)}</label>
+        </div>
+      </div>`;
+      return html;
+    }
+    
+    // Génération d'un fieldset pour une catégorie de risque
+    function renderRiskCategory(category, index) {
+      let html = `<fieldset>
+        <legend>${category.title}</legend>`;
+      if (category.type === "free") {
+        category.fields.forEach(field => {
+          html += `<label for="${field.name}">${field.label} :</label>`;
+          if (field.name.includes("observations")) {
+            html += `<textarea id="${field.name}" name="${field.name}" rows="3"></textarea>`;
+          } else {
+            html += `<input type="text" id="${field.name}" name="${field.name}">`;
+          }
+        });
+      } else {
+        category.options.forEach(option => {
+          html += renderRiskOption(index + 1, option);
+        });
+      }
+      html += `</fieldset>`;
+      return html;
+    }
+    
+    // Rendu de l'ensemble du formulaire dans le conteneur
+    function renderForm() {
+      const container = document.getElementById("risk-container");
+      let html = "";
+      riskCategories.forEach((category, index) => {
+        html += renderRiskCategory(category, index);
+      });
+      container.innerHTML = html;
+    }
+    
+    // Fonction pour afficher ou masquer le bloc de détails
+    function toggleDetails(id, show) {
+      const elem = document.getElementById(id);
+      if (elem) {
+        elem.style.display = show ? "block" : "none";
+      }
+    }
+    
+    // Fonction pour générer le CSV
+    function generateCSV() {
+      const form = document.getElementById("riskForm");
+      const data = [];
+      // En-tête du CSV
+      data.push(["Unité de travail", "Évaluateur", "Catégorie", "Option de risque", "Fréquence", "Gravité", "Description", "Observations"]);
+      
+      // Informations générales
+      const uniteTravail = document.getElementById("unite_travail").value;
+      const evaluateur = document.getElementById("evaluateur").value;
+      
+      // Parcours des catégories
+      riskCategories.forEach((category, catIndex) => {
+        // Pour les catégories classiques
+        if (!category.type || category.type !== "free") {
+          category.options.forEach(option => {
+            const checkboxName = `risk_${catIndex + 1}_${option.name}`;
+            const checkbox = form.elements[checkboxName];
+            if (checkbox && checkbox.checked) {
+              const freqSelect = form.elements[checkboxName + "_freq"];
+              const gravSelect = form.elements[checkboxName + "_grav"];
+              const freqValue = freqSelect ? freqSelect.value : "";
+              const gravValue = gravSelect ? gravSelect.value : "";
+              data.push([uniteTravail, evaluateur, category.title, option.label, freqValue, gravValue, "", ""]);
+            }
+          });
+        } else {
+          // Pour la catégorie "Autres risques"
+          const desc = form.elements["description_autres"] ? form.elements["description_autres"].value : "";
+          const obs = form.elements["observations_autres"] ? form.elements["observations_autres"].value : "";
+          // On ajoute une ligne uniquement si au moins un des champs est renseigné
+          if (desc.trim() !== "" || obs.trim() !== "") {
+            data.push([uniteTravail, evaluateur, category.title, "", "", "", desc, obs]);
+          }
+        }
+      });
+      
+      // Transformation du tableau de données en texte CSV
+      const csvContent = data.map(row => {
+        return row.map(item => {
+          // Echappement des guillemets et encadrement entre guillemets
+          let cell = item.toString().replace(/"/g, '""');
+          return `"${cell}"`;
+        }).join(",");
+      }).join("\n");
+      
+      // Création d'un objet Blob et déclenchement du téléchargement
+      const blob = new Blob([csvContent], { type: "text/csv;charset=utf-8;" });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement("a");
+      link.setAttribute("href", url);
+      link.setAttribute("download", "risques.csv");
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }
+    
+    document.addEventListener("DOMContentLoaded", renderForm);
+  </script>
+</body>
+</html>
