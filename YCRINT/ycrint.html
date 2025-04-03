@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filtrage de Logs</title>
+    <style>
+        /* Simple reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            min-height: 100vh;
+            padding: 20px;
+            background: linear-gradient(to right, #ece9e6, #ffffff);
+        }
+
+        h2 {
+            margin-bottom: 1rem;
+        }
+
+        .container {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            padding: 20px;
+            width: 75%; /* 75% de la fenêtre */
+            margin-bottom: 20px;
+            animation: fadeIn 1s ease forwards;
+        }
+
+        textarea {
+            width: 100%;
+            height: 150px;
+            resize: vertical;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            outline: none;
+            font-family: monospace;
+            transition: box-shadow 0.3s ease;
+        }
+        textarea:focus {
+            box-shadow: 0 0 5px rgba(0, 150, 255, 0.5);
+        }
+
+        .buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        button {
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #f0f0f0;
+        }
+
+        h3 {
+            margin-top: 1rem;
+        }
+
+        pre {
+            background: #f4f4f4;
+            padding: 10px;
+            white-space: pre-wrap;
+            border-radius: 4px;
+            min-height: 80px;
+            margin-top: 10px;
+            animation: fadeIn 0.5s ease forwards;
+        }
+
+        /* Keyframe for fade-in animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Coller vos logs ici :</h2>
+        <textarea id="logInput" placeholder="Collez ici vos logs..."></textarea>
+        <div class="buttons">
+            <button onclick="filterLogs()">Filtrer Logs</button>
+            <button onclick="downloadLogs()">Télécharger Logs Filtrés</button>
+        </div>
+        <h3>Résultats :</h3>
+        <pre id="filteredLogs"></pre>
+    </div>
+
+    <script>
+        function filterLogs() {
+            const logInput = document.getElementById('logInput').value;
+            const lines = logInput.split('\n');
+
+            // Ne garder que les lignes qui contiennent [WARN] ou [ERROR] (insensible à la casse)
+            const filteredLines = lines.filter(line => {
+                const upperLine = line.toUpperCase();
+                return upperLine.includes('[ WARN]') || upperLine.includes('[ERROR]');
+            });
+
+            const outputElem = document.getElementById('filteredLogs');
+
+            if (filteredLines.length === 0) {
+                outputElem.textContent = "Aucune ligne [WARN] ou [ERROR] trouvée.";
+            } else {
+                outputElem.textContent = filteredLines.join('\n');
+            }
+        }
+
+        function downloadLogs() {
+            const text = document.getElementById('filteredLogs').textContent;
+            if (!text || text.startsWith("Aucune ligne ")) {
+                alert("Aucun log filtré à télécharger.");
+                return;
+            }
+            const blob = new Blob([text], { type: 'text/plain' });
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(blob);
+            link.download = 'filtered_logs.txt';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+    </script>
+</body>
+</html>

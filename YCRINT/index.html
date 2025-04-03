@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <h1>Bienvenue sur la page Index</h1>
+    <a href="../index.html">Lien vers le Hub</a>
+    <a href="ycrint.html">Lien vers YCRINT</a>
+    <h2>Code source de la page YCRINT</h2>
+    <pre id="source-code" class="code"></pre>
+
+    <script>
+        // Charger et afficher le code source de ycrint.html
+        fetch('ycrint.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('source-code').textContent = data;
+            })
+            .catch(error => {
+                console.error('Erreur lors du chargement du code source:', error);
+            });
+    </script>
+</body>
+</html>
