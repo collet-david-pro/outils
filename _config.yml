@@ -1,0 +1,12 @@
+title: "Hub"
+description: "Un hub pour les projets et les ressources"
+url: "https://www.davidcollet.fr" # Remplacez par l'URL de votre site
+theme: "minima" # Vous pouvez remplacer par un autre thème ou un thème personnalisé
+author:
+  name: "Votre Nom"
+  email: "votre.email@example.com"
+markdown: kramdown
+highlighter: rouge
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
