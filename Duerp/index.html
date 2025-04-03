@@ -39,50 +39,49 @@
                     
 
                     <h2>Code source de la version 1</h2>
-<pre id="source-code" class="code">
-
-       <script>
-   // Charger et afficher le code source de ycrint.html
- fetch('formulaireV2.html')
-  .then(response => response.text())
-   .then(data => {
-     document.getElementById('source-code').textContent = data;
-     })
-       .catch(error => {
-      console.error('Erreur lors du chargement du code source:', error);
-       });
-                            </script></pre>
+<pre id="source-code-v1" class="code">
+    <script>
+    // Charger et afficher le code source de formulaireV2.html
+    fetch('formulaireV2.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('source-code-v1').textContent = data;
+        })
+        .catch(error => {
+            console.error('Erreur lors du chargement du code source:', error);
+        });
+    </script>
+</pre>
 
 <h2>Code source de la version 2</h2>
-
-<pre id="source-code" class="code">
-
+<pre id="source-code-v2" class="code">
     <script>
-// Charger et afficher le code source de ycrint.html
-fetch('formulairecsv.html')
-.then(response => response.text())
-.then(data => {
-  document.getElementById('source-code').textContent = data;
-  })
-    .catch(error => {
-   console.error('Erreur lors du chargement du code source:', error);
-    });
-                         </script></pre>                       
-    
-    <h2> Code source de la version 3</h2>
-    <pre id="source-code" class="code">
-
-        <script>
-    // Charger et afficher le code source de ycrint.html
-  fetch('formulaire.html')
-   .then(response => response.text())
-    .then(data => {
-      document.getElementById('source-code').textContent = data;
-      })
+    // Charger et afficher le code source de formulairecsv.html
+    fetch('formulairecsv.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('source-code-v2').textContent = data;
+        })
         .catch(error => {
-       console.error('Erreur lors du chargement du code source:', error);
+            console.error('Erreur lors du chargement du code source:', error);
         });
-                             </script></pre>  
+    </script>
+</pre>
+
+<h2>Code source de la version 3</h2>
+<pre id="source-code-v3" class="code">
+    <script>
+    // Charger et afficher le code source de formulaire.html
+    fetch('formulaire.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('source-code-v3').textContent = data;
+        })
+        .catch(error => {
+            console.error('Erreur lors du chargement du code source:', error);
+        });
+    </script>
+</pre>  
 
                 </li>
             </ul>
