@@ -2,10 +2,7 @@ title: "Hub"
 description: "Un hub pour les projets et les ressources"
 url: "https://www.davidcollet.fr" # Remplacez par l'URL de votre site
 theme: "minima" # Vous pouvez remplacer par un autre thème ou un thème personnalisé
-author:
-  name: "COLLET David"
-  email: "davidc.collet@ac-amiens.fr"
-markdown: kramdown
+
 highlighter: rouge
 plugins:
   - jekyll-feed
