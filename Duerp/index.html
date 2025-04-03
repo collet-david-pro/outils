@@ -31,44 +31,65 @@
                 <li>
                     <strong>formulaire V2.html</strong> - Formulaire interactif pour l'identification des risques avec des catégories dynamiques.
                     <a href="./formulaire V2.html">Voir le fichier</a>
-                    <pre>
-<code class="code">
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <title>Fiche d'Identification des Risques</title>
-  ...
-</code>
-                    </pre>
+                 
                 </li>
                 <li>
                     <strong>formulaire csv.html</strong> - Formulaire permettant de générer un fichier CSV des risques identifiés.
                     <a href="./formulaire csv.html">Voir le fichier</a>
-                    <pre>
-<code class="code">
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <title>Fiche d'Identification des Risques</title>
-  ...
-</code>
-                    </pre>
+                    
+
                 </li>
                 <li>
                     <strong>formulaire.html</strong> - Formulaire d'évaluation des risques avec une notice explicative et une option d'impression.
                     <a href="./formulaire.html">Voir le fichier</a>
-                    <pre>
-<code class="code">
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <title>Évaluation des risques - DUERP</title>
-  ...
-</code>
-                    </pre>
+                    
+
+                    <h2>Code source de la version 1</h2>
+<pre id="source-code" class="code">
+
+       <script>
+   // Charger et afficher le code source de ycrint.html
+ fetch('formulaire V2.html')
+  .then(response => response.text())
+   .then(data => {
+     document.getElementById('source-code').textContent = data;
+     })
+       .catch(error => {
+      console.error('Erreur lors du chargement du code source:', error);
+       });
+                            </script></pre>
+
+<h2>Code source de la version 2</h2>
+
+<pre id="source-code" class="code">
+
+    <script>
+// Charger et afficher le code source de ycrint.html
+fetch('formulaire csv.html')
+.then(response => response.text())
+.then(data => {
+  document.getElementById('source-code').textContent = data;
+  })
+    .catch(error => {
+   console.error('Erreur lors du chargement du code source:', error);
+    });
+                         </script></pre>                       
+    
+    <h2> Code source de la version 3</h2>
+    <pre id="source-code" class="code">
+
+        <script>
+    // Charger et afficher le code source de ycrint.html
+  fetch('formulaire.html')
+   .then(response => response.text())
+    .then(data => {
+      document.getElementById('source-code').textContent = data;
+      })
+        .catch(error => {
+       console.error('Erreur lors du chargement du code source:', error);
+        });
+                             </script></pre>  
+
                 </li>
             </ul>
         </section>
