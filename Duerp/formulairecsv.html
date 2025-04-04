@@ -55,20 +55,44 @@
       <legend>Informations</legend>
       <label for="unite_travail">Unité de travail :</label>
       <select id="unite_travail" name="unite_travail">
-        <option value="unite_a">Unité A</option>
-        <option value="unite_b">Unité B</option>
-        <option value="unite_c">Unité C</option>
+        <option value="UT01_01">UT01 01 - Accueil - Bâtiment B</option>
+        <option value="UT02_01">UT02 01 - Activité de gestion de magasin / maître ouvrier - Bâtiment D - Atelier OP</option>
+        <option value="UT03_01">UT03 01 - Activités d'enseignement à l'E.P.S. - Bâtiment C - RDC - Salle polyvalente</option>
+        <option value="UT03_02">UT03 02 - Activités d'enseignement à l'E.P.S. - Cour</option>
+        <option value="UT04_01">UT04 01 - Activités d'enseignement en atelier - Bâtiment D - Ateliers</option>
+        <option value="UT05_01">UT05 01 - Activités d'enseignement et préparation en laboratoire - Bâtiment A - R1 R2 - Bâtiment C - R1</option>
+        <option value="UT06_01">UT06 01 - Activités d'enseignement général - Bâtiment A D C</option>
+        <option value="UT07_01">UT07 01 - Administratif / Direction - Bâtiment B - RDC</option>
+        <option value="UT07_02">UT07 02 - Administratif / Direction - Bâtiment C - R1 - Pôle ASH</option>
+        <option value="UT08_01">UT08 01 - Autre unité - Parking</option>
+        <option value="UT08_02">UT08 02 - Autre unité - Véhicules de services</option>
+        <option value="UT08_03">UT08 03 - Autre unité - Sorties et voyages scolaires</option>
+        <option value="UT09_01">UT09 01 - Cuisine / Restauration - Bâtiment E - Cuisine</option>
+        <option value="UT09_02">UT09 02 - Cuisine / Restauration - Bâtiment E - Self</option>
+        <option value="UT10_01">UT10 01 - Entretien - Bâtiment ABCD</option>
+        <option value="UT11_01">UT11 01 - Maintenance - Collège entier</option>
+        <option value="UT12_01">UT12 01 - Personnels Santé / Social - Bâtiment A - Infirmerie - RDC</option>
+        <option value="UT12_02">UT12 02 - Personnels Santé / Social - Bâtiment A - RDC</option>
+        <option value="UT13_01">UT13 01 - Vie scolaire - Bâtiment A - RDC</option>
       </select>
       <label for="evaluateur">Nom de l'évaluateur :</label>
-      <input type="text" id="evaluateur" name="evaluateur">
-    </fieldset>
+      <input type="text" id="evaluateur" name="evaluateur" required>
+      </fieldset>
     
     <!-- Conteneur pour l'affichage des catégories de risques -->
     <div id="risk-container"></div>
     
+    <!-- Confirmation obligatoire -->
+    <div>
+      <label>
+        <input type="checkbox" id="confirmation" required>
+        Je confirme avoir rempli l'ensemble du document avec soin, et valide les informations s'y figurant pour une reprise dans le document unique des risques de l'établissement.
+      </label>
+    </div>
+
     <!-- Boutons : Générer CSV et Imprimer -->
-    <button type="button" class="no-print" onclick="generateCSV()">Générer CSV</button>
-    <button type="button" class="no-print" onclick="window.print()">Imprimer le formulaire</button>
+    <button type="submit" class="no-print">Générer CSV</button>
+  
   </form>
   
   <script>
