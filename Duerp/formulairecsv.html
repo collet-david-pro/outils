@@ -532,6 +532,10 @@
     }
     
     document.addEventListener("DOMContentLoaded", renderForm);
+    document.getElementById("riskForm").addEventListener("submit", function(e) {
+      e.preventDefault(); // Empêche l'envoi du formulaire
+      generateCSV();      // Appelle la fonction de génération CSV
+    });
   </script>
 </body>
 </html>
