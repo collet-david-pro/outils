@@ -4,42 +4,146 @@
   <meta charset="UTF-8">
   <title>Fiche d'Identification des Risques</title>
   <style>
+    /* Style global */
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Roboto', Arial, sans-serif;
       margin: 20px;
+      background-color: #f4f4f9;
+      color: #333;
+      line-height: 1.6;
     }
-    fieldset {
-      border: 1px solid #ccc;
-      padding: 10px 20px;
+
+    h1, h2 {
+      color: #2c3e50;
+    }
+
+    h1 {
+      text-align: center;
       margin-bottom: 20px;
     }
-    legend {
-      font-weight: bold;
-    }
-    .risk-option {
-      border: 1px solid #ddd;
-      padding: 10px;
+
+    h2 {
       margin-bottom: 10px;
     }
-    .risk-option .details {
-      margin-left: 20px;
-      margin-top: 5px;
-      display: none; /* Masqué par défaut */
+
+    /* Notice */
+    .notice {
+      background-color: #eaf2f8;
+      border: 1px solid #d6e9f9;
+      padding: 20px;
+      border-radius: 8px;
+      margin-bottom: 20px;
     }
+
+    .notice strong {
+      color: #2980b9;
+    }
+
+    /* Formulaire */
+    form {
+      background: #ffffff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    fieldset {
+      border: 1px solid #ddd;
+      padding: 15px;
+      margin-bottom: 20px;
+      border-radius: 8px;
+    }
+
+    legend {
+      font-weight: bold;
+      color: #34495e;
+    }
+
     label {
       display: block;
-      margin-top: 5px;
+      margin-top: 10px;
+      font-weight: 500;
     }
+
     select, input[type="text"], textarea {
       width: 100%;
-      padding: 5px;
+      padding: 10px;
       margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 14px;
+      box-sizing: border-box;
     }
+
+    select:focus, input[type="text"]:focus, textarea:focus {
+      border-color: #2980b9;
+      outline: none;
+      box-shadow: 0 0 5px rgba(41, 128, 185, 0.5);
+    }
+
+    .risk-option {
+      border: 1px solid #eee;
+      padding: 15px;
+      margin-bottom: 15px;
+      border-radius: 6px;
+      background-color: #f9f9f9;
+    }
+
+    .risk-option .details {
+      margin-left: 20px;
+      margin-top: 10px;
+      display: none; /* Masqué par défaut */
+    }
+
     button {
+      background-color: #2980b9;
+      color: #fff;
+      border: none;
       padding: 10px 20px;
       font-size: 16px;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #1f6391;
+    }
+
+    button.no-print {
       margin-right: 10px;
     }
+
+    /* Confirmation */
+    .confirmation {
+      margin-top: 20px;
+      padding: 15px;
+      background-color: #fdf2e9;
+      border: 1px solid #f5cba7;
+      border-radius: 6px;
+    }
+
+    .confirmation label {
+      font-weight: 500;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      body {
+        margin: 10px;
+      }
+
+      form {
+        padding: 15px;
+      }
+
+      button {
+        width: 100%;
+        margin-bottom: 10px;
+      }
+    }
+
+    /* Impression */
     @media print {
       .no-print {
         display: none;
@@ -48,6 +152,70 @@
   </style>
 </head>
 <body>
+  <!-- Notice explicative -->
+  <div class="notice">
+    <h2>Notice d'utilisation</h2>
+    <p>
+      Ce formulaire a pour objectif de recenser et d'évaluer les risques présents dans votre établissement, dans le cadre du Document Unique d'Évaluation des Risques Professionnels (DUERP).
+    </p>
+    <p>
+      Ce document doit être rempli dans une logique professionnelle. Les risques évoqués ici concernent exclusivement les personnels travaillant dans l'établissement. Les élèves ne sont pas à prendre en compte dans cette évaluation.
+    </p>
+    <ol>
+      <li>Sélectionnez l’unité de travail concernée.</li>
+      <li>Indiquez votre nom en tant qu’évaluateur.</li>
+      <li>Pour chaque catégorie de risque, cochez les options qui s’appliquent à l’unité de travail.</li>
+      <li>Pour chaque risque identifié, choisissez la <strong>fréquence</strong> et la <strong>gravité</strong> dans les menus déroulants affichés après avoir coché une case.</li>
+      <li>Complétez la partie “Autres risques” si nécessaire (risques non listés dans les catégories précédentes).</li>
+      <li>Cochez la case de confirmation et cliquez sur “Générer CSV” pour exporter vos données.</li>
+    </ol>
+    <h3>Fréquence d'exposition</h3>
+    <p>Indique la régularité avec laquelle le personnel est exposé au risque identifié :</p>
+    <ul>
+      <li><strong>Quotidien</strong> : tous les jours ou presque</li>
+      <li><strong>1 à 2 fois par semaine</strong> : exposition hebdomadaire</li>
+      <li><strong>1 à 2 fois par mois</strong> : exposition occasionnelle</li>
+      <li><strong>1 à 2 fois par an</strong> : exposition rare</li>
+    </ul>
+    <h3>Gravité potentielle</h3>
+    <p>Évalue les conséquences possibles si le risque se concrétise :</p>
+    <ul>
+      <li><strong>Sans conséquence</strong> : aucune blessure ou dommage</li>
+      <li><strong>Conséquence légère</strong> : blessure mineure, soins de premier niveau</li>
+      <li><strong>Conséquence grave</strong> : arrêt de travail, blessure importante, hospitalisation</li>
+      <li><strong>Conséquence mortelle</strong> : décès ou invalidité permanente</li>
+    </ul>
+    <p>
+      <strong>Important :</strong> L'association d'une fréquence élevée et d'une gravité importante augmente la priorité d'action. 
+      En cas de doute, vous pouvez contacter <strong>M. COLLET</strong> pour obtenir de l'aide.
+    </p>
+    <p>
+      Une fois le fichier CSV généré, veuillez l'envoyer à <strong>gest.0021493m@ac-amiens.fr</strong> ou le remettre à <strong>M. COLLET</strong> via Pronote.
+    </p>
+    <h3>Exemples concrets d'évaluation</h3>
+    <ul>
+      <li>
+        <strong>Exemple 1 – Sol glissant dans la cuisine :</strong> Le sol de la cuisine est régulièrement mouillé à cause du lavage et des projections d'huile. Le personnel de cuisine passe plusieurs heures par jour dans cette zone.
+        <br><em>Fréquence :</em> Quotidien<br><em>Gravité :</em> Conséquence grave (risque de chute entraînant une blessure)
+      </li>
+      <li>
+        <strong>Exemple 2 – Éclairage insuffisant dans les couloirs de service :</strong> Dans une zone de circulation utilisée par l'équipe de nettoyage tôt le matin, l’éclairage est faible.
+        <br><em>Fréquence :</em> 1 à 2 fois par semaine<br><em>Gravité :</em> Conséquence légère (risque de buter ou trébucher sans blessure grave)
+      </li>
+      <li>
+        <strong>Exemple 3 – Utilisation d’un produit non étiqueté :</strong> Dans le local technique, un bidon sans étiquette est utilisé pour le nettoyage. L'utilisateur ne connaît pas la nature exacte du produit.
+        <br><em>Fréquence :</em> 1 à 2 fois par mois<br><em>Gravité :</em> Conséquence grave (exposition potentielle à un produit dangereux)
+      </li>
+      <li>
+        <strong>Exemple 4 – Travail dans le froid en atelier :</strong> Pendant l’hiver, les agents de maintenance interviennent dans un atelier non chauffé.
+        <br><em>Fréquence :</em> 1 à 2 fois par jour<br><em>Gravité :</em> Conséquence légère (inconfort ou risque d'engelure si non équipé)
+      </li>
+      <li>
+        <strong>Exemple 5 – Manque de formation aux premiers secours :</strong> Aucun agent dans l’équipe n’a reçu de formation de secouriste du travail.
+        <br><em>Fréquence :</em> Quotidien (situation permanente)<br><em>Gravité :</em> Conséquence mortelle (si personne n’intervient efficacement en cas d’accident grave)
+      </li>
+    </ul>
+  </div>
   <h1>Fiche d'Identification des Risques</h1>
   <form id="riskForm" action="#" method="post">
     <!-- Informations (Unité de travail et évaluateur) -->
@@ -55,20 +223,44 @@
       <legend>Informations</legend>
       <label for="unite_travail">Unité de travail :</label>
       <select id="unite_travail" name="unite_travail">
-        <option value="unite_a">Unité A</option>
-        <option value="unite_b">Unité B</option>
-        <option value="unite_c">Unité C</option>
+        <option value="UT01_01">UT01 01 - Accueil - Bâtiment B</option>
+        <option value="UT02_01">UT02 01 - Activité de gestion de magasin / maître ouvrier - Bâtiment D - Atelier OP</option>
+        <option value="UT03_01">UT03 01 - Activités d'enseignement à l'E.P.S. - Bâtiment C - RDC - Salle polyvalente</option>
+        <option value="UT03_02">UT03 02 - Activités d'enseignement à l'E.P.S. - Cour</option>
+        <option value="UT04_01">UT04 01 - Activités d'enseignement en atelier - Bâtiment D - Ateliers</option>
+        <option value="UT05_01">UT05 01 - Activités d'enseignement et préparation en laboratoire - Bâtiment A - R1 R2 - Bâtiment C - R1</option>
+        <option value="UT06_01">UT06 01 - Activités d'enseignement général - Bâtiment A D C</option>
+        <option value="UT07_01">UT07 01 - Administratif / Direction - Bâtiment B - RDC</option>
+        <option value="UT07_02">UT07 02 - Administratif / Direction - Bâtiment C - R1 - Pôle ASH</option>
+        <option value="UT08_01">UT08 01 - Autre unité - Parking</option>
+        <option value="UT08_02">UT08 02 - Autre unité - Véhicules de services</option>
+        <option value="UT08_03">UT08 03 - Autre unité - Sorties et voyages scolaires</option>
+        <option value="UT09_01">UT09 01 - Cuisine / Restauration - Bâtiment E - Cuisine</option>
+        <option value="UT09_02">UT09 02 - Cuisine / Restauration - Bâtiment E - Self</option>
+        <option value="UT10_01">UT10 01 - Entretien - Bâtiment ABCD</option>
+        <option value="UT11_01">UT11 01 - Maintenance - Collège entier</option>
+        <option value="UT12_01">UT12 01 - Personnels Santé / Social - Bâtiment A - Infirmerie - RDC</option>
+        <option value="UT12_02">UT12 02 - Personnels Santé / Social - Bâtiment A - RDC</option>
+        <option value="UT13_01">UT13 01 - Vie scolaire - Bâtiment A - RDC</option>
       </select>
       <label for="evaluateur">Nom de l'évaluateur :</label>
-      <input type="text" id="evaluateur" name="evaluateur">
-    </fieldset>
+      <input type="text" id="evaluateur" name="evaluateur" required>
+      </fieldset>
     
     <!-- Conteneur pour l'affichage des catégories de risques -->
     <div id="risk-container"></div>
     
+    <!-- Confirmation obligatoire -->
+    <div class="confirmation">
+      <label>
+        <input type="checkbox" id="confirmation" required>
+        Je confirme avoir rempli l'ensemble du document avec soin, et valide les informations s'y figurant pour une reprise dans le document unique des risques de l'établissement.
+      </label>
+    </div>
+
     <!-- Boutons : Générer CSV et Imprimer -->
-    <button type="button" class="no-print" onclick="generateCSV()">Générer CSV</button>
-    <button type="button" class="no-print" onclick="window.print()">Imprimer le formulaire</button>
+    <button type="submit" class="no-print">Générer CSV</button>
+  
   </form>
   
   <script>
@@ -368,17 +560,24 @@
       }).join("\n");
       
       // Création d'un objet Blob et déclenchement du téléchargement
-      const blob = new Blob([csvContent], { type: "text/csv;charset=utf-8;" });
+      const blob = new Blob(["\uFEFF" + csvContent], { type: "text/csv;charset=utf-8;" });
       const url = URL.createObjectURL(blob);
       const link = document.createElement("a");
       link.setAttribute("href", url);
-      link.setAttribute("download", "risques.csv");
+  const now = new Date();
+  const timestamp = now.toISOString().replace(/[:.]/g, "-");
+  const filename = `risques_${timestamp}.csv`;
+  link.setAttribute("download", filename);
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
     }
     
     document.addEventListener("DOMContentLoaded", renderForm);
+    document.getElementById("riskForm").addEventListener("submit", function(e) {
+      e.preventDefault(); // Empêche l'envoi du formulaire
+      generateCSV();      // Appelle la fonction de génération CSV
+    });
   </script>
 </body>
 </html>
