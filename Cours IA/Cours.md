@@ -1,120 +1,221 @@
+---
+marp: true
+theme: default
+paginate: true
+---
+
 # Formation à l'Intelligence Artificielle  
-## Objectifs de la journée
-- Comprendre les fondements de l'intelligence artificielle
-- Identifier ses applications concrètes dans le secteur public
-- Savoir utiliser un outil conversationnel d'IA générative
-- Réfléchir aux impacts éthiques et organisationnels de l’IA
+## Objectifs de la formation
+
+- Comprendre les fondements de l'IA  
+- Identifier ses applications concrètes dans le secteur public  
+- Utiliser un outil conversationnel d'IA générative  
+- Réfléchir aux enjeux éthiques et organisationnels  
 
 ---
 
-## 1. Accueil et introduction (9h00 – 9h15)
-### Objectifs :
-- Présentation du formateur et des participants
-- Cadre et objectifs de la journée
-- Tour de table : représentations et attentes
+## Sommaire
+
+- [1. Accueil et introduction](#accueil-et-introduction)
+- [2. Qu’est-ce que l’intelligence artificielle ?](#quest-ce-que-lintelligence-artificielle)
+- [3. Domaines d'application](#domaines-dapplication)
+- [4. Avantages et limites](#avantages-et-limites)
+- [5. Prise en main d’un outil d’IA générative](#prise-en-main-dun-outil-dia-generative)
+- [6. L’IA au service des RH](#lia-au-service-des-rh)
+- [7. Études de cas et retours d’expérience](#etudes-de-cas-et-retours-dexperience)
+- [8. Conclusion et perspectives](#conclusion-et-perspectives)
+- [9. Évaluation](#evaluation-de-la-formation)
 
 ---
 
-## 2. Qu’est-ce que l’intelligence artificielle ? (9h15 – 10h15)
-### Contenus :
-- Définitions clés : IA, machine learning, deep learning
-- Histoire de l’IA en quelques repères
-- IA faible vs IA forte
-- Exemples concrets : assistants vocaux, détection de fraude, tri automatique de CV
-### Méthode :
-- Présentation illustrée
-- Quiz interactif de découverte
-- Questions/réponses
+## Accueil et introduction
+
+### Objectifs
+
+- Créer un climat de confiance  
+- Présenter le cadre de la formation  
+- Identifier les attentes des participants  
 
 ---
 
-## 3. Pause (10h15 – 10h30)
+## Accueil et introduction
+
+### Déroulement
+
+- Présentation du formateur (David Collet)  
+- Présentation du programme  
+- Tour de table : prénom, fonction, attentes ou niveau IA  
+- Règles communes : bienveillance, droit à l’erreur  
 
 ---
 
-## 4. Domaines d'application de l'IA (10h30 – 11h30)
-### Contenus :
-- Secteurs impactés : santé, transport, éducation, secteur public
-- Cas concrets d’usages en administration : 
-  - automatisation des courriers
-  - génération de comptes-rendus
-  - aide à la rédaction de projets
-- Exemples locaux ou institutionnels
-### Méthode :
-- Étude de cas commentée
-- Discussion collective sur les applications possibles dans le cadre professionnel des participants
+## Qu’est-ce que l’intelligence artificielle ?
+
+### Définitions
+
+- IA : systèmes simulant l’intelligence humaine  
+- Machine Learning : apprentissage automatique  
+- Deep Learning : réseaux de neurones  
 
 ---
 
-## 5. Avantages et limites (11h30 – 12h00)
-### Avantages :
-- Automatisation des tâches répétitives
-- Accès facilité à l’information
-- Personnalisation des services
-### Limites :
-- Risques de biais
-- Problèmes de transparence et de traçabilité
-- Remise en question de certaines missions
-### Activité :
-- Atelier : “Avantage ou limite ?” (mises en situation à débattre)
+## Qu’est-ce que l’intelligence artificielle ?
+
+### Repères
+
+- IA faible vs IA forte  
+- Repères historiques  
+- Exemples : assistants vocaux, détection de fraude, tri de CV  
 
 ---
 
-## 6. Pause déjeuner (12h00 – 13h30)
+## Qu’est-ce que l’intelligence artificielle ?
+
+### Méthode
+
+- Présentation illustrée  
+- Quiz interactif  
+- Échanges guidés  
 
 ---
 
-## 7. Prise en main d’un outil d’IA générative (13h30 – 14h30)
-### Objectifs :
-- Découvrir une interface d’IA générative (type assistant conversationnel)
-- Comprendre la logique des prompts
-- Produire des textes, des synthèses, des idées
-### Activité :
-- Démonstration en direct
-- Atelier pratique en binôme :
-  - Rédaction de mails
-  - Résumé de documents
-  - Génération de plan ou d’idées
+## Domaines d'application
+
+### Panorama
+
+- Santé, éducation, transports, administration  
+- Prédiction, automatisation, optimisation  
 
 ---
 
-## 8. L’IA au service des ressources humaines (14h30 – 15h30)
-### Contenus :
-- Optimisation du traitement des candidatures
-- Aide à l’élaboration d’entretiens ou de bilans
-- Suivi et pilotage RH par analyse automatisée
-### Activité :
-- Cas pratiques : générer un profil de poste, un courrier de convocation, etc.
+## Domaines d'application
+
+### En administration
+
+- Automatisation de courriers  
+- Comptes-rendus automatiques  
+- Aide à la rédaction de projets  
 
 ---
 
-## 9. Pause (15h30 – 15h45)
+## Domaines d'application
+
+### Méthode
+
+- Présentation de cas concrets  
+- Discussion collective  
 
 ---
 
-## 10. Études de cas et retour d’expérience (15h45 – 16h45)
-### Objectifs :
-- Mettre en situation des usages de l’IA en contexte réel
-- Présenter les expériences de terrain (du formateur ou d’autres institutions)
-- Identifier les freins et leviers
-### Activité :
-- Travail en groupes : étude d’un cas concret + restitution
-- Discussion croisée sur les pratiques possibles
+## Avantages et limites
+
+### Avantages
+
+- Automatisation des tâches répétitives  
+- Accès facilité à l’information  
+- Personnalisation des services  
 
 ---
 
-## 11. Conclusion et perspectives (16h45 – 17h00)
-### Synthèse :
-- Ce qu’il faut retenir
-- Questions ouvertes : comment intégrer ces outils durablement ?
-- Ressources pour aller plus loin
+## Avantages et limites
+
+### Limites
+
+- Biais algorithmiques  
+- Transparence limitée  
+- Perte de certaines compétences humaines  
 
 ---
 
-## 12. Évaluation de la formation
-### Support :
-- Grille papier ou formulaire numérique
-### Trois questions ouvertes :
-- Ce que j’ai retenu
-- Ce que je vais tester
-- Ce que je souhaite approfondir
+## Avantages et limites
+
+### Activité
+
+- Atelier collaboratif : “Avantage ou limite ?”  
+
+---
+
+## Prise en main d’un outil d’IA générative
+
+### Objectifs
+
+- Explorer une interface d’IA  
+- Comprendre les prompts  
+- Produire des contenus variés  
+
+---
+
+## Prise en main d’un outil d’IA générative
+
+### Activités
+
+- Démonstration  
+- Exercices en binômes :  
+  - Rédaction de mails  
+  - Résumés  
+  - Plans ou argumentaires  
+
+---
+
+## L’IA au service des RH
+
+### Applications
+
+- Tri automatisé de candidatures  
+- Génération d’éléments d’entretien  
+- Suivi RH avec analyse automatique  
+
+---
+
+## L’IA au service des RH
+
+### Activité
+
+- Création de documents RH :  
+  - Profils de poste  
+  - Courriers types  
+  - Supports d’évaluation  
+
+---
+
+## Études de cas et retours d’expérience
+
+### Objectifs
+
+- Illustrer des cas réels  
+- Identifier leviers et obstacles  
+- Partager des expériences concrètes  
+
+---
+
+## Études de cas et retours d’expérience
+
+### Activités
+
+- Travaux en groupes  
+- Études de scénarios  
+- Restitution et analyse  
+
+---
+
+## Conclusion et perspectives
+
+### Synthèse
+
+- Récapitulatif des acquis  
+- Réflexion collective sur les usages futurs  
+- Ressources pour approfondir  
+
+---
+
+## Évaluation de la formation
+
+### Support
+
+- Formulaire papier ou numérique  
+
+### Questions proposées
+
+- Ce que j’ai retenu  
+- Ce que je vais tester  
+- Ce que je souhaite approfondir  
