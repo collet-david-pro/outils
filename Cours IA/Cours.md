@@ -5,6 +5,22 @@ paginate: true
 ---
 
 # Formation à l'Intelligence Artificielle  
+### Pour les élèves de l'IRA Lille
+
+Formateur : David Collet  
+Secrétaire Général d’EPLE – Collège Victor Hugo (Chauny)
+
+<br>
+
+<img src="men.png" alt="Logo MENJ" style="height:80px; float:right; margin-left: 20px;" />
+<img src="ira.png" alt="Logo IRA Lille" style="height:80px; float:right;" />
+
+
+
+
+---
+
+# Formation à l'Intelligence Artificielle  
 ## Objectifs de la formation
 
 - Comprendre les fondements de l'IA  
