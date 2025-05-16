@@ -4,39 +4,68 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Présentation Dynamique</title>
+
+  <!-- Tailwind en CDN pour le dev (ok en local ou staging) -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://unpkg.com/remark@14.0.1/remark.min.js"></script>
+
+  <!-- remark.js depuis jsDelivr (pas de blocage MIME) -->
+  <script src="https://cdn.jsdelivr.net/npm/remark@14.0.1/dist/remark.min.js"></script>
+
   <style>
-    .slide { transition: opacity .6s ease, transform .6s ease; }
-    .slide[data-state="current"] { opacity: 1; transform: scale(1); }
-    .slide[data-state="hidden"]  { opacity: 0; transform: scale(.8); }
+    /* Animations simples */
+    .remark-slide {
+      transition: opacity .6s ease, transform .6s ease;
+    }
+    .remark-slide[data-state="current"] {
+      opacity: 1;
+      transform: scale(1);
+    }
+    .remark-slide[data-state="hidden"] {
+      opacity: 0;
+      transform: scale(.8);
+    }
   </style>
 </head>
+
 <body class="bg-gray-900 text-white">
 
+  <!-- Zone cachée pour ton Markdown -->
   <textarea id="source-md" hidden></textarea>
 
   <script>
-    // Charge le Markdown externe
-    fetch('./Cours.md')
-      .then(r => r.text())
+    // 1) Récupère ton fichier slides.md
+    fetch('Cours.md')
+      .then(response => {
+        if (!response.ok) {
+          throw new Error(`Impossible de charger slides.md : ${response.status}`);
+        }
+        return response.text();
+      })
       .then(md => {
+        // 2) Injecte-le dans la textarea
         document.getElementById('source-md').value = md;
-        return remark.create({
+
+        // 3) Initialise remark
+        const slideshow = remark.create({
           source: md,
           highlightStyle: 'monokai',
           slideNumber: true,
           ratio: '16:9',
           navigation: { scroll: false, touch: true }
         });
-      })
-      .then(slideshow => {
+
+        // 4) Gère l’animation
         slideshow.on('showSlide', slide => {
           document.querySelectorAll('.remark-slide')
-            .forEach(s => s.setAttribute('data-state','hidden'));
-          slide.slideElement.setAttribute('data-state','current');
+            .forEach(s => s.setAttribute('data-state', 'hidden'));
+          slide.slideElement.setAttribute('data-state', 'current');
         });
+      })
+      .catch(err => {
+        console.error(err);
+        document.body.innerHTML = `<p class="p-4 bg-red-700 text-white">Erreur : ${err.message}</p>`;
       });
   </script>
+
 </body>
 </html>
