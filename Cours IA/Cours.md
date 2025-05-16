@@ -392,90 +392,290 @@ Un **agent IA** est un système autonome qui :
 ### Activité
 
 - Atelier collaboratif : “Avantage ou limite ?”  
+---
+
+## Prise en main d’un outil d’IA générative  
+### Objectifs de la séquence
+
+- Comprendre le fonctionnement d’un outil conversationnel  
+- Maîtriser la logique des **prompts** (requêtes)  
+- Expérimenter la génération de contenus adaptés à un usage professionnel
 
 ---
 
-## Prise en main d’un outil d’IA générative
+## Qu’est-ce qu’un prompt ?  
+### Définition et enjeux
 
-### Objectifs
+- Un **prompt** est une instruction ou une question que l’on donne à une IA pour obtenir une réponse.
+- Sa qualité influence fortement la pertinence de la réponse.
+- Prompt ≠ commande simple : il faut contextualiser, structurer, guider l’IA.
 
-- Explorer une interface d’IA  
-- Comprendre les prompts  
-- Produire des contenus variés  
-
----
-
-## Prise en main d’un outil d’IA générative
-
-### Activités
-
-- Démonstration  
-- Exercices en binômes :  
-  - Rédaction de mails  
-  - Résumés  
-  - Plans ou argumentaires  
+**Exemples :**  
+- Mauvais : « fais un résumé »  
+- Meilleur : « Résume ce texte en 5 lignes en conservant les idées clés et un ton formel »
 
 ---
 
-## L’IA au service des RH
+## Usages professionnels possibles  
+### Ce que les participants vont tester
 
-### Applications
+- Rédaction d’un **mail professionnel** clair et structuré  
+- Génération d’un **résumé de document administratif**  
+- Proposition d’un **plan ou d’un argumentaire**  
+- Reformulation ou **simplification d’un texte technique**  
+- Création d’un **modèle de courrier** adapté à une situation réelle
 
-- Tri automatisé de candidatures  
-- Génération d’éléments d’entretien  
-- Suivi RH avec analyse automatique  
-
----
-
-## L’IA au service des RH
-
-### Activité
-
-- Création de documents RH :  
-  - Profils de poste  
-  - Courriers types  
-  - Supports d’évaluation  
 
 ---
 
-## Études de cas et retours d’expérience
+## Prise en main d’un outil d’IA générative  
+### Activités pratiques
 
-### Objectifs
+- **Démonstration guidée**  
+  - Exploration en temps réel d’une interface d’IA (type assistant conversationnel)  
+  - Construction d’un bon prompt à partir d’un besoin réel  
 
-- Illustrer des cas réels  
-- Identifier leviers et obstacles  
-- Partager des expériences concrètes  
-
----
-
-## Études de cas et retours d’expérience
-
-### Activités
-
-- Travaux en groupes  
-- Études de scénarios  
-- Restitution et analyse  
+- **Travail en binômes**  
+  - Chaque duo choisit une situation professionnelle parmi les suivantes :  
+    - Rédiger un mail de réponse à une demande d’information  
+    - Résumer une note de service en 5 points  
+    - Générer un plan structuré pour un exposé, un projet, une réunion
 
 ---
 
-## Conclusion et perspectives
+## L’IA au service des ressources humaines  
+### Applications concrètes
 
-### Synthèse
+- **Tri de candidatures**  
+  - Analyse automatique des CV reçus selon des critères définis (mots-clés, expérience, diplôme)  
+  - Classement des profils par degré de correspondance
 
-- Récapitulatif des acquis  
-- Réflexion collective sur les usages futurs  
-- Ressources pour approfondir  
+- **Préparation des entretiens**  
+  - Génération de trames de questions selon le poste visé  
+  - Aide à l’identification de signaux faibles dans les parcours  
+
+- **Suivi RH et pilotage**  
+  - Tableaux de bord automatisés  
+  - Prévision de mobilités ou d’absences selon historique et données disponibles
 
 ---
 
-## Évaluation de la formation
+## L’IA au service des ressources humaines  
+### Activité guidée
 
-### Support
+- **Objectif : produire un livrable RH en lien avec votre environnement**  
+  - Choisissez une des productions suivantes :  
+    - Un **profil de poste** à partir d’un besoin exprimé  
+    - Un **modèle de courrier** : convocation, relance, notification  
+    - Une **fiche d’évaluation** ou grille de compétences  
+  - Travail en autonomie, avec appui possible du formateur  
+  - Restitution optionnelle et discussion sur la pertinence et les limites des productions IA
 
-- Formulaire papier ou numérique  
+---
 
-### Questions proposées
+## Études de cas et retours d’expérience  
+### Objectifs et cas inspirés du réel
 
+- **Illustrer des cas d’usage réels d’IA dans un cadre public ou scolaire**  
+- **Identifier les leviers de réussite et les freins rencontrés**  
+- **Favoriser les échanges entre pairs sur les usages concrets de l’IA**  
+
+### Cas proposés (issus de projets réels)
+
+- 🗂️ **Automatisation d’un rapport financier**  
+  → Utilisation d’un assistant IA pour synthétiser les sections d’un compte financier, générer les tableaux, reformuler pour le CA
+
+- 📬 **Génération de courriers types dans un EPLE**  
+  → Réponse aux demandes parents/profs, relances, convocations… avec un prompt structuré et des champs variables
+
+- 📊 **Soutien à la construction d’un DUERP**  
+  → Génération automatique de formulations adaptées, suggestions d’actions de prévention, rédaction synthétique par domaine
+
+- 🤖 **Création d’un outil de suivi des voyages scolaires**  
+  → Structuration des données dans un tableau + génération de synthèses automatiques (parents, CA, DSDEN)
+
+- 🧠 **Utilisation d’IA dans un atelier d’orientation**  
+  → Simulation de profils métiers, suggestion de compétences à acquérir, formulation de lettres de motivation types
+
+
+---
+
+## Cas 1 : Automatisation d’un rapport financier  
+### Contexte réel
+
+- Dans un collège public, le rapport de gestion du compte financier est long et fastidieux à rédiger.  
+- L'objectif est de produire un document clair, structuré et synthétique à partir de tableaux comptables.  
+- L’IA est utilisée pour reformuler, structurer et même générer des éléments de commentaire à partir des données chiffrées.
+
+---
+
+## Cas 1 : Activité proposée
+
+**Mission pour les participants** :  
+- Vous disposez d’un tableau de dépenses et de recettes (fictif ou fourni par le formateur).  
+- À l’aide d’un assistant IA :  
+  - Formulez une introduction neutre et professionnelle  
+  - Proposez un paragraphe d’analyse pour un service (pédagogique, restauration…)  
+  - Reformulez les points saillants sous forme de bullet points
+
+---
+
+## Cas 1 : Restitution et analyse
+
+**Éléments attendus** :  
+- Un rapport structuré en 2 à 3 paragraphes  
+- Des formulations claires et conformes à un usage administratif  
+- Capacité à distinguer les faits des interprétations  
+- Discussion collective :  
+  - Quelles tâches ont réellement été automatisées ?  
+  - Quels ajustements avez-vous dû faire ?  
+  - Quels gains de temps ou limites avez-vous identifiés ?
+
+---
+
+
+## Cas 2 : Génération de courriers types  
+### Contexte réel
+
+- Dans un établissement scolaire, de nombreux courriers sont produits chaque semaine :  
+  - réponses aux familles  
+  - convocations internes  
+  - demandes aux partenaires  
+- L’objectif : **automatiser tout ou partie de la rédaction** grâce à un assistant IA, tout en maintenant un ton professionnel et personnalisé.
+
+---
+
+## Cas 2 : Activité proposée
+
+**Mission pour les participants** :  
+- Choisissez un **type de courrier professionnel** à produire (liste au tableau ou fiche) :  
+  - Réponse à une absence injustifiée  
+  - Demande de devis à un prestataire  
+  - Convocation d’un personnel à une réunion  
+- À l’aide d’un assistant IA, formulez :  
+  - Un **prompt structuré**, avec le contexte, le ton, les destinataires  
+  - Une **version exploitable directement** ou à corriger
+
+---
+
+## Cas 2 : Restitution et analyse
+
+**Éléments attendus** :  
+- Un **modèle de courrier prêt à l’emploi**, formaté correctement  
+- Une capacité à identifier les **forces et limites** de l’IA :  
+  - Pertinence de la formulation  
+  - Respect du ton administratif  
+  - Nécessité de relecture ou ajustement  
+- Échange collectif :  
+  - Dans quels cas ce gain de temps est-il vraiment pertinent ?  
+  - Peut-on généraliser l’usage ou faut-il poser des garde-fous ?
+
+---
+
+## Cas 3 : Aide à la rédaction d’un DUERP  
+### Contexte réel
+
+- Le DUERP (Document Unique d’Évaluation des Risques Professionnels) doit être mis à jour régulièrement.  
+- Il implique :  
+  - la description des situations à risque  
+  - l’évaluation de leur criticité  
+  - des propositions d’actions correctives  
+- Le formateur a expérimenté l’usage de l’IA pour **formuler des fiches risque, générer des mesures et structurer le document**.
+
+---
+
+## Cas 3 : Activité proposée
+
+**Mission pour les participants** :  
+- Choisissez un poste de travail (ex : agent d’entretien, agent de restauration, secrétaire, enseignant…)  
+- Avec l’IA :  
+  - Formulez une **fiche de situation à risque** (contexte, exposition, gravité)  
+  - Générez **des propositions de prévention concrètes**  
+  - Demandez une **mise en page synthétique type tableau ou fiche d’action**
+
+---
+
+## Cas 3 : Restitution et analyse
+
+**Éléments attendus** :  
+- Une **fiche DUERP claire**, structurée et exploitable  
+- Vérification humaine sur la pertinence des mesures proposées  
+- Discussion collective :  
+  - Dans quels cas l’IA a-t-elle été utile (ou non) ?  
+  - Peut-elle aider à la mise à jour annuelle ?  
+  - Comment assurer la fiabilité des propositions générées ?
+
+
+
+---
+
+## Conclusion et perspectives  
+### Récapitulatif des acquis
+
+- Compréhension des notions clés : IA, machine learning, deep learning  
+- Connaissance des domaines d’application dans le secteur public  
+- Expérimentation d’outils d’IA générative dans des cas concrets  
+- Identification des bénéfices mais aussi des limites  
+
+---
+
+## Conclusion et perspectives  
+### Réflexion collective
+
+- Dans votre environnement professionnel :  
+  - **Où l’IA est-elle un réel appui ?**  
+  - **Quelles tâches pourraient être partiellement automatisées ?**  
+  - **Quelles compétences restent fondamentalement humaines ?**
+
+- Quelle posture adopter ?  
+  - Vigilance face aux dérives  
+  - Curiosité et esprit critique  
+  - Encadrement par des règles claires
+
+---
+
+## Conclusion et perspectives  
+### Pour aller plus loin
+
+- **Ressources pédagogiques** :  
+  - Fiches CNIL sur l’IA et les biais  
+  - EduNum IA – MENJ  
+  - MOOC INRIA : Comprendre l’IA
+
+- **Bonnes pratiques** :  
+  - Relire systématiquement les productions IA  
+  - Vérifier les sources et les biais potentiels  
+  - Documenter l’usage de l’IA dans les process internes
+
+- **À suivre…**  
+  - Cadre européen (AI Act)  
+  - Outils en constante évolution : rester formé et s’adapter
+
+---
+---
+
+## Merci pour votre participation !  
+### Formateur : David Collet
+
+- Secrétaire Général d’EPLE – Collège Victor Hugo (Chauny)  
+- Formateur en gestion, outils numériques et IA
+
+**Contact :** gest.0021493m@ac-amiens.fr  
+**Partage, veille et ressources sur demande.**
+
+---
+
+## Votre retour compte  
+### Évaluation de la formation
+
+Merci de prendre quelques instants pour répondre à l’évaluation.  
+Elle est essentielle pour améliorer les prochaines sessions.
+
+**Trois questions ouvertes :**  
 - Ce que j’ai retenu  
 - Ce que je vais tester  
-- Ce que je souhaite approfondir  
+- Ce que je souhaite approfondir
+
+> Format : formulaire papier ou lien numérique (QR Code possible)
+
+
