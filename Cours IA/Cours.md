@@ -652,7 +652,6 @@ Un **agent IA** est un système autonome qui :
   - Outils en constante évolution : rester formé et s’adapter
 
 ---
----
 
 ## Merci pour votre participation !  
 ### Formateur : David Collet
