@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Uploader de fichiers</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@uploadcare/file-uploader@1/web/uc-file-uploader-regular.min.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
+      margin: 0;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    uc-file-uploader-regular {
+      max-width: 500px;
+      width: 100%;
+    }
+  </style>
+  <script type="module">
+    import * as UC from 'https://cdn.jsdelivr.net/npm/@uploadcare/file-uploader@1/web/uc-file-uploader-regular.min.js';
+    UC.defineComponents(UC);
+  </script>
+</head>
+<body>
+  <h1>Envoyez vos fichiers</h1>
+
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/@uploadcare/file-uploader@1/web/uc-file-uploader-regular.min.css"
+>
+<script type="module">
+  import * as UC from 'https://cdn.jsdelivr.net/npm/@uploadcare/file-uploader@1/web/uc-file-uploader-regular.min.js';
+  UC.defineComponents(UC);
+</script>
+
+<uc-config
+  ctx-name="my-uploader"
+  use-cloud-image-editor="false"
+  source-list="local, gdrive"
+  pubkey="c7e1eb2aacb01610970d"
+></uc-config>
+
+<uc-file-uploader-regular
+  ctx-name="my-uploader"
+  class="uc-light"
+></uc-file-uploader-regular>
+</body>
+</html>
