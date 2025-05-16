@@ -3,24 +3,38 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Présentation Reveal.js</title>
+  <title>Présentation Dense</title>
 
-  <!-- Core Reveal.js CSS -->
+  <!-- CSS de base Reveal.js + thème light -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.css">
-  <!-- Thème dark (night) -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/theme/night.css" id="theme">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/theme/simple.css" id="theme">
 
-  <!-- Personnalisation : fond gris foncé et texte blanc -->
+  <!-- Personnalisation : fond crème, textes et tailles modérées -->
   <style>
-    .reveal { background-color: #1a202c; }
-    .reveal .slides section { color: #fff; }
+    .reveal { background-color: #f5f0e1; }
+    .reveal .slides section {
+      color: #333;
+      font-size: 0.9rem;
+      padding: 1.5rem 2rem;
+      line-height: 1.4;
+    }
+    .reveal h1 {
+      font-size: 2.2rem;
+      color: #2a7f62;
+      margin-bottom: 0.5em;
+    }
+    .reveal h2 {
+      font-size: 1.8rem;
+      color: #3b5a40;
+      margin-bottom: 0.4em;
+    }
+    .reveal a { color: #b85c38; }
   </style>
 </head>
 <body>
 
   <div class="reveal">
     <div class="slides">
-      <!-- Reveal.js va charger slides.md et découper sur ^---$ -->
       <section
         data-markdown="slides.md"
         data-separator="^---$"
@@ -30,20 +44,15 @@
     </div>
   </div>
 
-  <!-- Core Reveal.js script -->
   <script src="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.js"></script>
-  <!-- Plugin Markdown pour importer ton fichier .md -->
   <script src="https://cdn.jsdelivr.net/npm/reveal.js/plugin/markdown/markdown.js"></script>
-  <!-- Plugin Highlight.js pour la coloration du code -->
   <script src="https://cdn.jsdelivr.net/npm/reveal.js/plugin/highlight/highlight.js"></script>
-
   <script>
     Reveal.initialize({
-      hash: true,                // ajout dans l'URL du numéro de slide
-      slideNumber: true,         // numéro de slide
+      hash: true,
+      slideNumber: true,
       plugins: [ RevealMarkdown, RevealHighlight ]
     });
   </script>
-
 </body>
 </html>
