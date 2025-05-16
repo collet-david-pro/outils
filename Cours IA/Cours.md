@@ -5,12 +5,9 @@
 Formateur : David Collet  
 Secrétaire Général d’EPLE – Collège Victor Hugo (Chauny)
 
-<br>
 
 <img src="men.png" alt="Logo MENJ" style="height:80px; float:right; margin-left: 20px;" witdh="200px"/>
 <img src="ira.png" alt="Logo IRA Lille" style="height:80px; float:right;" witdh="200px"/>
-
-
 
 
 ---
