@@ -8,8 +8,8 @@
   <!-- DEV : Tailwind via CDN (warning “prod only” mais OK pour test/local) -->
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- remark.js officiel, servi avec le bon type MIME -->
-  <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+  <!-- remark.js LOCAL, plus de souci de MIME -->
+  <script src="./remark-latest.min.js"></script>
 
   <style>
     .remark-slide {
@@ -32,17 +32,17 @@
   <textarea id="source-md" hidden></textarea>
 
   <script>
-    // 1) On charge slides.md (même dossier que Cours.html)
+    // 1) Charge slides.md
     fetch('Cours.md')
       .then(r => {
         if (!r.ok) throw new Error(`Erreur ${r.status} sur slides.md`);
         return r.text();
       })
       .then(md => {
-        // 2) On l’injecte pour remark
+        // 2) Injecte le Markdown
         document.getElementById('source-md').value = md;
 
-        // 3) On crée le diaporama
+        // 3) Initialise remark.js
         const slideshow = remark.create({
           source: md,
           highlightStyle: 'monokai',
@@ -51,10 +51,9 @@
           navigation: { scroll: false, touch: true }
         });
 
-        // 4) On gère l’animation d’entrée/sortie
+        // 4) Animation entrée/sortie
         slideshow.on('showSlide', slide => {
-          document
-            .querySelectorAll('.remark-slide')
+          document.querySelectorAll('.remark-slide')
             .forEach(s => s.setAttribute('data-state','hidden'));
           slide.slideElement.setAttribute('data-state','current');
         });
