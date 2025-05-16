@@ -1,38 +1,47 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Présentation Dense</title>
+  <!-- … tes meta et liens Reveal.js … -->
 
-  <!-- CSS de base Reveal.js + thème light -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.css">
+  <!-- Thème light -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/theme/simple.css" id="theme">
 
-  <!-- Personnalisation : fond crème, textes et tailles modérées -->
+  <!-- CSS responsive -->
   <style>
+    /* Fond crème et couleurs comme précédemment… */
     .reveal { background-color: #f5f0e1; }
-    .reveal .slides section {
-      color: #333;
-      font-size: 0.9rem;
-      padding: 1.5rem 2rem;
-      line-height: 1.4;
+    .reveal .slides section { color: #333; }
+
+    /* —— TYPOGRAPHIE RESPONSIVE —— */
+    .reveal {
+      font-size: 2.5vmin; /* base : 1rem = 2.5% de la plus petite dimension */
     }
     .reveal h1 {
-      font-size: 2.2rem;
+      font-size: 2.5rem;
       color: #2a7f62;
       margin-bottom: 0.5em;
     }
     .reveal h2 {
-      font-size: 1.8rem;
+      font-size: 2rem;
       color: #3b5a40;
       margin-bottom: 0.4em;
     }
-    .reveal a { color: #b85c38; }
+    .reveal h3 {
+      font-size: clamp(1.2rem, 3vmin, 1.8rem);
+      color: #43621e;
+      margin-bottom: 0.3em;
+    }
+    .reveal p,
+    .reveal li {
+      font-size: 1rem;
+      line-height: 1.4;
+    }
+    .reveal a {
+      color: #b85c38;
+    }
   </style>
 </head>
 <body>
-
   <div class="reveal">
     <div class="slides">
       <section
@@ -44,15 +53,6 @@
     </div>
   </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/reveal.js/plugin/markdown/markdown.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/reveal.js/plugin/highlight/highlight.js"></script>
-  <script>
-    Reveal.initialize({
-      hash: true,
-      slideNumber: true,
-      plugins: [ RevealMarkdown, RevealHighlight ]
-    });
-  </script>
+  <!-- scripts Reveal.js… -->
 </body>
 </html>
