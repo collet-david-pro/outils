@@ -5,14 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Présentation Dynamique</title>
 
-  <!-- Tailwind en CDN pour le dev (ok en local ou staging) -->
+  <!-- DEV : Tailwind via CDN (warning “prod only” mais OK pour test/local) -->
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- remark.js depuis jsDelivr (pas de blocage MIME) -->
-  <script src="https://cdn.jsdelivr.net/npm/remark@14.0.1/dist/remark.min.js"></script>
+  <!-- remark.js officiel, servi avec le bon type MIME -->
+  <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
 
   <style>
-    /* Animations simples */
     .remark-slide {
       transition: opacity .6s ease, transform .6s ease;
     }
@@ -29,23 +28,21 @@
 
 <body class="bg-gray-900 text-white">
 
-  <!-- Zone cachée pour ton Markdown -->
+  <!-- Conteneur caché qui va recevoir ton Markdown -->
   <textarea id="source-md" hidden></textarea>
 
   <script>
-    // 1) Récupère ton fichier slides.md
+    // 1) On charge slides.md (même dossier que Cours.html)
     fetch('Cours.md')
-      .then(response => {
-        if (!response.ok) {
-          throw new Error(`Impossible de charger slides.md : ${response.status}`);
-        }
-        return response.text();
+      .then(r => {
+        if (!r.ok) throw new Error(`Erreur ${r.status} sur slides.md`);
+        return r.text();
       })
       .then(md => {
-        // 2) Injecte-le dans la textarea
+        // 2) On l’injecte pour remark
         document.getElementById('source-md').value = md;
 
-        // 3) Initialise remark
+        // 3) On crée le diaporama
         const slideshow = remark.create({
           source: md,
           highlightStyle: 'monokai',
@@ -54,16 +51,20 @@
           navigation: { scroll: false, touch: true }
         });
 
-        // 4) Gère l’animation
+        // 4) On gère l’animation d’entrée/sortie
         slideshow.on('showSlide', slide => {
-          document.querySelectorAll('.remark-slide')
-            .forEach(s => s.setAttribute('data-state', 'hidden'));
-          slide.slideElement.setAttribute('data-state', 'current');
+          document
+            .querySelectorAll('.remark-slide')
+            .forEach(s => s.setAttribute('data-state','hidden'));
+          slide.slideElement.setAttribute('data-state','current');
         });
       })
       .catch(err => {
         console.error(err);
-        document.body.innerHTML = `<p class="p-4 bg-red-700 text-white">Erreur : ${err.message}</p>`;
+        document.body.innerHTML = `
+          <div class="p-4 bg-red-700 text-white">
+            <strong>Erreur : </strong>${err.message}
+          </div>`;
       });
   </script>
 
