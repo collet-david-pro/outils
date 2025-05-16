@@ -1,8 +1,3 @@
----
-marp: true
-theme: default
-paginate: true
----
 
 # Formation à l'Intelligence Artificielle  
 ### Pour les élèves de l'IRA Lille
