@@ -1,49 +1,57 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <!-- … tes meta et liens Reveal.js … -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formation IA – Présentation</title>
 
-  <!-- Thème light -->
+  <!-- Reveal.js core CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.css">
+  <!-- Thème light, minimaliste -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/theme/simple.css" id="theme">
 
-  <!-- CSS responsive -->
   <style>
-    /* Fond crème et couleurs comme précédemment… */
-    .reveal { background-color: #f5f0e1; }
-    .reveal .slides section { color: #333; }
-
-    /* —— TYPOGRAPHIE RESPONSIVE —— */
-    .reveal {
-      font-size: 2.5vmin; /* base : 1rem = 2.5% de la plus petite dimension */
+    /* Fond crème doux et texte gris foncé */
+    .reveal { background-color: #f7f5ec; }
+    .reveal .slides section {
+      color: #2d2a24;
+      /* Responsive grâce à vmin pour toute la section */
+      font-size: 2.5vmin;
+      padding: 2vw 4vw;
+      line-height: 1.5;
+      box-sizing: border-box;
     }
+    /* Titres responsives et élégants */
     .reveal h1 {
-      font-size: 2.5rem;
-      color: #2a7f62;
-      margin-bottom: 0.5em;
-    }
-    .reveal h2 {
-      font-size: 2rem;
-      color: #3b5a40;
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      color: #398376;
       margin-bottom: 0.4em;
     }
-    .reveal h3 {
-      font-size: clamp(1.2rem, 3vmin, 1.8rem);
-      color: #43621e;
+    .reveal h2 {
+      font-size: clamp(1.5rem, 3vw, 2.5rem);
+      color: #52796f;
       margin-bottom: 0.3em;
     }
-    .reveal p,
-    .reveal li {
-      font-size: 1rem;
-      line-height: 1.4;
-    }
-    .reveal a {
+    .reveal h3 {
+      font-size: clamp(1.2rem, 2.2vw, 1.8rem);
       color: #b85c38;
+      margin-bottom: 0.2em;
+    }
+    .reveal a { color: #b85c38; text-decoration: underline; }
+    .reveal strong { color: #ca431d; }
+    /* Listes plus sobres */
+    .reveal ul, .reveal ol { margin-left: 2vw; }
+    .reveal li { margin-bottom: 0.3em; }
+    /* Pour éviter l'effet "géant" en affichage salle */
+    @media (min-width:1200px) {
+      .reveal .slides section { font-size: 1.8vmin; }
     }
   </style>
 </head>
 <body>
   <div class="reveal">
     <div class="slides">
+      <!-- Ton slides.md sera chargé ici -->
       <section
         data-markdown="slides.md"
         data-separator="^---$"
@@ -53,6 +61,21 @@
     </div>
   </div>
 
-  <!-- scripts Reveal.js… -->
+  <!-- Scripts Reveal.js -->
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js/plugin/markdown/markdown.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js/plugin/highlight/highlight.js"></script>
+  <script>
+    Reveal.initialize({
+      hash: true,
+      slideNumber: true,
+      plugins: [ RevealMarkdown, RevealHighlight ],
+      width: "100%",
+      height: "100%",
+      margin: 0.1,
+      minScale: 0.2,
+      maxScale: 2.0
+    });
+  </script>
 </body>
 </html>
