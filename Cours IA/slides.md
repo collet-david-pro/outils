@@ -22,38 +22,25 @@ Secrétaire Général d’EPLE – Collège Victor Hugo (Chauny)
 
 ---
 
-## Sommaire
+## Plan de la journée – Matinée
 
-- [1. Accueil et introduction](#accueil-et-introduction)
-- [2. Qu’est-ce que l’intelligence artificielle ?](#quest-ce-que-lintelligence-artificielle)
-- [3. Domaines d'application](#domaines-dapplication)
-- [4. Avantages et limites](#avantages-et-limites)
-- [5. Prise en main d’un outil d’IA générative](#prise-en-main-dun-outil-dia-generative)
-- [6. L’IA au service des RH](#lia-au-service-des-rh)
-- [7. Études de cas et retours d’expérience](#etudes-de-cas-et-retours-dexperience)
-- [8. Conclusion et perspectives](#conclusion-et-perspectives)
-- [9. Évaluation](#evaluation-de-la-formation)
+- Un peu de théorie
+- Un peu plus de théorie et contexte
+- *Pause* 
+- Structure d’un prompt  
+- Premiers prompt simples
 
 ---
 
-## Accueil et introduction
+## Plan de la journée – Après-midi
 
-### Objectifs
+- Une conversation à la place d’une requête  
+- Affiner une demande  
+- L’analyse de documents  
+- *Pause*  
+- Les limites  
+- Aller plus loin…
 
-- Créer un climat de confiance  
-- Présenter le cadre de la formation  
-- Identifier les attentes des participants  
-
----
-
-## Accueil et introduction
-
-### Déroulement
-
-- Présentation du formateur (David Collet)  
-- Présentation du programme  
-- Tour de table : prénom, fonction, attentes ou niveau IA  
-- Règles communes : bienveillance, droit à l’erreur  
 
 ---
 
@@ -117,13 +104,22 @@ Applications typiques :
 
 ---
 
-## Résumé visuel
+## Historique de l’IA moderne
 
-| Terme             | Définition simplifiée                    | Exemple                              |
-|------------------|------------------------------------------|--------------------------------------|
-| IA               | Ensemble des techniques imitant l’humain | Chatbots, reconnaissance faciale     |
-| Machine Learning | L’IA qui apprend à partir de données      | Filtrage de spams, recommandations   |
-| Deep Learning    | Apprentissage profond avec des neurones  | Traduction automatique, reconnaissance d’images |
+**Alan Turing (1912–1954)** est un mathématicien britannique considéré comme le père de l’intelligence artificielle.  
+En 1950, il publie un article où il pose la question : “Les machines peuvent-elles penser ?”  
+Il propose alors **le test de Turing**, qui évalue si une machine peut imiter la pensée humaine.
+
+Il pose les bases théoriques de l’IA moderne.
+
+---
+
+## Le test de Turing
+
+Une personne humaine dialogue par écrit avec deux interlocuteurs cachés : un humain et une machine.  
+Si, après plusieurs échanges, la personne ne peut pas distinguer qui est la machine, alors la machine réussit le test.
+
+
 
 ---
 
@@ -149,7 +145,7 @@ Applications typiques :
 ---
 
 ## IA forte  
-### Enjeux théoriques et philosophiques
+### Enjeux théoriques et philosophiques ?
 
 - Capacité à raisonner de manière générale  
 - Autonomie complète dans des environnements variés  
@@ -190,53 +186,7 @@ Un **agent IA** est un système autonome qui :
 
 ---
 
-## Repères historiques  
-### Les grandes étapes
 
-- **1956** : naissance du terme “IA” à la conférence de Dartmouth  
-- **1960-1980** : IA symbolique (règles logiques)  
-- **Années 2000** : essor du machine learning grâce aux données massives  
-- **Depuis 2012** : deep learning et explosion des usages  
-
----
-
-## Repères historiques  
-### IA et société
-
-- Débats récurrents sur la place de l’IA dans l’emploi  
-- Alternance entre périodes d’enthousiasme (boom) et de désillusion (hiver de l’IA)  
-- L’IA d’aujourd’hui est omniprésente dans les objets et services du quotidien
-
----
-
-## Exemples d’IA actuelles  
-### Dans la vie de tous les jours
-
-- **Assistants vocaux** : Alexa, Siri, Google Assistant  
-- **Détection de fraude** : transactions bancaires, assurance  
-- **Tri de CV** : pré-analyse par mots-clés et critères prédéfinis  
-- **Autres** : GPS, recommandations, filtres photo, traduction
-
----
-
-## Synthèse visuelle  
-| Type d’IA  | Description                  | Exemples                         |
-|------------|------------------------------|----------------------------------|
-| Faible     | Spécialisée, non consciente  | Siri, GPT, reconnaissance image  |
-| Forte      | Hypothétique, autonome       | Aucune à ce jour                 |
-| Historique | Évolue avec puissance et données | IA symbolique → Deep learning   |
-
-
-
-## Qu’est-ce que l’intelligence artificielle ?
-
-### Méthode
-
-- Présentation illustrée  
-- Quiz interactif  
-- Échanges guidés  
-
----
 
 ## Domaines d'application  
 ### Panorama
@@ -325,7 +275,7 @@ Un **agent IA** est un système autonome qui :
 ## Cas 3 : IA et analyse de CV – Service de recrutement d’une collectivité
 
 ### Contexte :
-- Pour répondre à un besoin de traitement rapide sur des vagues de candidatures (> 300 par poste), un EPCI (établissement public de coopération intercommunale) met en place une IA de présélection.
+- Pour répondre à un besoin de traitement rapide sur des vagues de candidatures (> 300 par poste), un établissement met en place une IA de présélection.
 
 ### Application :
 - Les CV sont analysés automatiquement selon des critères définis (expérience, mots-clés, compatibilité missions).  
@@ -377,13 +327,7 @@ Un **agent IA** est un système autonome qui :
 - **Problèmes éthiques ou juridiques**  
   → Questions liées à la vie privée, à la responsabilité, au contrôle humain
 
----
 
-## Avantages et limites
-
-### Activité
-
-- Atelier collaboratif : “Avantage ou limite ?”  
 ---
 
 ## Prise en main d’un outil d’IA générative  
@@ -419,254 +363,174 @@ Un **agent IA** est un système autonome qui :
 
 
 ---
+## Les acteurs
 
-## Prise en main d’un outil d’IA générative  
-### Activités pratiques
-
-- **Démonstration guidée**  
-  - Exploration en temps réel d’une interface d’IA (type assistant conversationnel)  
-  - Construction d’un bon prompt à partir d’un besoin réel  
-
-- **Travail en binômes**  
-  - Chaque duo choisit une situation professionnelle parmi les suivantes :  
-    - Rédiger un mail de réponse à une demande d’information  
-    - Résumer une note de service en 5 points  
-    - Générer un plan structuré pour un exposé, un projet, une réunion
+- **OpenAI** : ChatGPT, DALL·E, Whisper, Copilot…  
+- **Google** : Gemini  
+- **Meta** : Llama  
+- **Anthropic** : Claude  
+- **Mistral**  
+- **Xai** : Grok  
+- **Autres** : Amazon, Apple, Alibaba, Huawei, Samsung…
 
 ---
 
-## L’IA au service des ressources humaines  
-### Applications concrètes
+## IA de génération de contenu
 
-- **Tri de candidatures**  
-  - Analyse automatique des CV reçus selon des critères définis (mots-clés, expérience, diplôme)  
-  - Classement des profils par degré de correspondance
-
-- **Préparation des entretiens**  
-  - Génération de trames de questions selon le poste visé  
-  - Aide à l’identification de signaux faibles dans les parcours  
-
-- **Suivi RH et pilotage**  
-  - Tableaux de bord automatisés  
-  - Prévision de mobilités ou d’absences selon historique et données disponibles
+- ChatGPT (OpenAI) – texte, code, image  
+- Claude (Anthropic) – texte long, structuration  
+- Gemini (Google) – texte + multimodalité  
+- Mistral (Mixtral, Mistral Large) – texte (open source)  
+- LLaMA (Meta) – texte (open source)  
+- Suno / Udio / ElevenLabs – musique ou voix  
+- DALL·E / MidJourney / Stable Diffusion – images
 
 ---
 
-## L’IA au service des ressources humaines  
-### Activité guidée
+## IA d’analyse et d’aide à la décision
 
-- **Objectif : produire un livrable RH en lien avec votre environnement**  
-  - Choisissez une des productions suivantes :  
-    - Un **profil de poste** à partir d’un besoin exprimé  
-    - Un **modèle de courrier** : convocation, relance, notification  
-    - Une **fiche d’évaluation** ou grille de compétences  
-  - Travail en autonomie, avec appui possible du formateur  
-  - Restitution optionnelle et discussion sur la pertinence et les limites des productions IA
+- Whisper (OpenAI) – transcription automatique  
+- Perplexity AI – moteur de recherche IA (sources citées)  
+- Cohere – résumé, classification, recherche sémantique  
+- WatsonX (IBM) – données + NLP  
+- Haystack / Qdrant – recherche sémantique (open source)  
+- AlphaFold (DeepMind) – structures biologiques
 
 ---
 
-## Études de cas et retours d’expérience  
-### Objectifs et cas inspirés du réel
+## IA d’assistance intégrée
 
-- **Illustrer des cas d’usage réels d’IA dans un cadre public ou scolaire**  
-- **Identifier les leviers de réussite et les freins rencontrés**  
-- **Favoriser les échanges entre pairs sur les usages concrets de l’IA**  
-
-### Cas proposés (issus de projets réels)
-
-- 🗂️ **Automatisation d’un rapport financier**  
-  → Utilisation d’un assistant IA pour synthétiser les sections d’un compte financier, générer les tableaux, reformuler pour le CA
-
-- 📬 **Génération de courriers types dans un EPLE**  
-  → Réponse aux demandes parents/profs, relances, convocations… avec un prompt structuré et des champs variables
-
-- 📊 **Soutien à la construction d’un DUERP**  
-  → Génération automatique de formulations adaptées, suggestions d’actions de prévention, rédaction synthétique par domaine
-
-- 🤖 **Création d’un outil de suivi des voyages scolaires**  
-  → Structuration des données dans un tableau + génération de synthèses automatiques (parents, CA, DSDEN)
-
-- 🧠 **Utilisation d’IA dans un atelier d’orientation**  
-  → Simulation de profils métiers, suggestion de compétences à acquérir, formulation de lettres de motivation types
-
+- Microsoft Copilot – Word, Excel, Outlook…  
+- Google Duet / Gemini – Docs, Gmail, Sheets…  
+- Notion AI – écriture, gestion de projet  
+- X.ai (Grok) – chatbot X (Twitter)  
+- GitHub Copilot – programmation  
+- Alexa / Siri / Google Assistant – vocaux
 
 ---
 
-## Cas 1 : Automatisation d’un rapport financier  
-### Contexte réel
+## Comment ça marche ?
 
-- Dans un collège public, le rapport de gestion du compte financier est long et fastidieux à rédiger.  
-- L'objectif est de produire un document clair, structuré et synthétique à partir de tableaux comptables.  
-- L’IA est utilisée pour reformuler, structurer et même générer des éléments de commentaire à partir des données chiffrées.
+### 1. Compréhension du texte
+Découpage en *tokens* (mots ou fragments), conversion en représentations numériques.
 
 ---
 
-## Cas 1 : Activité proposée
-
-**Mission pour les participants** :  
-- Vous disposez d’un tableau de dépenses et de recettes (fictif ou fourni par le formateur).  
-- À l’aide d’un assistant IA :  
-  - Formulez une introduction neutre et professionnelle  
-  - Proposez un paragraphe d’analyse pour un service (pédagogique, restauration…)  
-  - Reformulez les points saillants sous forme de bullet points
+### 2. Traitement par le modèle
+Réseau de neurones profonds, couches successives, repérage du sens, logique, contexte.
 
 ---
 
-## Cas 1 : Restitution et analyse
+### 3. Génération de la réponse
+Mot à mot, selon la consigne et le contexte. Ajout de variation contrôlée.
 
-**Éléments attendus** :  
-- Un rapport structuré en 2 à 3 paragraphes  
-- Des formulations claires et conformes à un usage administratif  
-- Capacité à distinguer les faits des interprétations  
-- Discussion collective :  
-  - Quelles tâches ont réellement été automatisées ?  
-  - Quels ajustements avez-vous dû faire ?  
-  - Quels gains de temps ou limites avez-vous identifiés ?
+---
+
+### 4. Affichage du résultat
+Conversion du résultat en texte fluide, naturel, structuré.
+
+---
+
+## Pause
+
+---
+
+## Quel modèle ?
+
+> Peu importe le modèle utilisé — ChatGPT, Mistral ou un autre — le fonctionnement de base reste le même : une analyse du prompt, un traitement via un réseau de neurones, puis une génération de réponse mot à mot.  
+
+La suite de la présentation est **généraliste**.
+
+---
+
+## Mistral
+
+- https://chat.mistral.ai  
+- Gratuit  
+- RGPD  
+- Hébergé en France  
+- Open Source
+
+---
+
+## Le prompt
+
+Un prompt bien formulé = une réponse de qualité.
+
+### 1. Le contexte
+> “Je prépare une réunion sur le numérique au collège.”
+
+### 2. La tâche attendue
+> “Rédige un mail d’invitation professionnel.”
+
+### 3. Les contraintes
+> “Ton formel, moins de 10 lignes, date du 12 juin à 14h.”
 
 ---
 
 
-## Cas 2 : Génération de courriers types  
-### Contexte réel
 
-- Dans un établissement scolaire, de nombreux courriers sont produits chaque semaine :  
-  - réponses aux familles  
-  - convocations internes  
-  - demandes aux partenaires  
-- L’objectif : **automatiser tout ou partie de la rédaction** grâce à un assistant IA, tout en maintenant un ton professionnel et personnalisé.
+> “Je prépare une réunion sur le numérique au collège. Rédige un mail d’invitation professionnel, au ton formel, de moins de 10 lignes, mentionnant la date du 12 juin à 14h.”
+
+**Exemple généré :**
 
 ---
 
-## Cas 2 : Activité proposée
+### Invitation à la réunion sur le numérique – 12 juin à 14h
 
-**Mission pour les participants** :  
-- Choisissez un **type de courrier professionnel** à produire (liste au tableau ou fiche) :  
-  - Réponse à une absence injustifiée  
-  - Demande de devis à un prestataire  
-  - Convocation d’un personnel à une réunion  
-- À l’aide d’un assistant IA, formulez :  
-  - Un **prompt structuré**, avec le contexte, le ton, les destinataires  
-  - Une **version exploitable directement** ou à corriger
+Madame, Monsieur,  
+Je vous invite à une réunion portant sur le développement du numérique au sein du collège, qui se tiendra le mercredi 12 juin à 14h, en salle des réunions.  
+Votre présence est vivement souhaitée afin d’échanger sur les projets en cours et les perspectives à venir.  
+Je vous remercie de bien vouloir confirmer votre participation.  
+**Cordialement,**  
+[Prénom Nom]
 
 ---
 
-## Cas 2 : Restitution et analyse
+## C’est un premier jet, voyons ce qu’on peut faire avec :
 
-**Éléments attendus** :  
-- Un **modèle de courrier prêt à l’emploi**, formaté correctement  
-- Une capacité à identifier les **forces et limites** de l’IA :  
-  - Pertinence de la formulation  
-  - Respect du ton administratif  
-  - Nécessité de relecture ou ajustement  
-- Échange collectif :  
-  - Dans quels cas ce gain de temps est-il vraiment pertinent ?  
-  - Peut-on généraliser l’usage ou faut-il poser des garde-fous ?
+- “Ajoute l’information suivante : un rafraîchissement sera servi à la fin.”
+- “Fais une version pour les parents d’élèves.”
 
 ---
 
-## Cas 3 : Aide à la rédaction d’un DUERP  
-### Contexte réel
+## C’est à vous
 
-- Le DUERP (Document Unique d’Évaluation des Risques Professionnels) doit être mis à jour régulièrement.  
-- Il implique :  
-  - la description des situations à risque  
-  - l’évaluation de leur criticité  
-  - des propositions d’actions correctives  
-- Le formateur a expérimenté l’usage de l’IA pour **formuler des fiches risque, générer des mesures et structurer le document**.
+Prompt simple :  
+**1. Contexte** + **2. Action claire** + **3. Contraintes précises**
 
 ---
 
-## Cas 3 : Activité proposée
-
-**Mission pour les participants** :  
-- Choisissez un poste de travail (ex : agent d’entretien, agent de restauration, secrétaire, enseignant…)  
-- Avec l’IA :  
-  - Formulez une **fiche de situation à risque** (contexte, exposition, gravité)  
-  - Générez **des propositions de prévention concrètes**  
-  - Demandez une **mise en page synthétique type tableau ou fiche d’action**
+## Pause
 
 ---
 
-## Cas 3 : Restitution et analyse
+## Plan de l’après-midi
 
-**Éléments attendus** :  
-- Une **fiche DUERP claire**, structurée et exploitable  
-- Vérification humaine sur la pertinence des mesures proposées  
-- Discussion collective :  
-  - Dans quels cas l’IA a-t-elle été utile (ou non) ?  
-  - Peut-elle aider à la mise à jour annuelle ?  
-  - Comment assurer la fiabilité des propositions générées ?
-
-
+- Une conversation à la place d’une requête  
+- Affiner une demande  
+- L’analyse de documents  
+- *Pause*  
+- Les limites  
+- Aller plus loin…
 
 ---
 
-## Conclusion et perspectives  
-### Récapitulatif des acquis
-
-- Compréhension des notions clés : IA, machine learning, deep learning  
-- Connaissance des domaines d’application dans le secteur public  
-- Expérimentation d’outils d’IA générative dans des cas concrets  
-- Identification des bénéfices mais aussi des limites  
+## Bilan de la journée
 
 ---
 
-## Conclusion et perspectives  
-### Réflexion collective
+## Échanger au lieu de demander
 
-- Dans votre environnement professionnel :  
-  - **Où l’IA est-elle un réel appui ?**  
-  - **Quelles tâches pourraient être partiellement automatisées ?**  
-  - **Quelles compétences restent fondamentalement humaines ?**
+> “L’IA conversationnelle désigne un type d’intelligence artificielle conçue pour interagir avec les humains en langage naturel”
 
-- Quelle posture adopter ?  
-  - Vigilance face aux dérives  
-  - Curiosité et esprit critique  
-  - Encadrement par des règles claires
+Agissons en conversant :  
+https://chat.mistral.ai/chat/aa8549e7-ce0d-4c88-896f-3470cbff45ec
 
 ---
 
-## Conclusion et perspectives  
-### Pour aller plus loin
+## Bilan de la journée
 
-- **Ressources pédagogiques** :  
-  - Fiches CNIL sur l’IA et les biais  
-  - EduNum IA – MENJ  
-  - MOOC INRIA : Comprendre l’IA
-
-- **Bonnes pratiques** :  
-  - Relire systématiquement les productions IA  
-  - Vérifier les sources et les biais potentiels  
-  - Documenter l’usage de l’IA dans les process internes
-
-- **À suivre…**  
-  - Cadre européen (AI Act)  
-  - Outils en constante évolution : rester formé et s’adapter
-
----
-
-## Merci pour votre participation !  
-### Formateur : David Collet
-
-- Secrétaire Général d’EPLE – Collège Victor Hugo (Chauny)  
-- Formateur en gestion, outils numériques et IA
-
-**Contact :** gest.0021493m@ac-amiens.fr  
-**Partage, veille et ressources sur demande.**
-
----
-
-## Votre retour compte  
-### Évaluation de la formation
-
-Merci de prendre quelques instants pour répondre à l’évaluation.  
-Elle est essentielle pour améliorer les prochaines sessions.
-
-**Trois questions ouvertes :**  
-- Ce que j’ai retenu  
-- Ce que je vais tester  
-- Ce que je souhaite approfondir
-
-> Format : formulaire papier ou lien numérique (QR Code possible)
+Merci pour votre attention !
 
 
