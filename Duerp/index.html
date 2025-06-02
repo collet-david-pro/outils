@@ -1,91 +1,120 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bienvenue sur le projet Duerp</title>
-    <link rel="stylesheet" href="../style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>DUERP - Gestion des risques professionnels</title>
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f7f5ec;
+      margin: 0;
+      padding: 0;
+      color: #2d2a24;
+    }
+    header.hero {
+      text-align: center;
+      padding: 3rem 1rem 2rem;
+    }
+    header.hero h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #398376;
+      margin-bottom: 0.5rem;
+    }
+    header.hero p {
+      font-size: 1.1rem;
+      color: #52796f;
+      margin-top: 0;
+    }
+    main.content {
+      max-width: 900px;
+      margin: 0 auto 3rem;
+      padding: 0 1rem;
+    }
+    main.content section {
+      margin-bottom: 2rem;
+    }
+    main.content h2 {
+      color: #398376;
+      margin-bottom: 0.5rem;
+    }
+    main.content p {
+      line-height: 1.5;
+      color: #2d2a24;
+    }
+    main.content ul {
+      padding-left: 1.5rem;
+      color: #2d2a24;
+    }
+    main.content ul li {
+      margin-bottom: 0.5rem;
+    }
+    a.button-link {
+      display: inline-block;
+      background: #398376;
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.3s ease;
+      margin-top: 1rem;
+    }
+    a.button-link:hover {
+      background: #b85c38;
+    }
+    footer {
+      text-align: center;
+      padding: 1rem 0;
+      background: #e8e6d9;
+      color: #398376;
+      font-weight: 600;
+      user-select: none;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>Bienvenue sur le projet Duerp</h1>
-    </header>
-    <a href="../index.html">Lien vers le Hub</a>
+  <header class="hero">
+    <h1>DUERP</h1>
+    <p>Gestion des risques professionnels</p>
+  </header>
 
-    <main>
-        <section>
-            <p>Duerp est un outil conçu pour simplifier et automatiser la collecte d'information en viue de remplir le DUER de l'établissement
-            </p>
-            </section>  
-    
-        <section>
-            <h2>Les formulaires</h2>
-            <p>Voici 3 version de ce formualaire, à adapter selon vos besoin :</p>
-            <ul>
-                <li>
-                    <strong>formulaire V2.html</strong> - Formulaire interactif pour l'identification des risques avec des catégories dynamiques.
-                    <a href="./formulaireV2.html">Voir le fichier</a>
-                 
-                </li>
-                <li>
-                    <strong>formulaire csv.html</strong> - Formulaire permettant de générer un fichier CSV des risques identifiés.
-                    <a href="./formulairecsv.html">Voir le fichier</a> Il s'agit de la version utilisée pour mon établissement.
-                    
+  <main class="content">
+    <section>
+      <p>Duerp est un outil conçu pour simplifier et automatiser la collecte d'information en vue de remplir le DUER de l'établissement.</p>
+    </section>
 
-                </li>
-                <li>
-                    <strong>formulaire.html</strong> - Formulaire d'évaluation des risques avec une notice explicative et une option d'impression.
-                    <a href="./formulaire.html">Voir le fichier</a>
-                    
+    <section>
+      <h2>Les formulaires</h2>
+      <p>Voici 3 versions de ce formulaire, à adapter selon vos besoins :</p>
+      <ul>
+        <li>
+          <strong>formulaireV2.html</strong> - Formulaire interactif pour l'identification des risques avec des catégories dynamiques.
+          <br />
+          <a href="./formulaireV2.html" class="button-link">Voir le fichier</a>
+        </li>
+        <li>
+          <strong>formulairecsv.html</strong> - Formulaire permettant de générer un fichier CSV des risques identifiés.
+          <br />
+          <a href="./formulairecsv.html" class="button-link">Voir le fichier</a>
+        </li>
+        <li>
+          <strong>formulaire.html</strong> - Formulaire d'évaluation des risques avec une notice explicative et une option d'impression.
+          <br />
+          <a href="./formulaire.html" class="button-link">Voir le fichier</a>
+        </li>
+      </ul>
+    </section>
+  </main>
 
-                    <h2>Code source de la version 1</h2>
-<pre id="source-code-v1" class="code">
-    <script>
-    // Charger et afficher le code source de formulaireV2.html
-    fetch('formulaireV2.html')
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById('source-code-v1').textContent = data;
-        })
-        .catch(error => {
-            console.error('Erreur lors du chargement du code source:', error);
-        });
-    </script>
-</pre>
-
-<h2>Code source de la version 2</h2>
-<pre id="source-code-v2" class="code">
-    <script>
-    // Charger et afficher le code source de formulairecsv.html
-    fetch('formulairecsv.html')
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById('source-code-v2').textContent = data;
-        })
-        .catch(error => {
-            console.error('Erreur lors du chargement du code source:', error);
-        });
-    </script>
-</pre>
-
-<h2>Code source de la version 3</h2>
-<pre id="source-code-v3" class="code">
-    <script>
-    // Charger et afficher le code source de formulaire.html
-    fetch('formulaire.html')
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById('source-code-v3').textContent = data;
-        })
-        .catch(error => {
-            console.error('Erreur lors du chargement du code source:', error);
-        });
-    </script>
-</pre>  
-
-                </li>
-            </ul>
-        </section>
-    </main>
+  <footer>
+    <p>&copy; 2024 DUERP. Tous droits réservés.</p>
+  </footer>
 </body>
 </html>
