@@ -177,20 +177,20 @@
       menu.classList.toggle('visible');
     }
 
-    // Build table of contents with only first-level titles
+    // Build table of contents with only second-level titles
     function buildTOC(content) {
       const toc = document.getElementById('toc');
       const lines = content.split('\n');
       let slideIndex = 0;
 
       lines.forEach(line => {
-        if (line.startsWith('# ') && !line.startsWith('##')) {
-          const title = line.replace(/^#\s*/, '');
+        if (line.startsWith('## ') && !line.startsWith('###')) {
+          const title = line.replace(/^##\s*/, '');
           
           const item = document.createElement('li');
           item.textContent = title;
-          item.style.paddingLeft = '0px';
-          item.style.fontSize = '18px';
+          item.style.paddingLeft = '15px';
+          item.style.fontSize = '16px';
           
           item.addEventListener('click', () => {
             slideshow.gotoSlide(slideIndex + 1);
