@@ -15,30 +15,84 @@
   <style>
     body {
       margin: 0;
-      font-family: "Source Sans Pro", Helvetica, sans-serif;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 14px;
       background-color: #f7f5ec;
     }
     .reveal {
       height: 100vh;
     }
-    .fullscreen-toggle {
+    .fullscreen-toggle, .export-pdf-btn, .menu-toggle-btn {
       position: fixed;
       top: 10px;
-      right: 10px;
       z-index: 1000;
       background: #398376;
       color: white;
       border: none;
-      padding: 0.5rem 1rem;
-      font-size: 1rem;
+      padding: 0.4rem 0.8rem;
+      font-size: 0.9rem;
       border-radius: 4px;
       cursor: pointer;
       transition: background 0.3s ease;
+      margin-left: 5px;
     }
-    .fullscreen-toggle:hover {
+    .fullscreen-toggle:hover, .export-pdf-btn:hover, .menu-toggle-btn:hover {
       background: #b85c38;
     }
+    .fullscreen-toggle {
+      right: 10px;
+    }
+    .export-pdf-btn {
+      right: 110px;
+    }
+    .menu-toggle-btn {
+      right: 210px;
+    }
+    #menu {
+      position: fixed;
+      top: 50px;
+      right: 10px;
+      width: 280px;
+      max-height: 80vh;
+      overflow-y: auto;
+      background: #e8e6d9;
+      border: 2px solid #398376;
+      border-radius: 6px;
+      padding: 1rem;
+      box-sizing: border-box;
+      font-size: 0.9rem;
+      display: none;
+      z-index: 999;
+    }
+    #menu h2 {
+      margin-top: 0;
+      color: #398376;
+      font-weight: 700;
+      font-size: 1.2rem;
+      border-bottom: 2px solid #398376;
+      padding-bottom: 0.3rem;
+    }
+    #menu ul {
+      list-style: none;
+      padding-left: 0;
+      margin-top: 0.5rem;
+      max-height: 70vh;
+      overflow-y: auto;
+    }
+    #menu li {
+      margin-bottom: 0.4rem;
+      cursor: pointer;
+      color: #52796f;
+    }
+    #menu li:hover {
+      color: #b85c38;
+      text-decoration: underline;
+    }
   </style>
+  <nav id="menu" aria-label="Plan du cours">
+    <h2>Plan du cours</h2>
+    <ul id="toc"></ul>
+  </nav>
 </head>
 <body>
   <button class="fullscreen-toggle" aria-label="Basculer en plein écran">Plein écran</button>
@@ -46,7 +100,7 @@
   <div class="reveal">
     <div class="slides">
       <section 
-        data-markdown="slides.md"
+        data-markdown="./slides.md"
         data-separator="^---$"
         data-separator-vertical="^--$"
         data-charset="utf-8"
@@ -130,5 +184,131 @@
       console.log('Présentation prête avec', Reveal.getTotalSlides(), 'slides');
     });
   </script>
-</body>
+  </body>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/dist/reveal.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/plugin/markdown/markdown.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/plugin/highlight/highlight.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/plugin/notes/notes.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/plugin/search/search.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/plugin/zoom/zoom.js"></script>
+  <script>
+    Reveal.initialize({
+      hash: true,
+      slideNumber: 'c/t',
+      showSlideNumber: 'all',
+      controls: true,
+      progress: true,
+      center: false,
+      touch: true,
+      loop: false,
+      rtl: false,
+      transition: 'slide',
+      transitionSpeed: 'default',
+      backgroundTransition: 'fade',
+      width: 1024,
+      height: 768,
+      margin: 0.1,
+      minScale: 0.2,
+      maxScale: 2.0,
+      plugins: [ 
+        RevealMarkdown, 
+        RevealHighlight, 
+        RevealNotes,
+        RevealSearch,
+        RevealZoom
+      ],
+      markdown: {
+        smartypants: true,
+        breaks: true
+      },
+      highlight: {
+        highlightOnLoad: true,
+        tabReplace: '  '
+      },
+      keyboard: {
+        13: 'next',
+        27: function() {
+          if (document.fullscreenElement) {
+            document.exitFullscreen();
+          }
+        }
+      }
+    });
+
+    // Fullscreen toggle button
+    const fsBtn = document.querySelector('.fullscreen-toggle');
+    fsBtn.addEventListener('click', () => {
+      if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen();
+      } else {
+        document.exitFullscreen();
+      }
+    });
+
+    // Export PDF button
+    const exportBtn = document.querySelector('.export-pdf-btn');
+    exportBtn.addEventListener('click', () => {
+      const opt = {
+        margin:       0.5,
+        filename:     'Formation_IA_Cours.pdf',
+        image:        { type: 'jpeg', quality: 0.98 },
+        html2canvas:  { scale: 2 },
+        jsPDF:        { unit: 'in', format: 'a4', orientation: 'landscape' }
+      };
+      const slides = document.querySelector('.reveal');
+      html2pdf().set(opt).from(slides).save();
+    });
+
+    // Menu toggle button
+    const menuBtn = document.querySelector('.menu-toggle-btn');
+    const menu = document.getElementById('menu');
+    menuBtn.addEventListener('click', () => {
+      if (menu.style.display === 'block') {
+        menu.style.display = 'none';
+      } else {
+        menu.style.display = 'block';
+      }
+    });
+
+    // Build TOC from markdown headings after Reveal is ready
+    Reveal.on('ready', () => {
+      const toc = document.getElementById('toc');
+      toc.innerHTML = '';
+      const headings = document.querySelectorAll('.slides section h1, .slides section h2, .slides section h3');
+      headings.forEach(heading => {
+        const li = document.createElement('li');
+        li.textContent = heading.textContent;
+        li.style.marginLeft = (parseInt(heading.tagName[1]) - 1) * 15 + 'px';
+        li.tabIndex = 0;
+        li.setAttribute('role', 'link');
+        li.addEventListener('click', () => {
+          const slide = heading.closest('section');
+          const index = Array.from(document.querySelectorAll('.slides section')).indexOf(slide);
+          Reveal.slide(index);
+          menu.style.display = 'none';
+        });
+        li.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            li.click();
+          }
+        });
+        toc.appendChild(li);
+      });
+    });
+
+    // Handle image load errors gracefully
+    Reveal.on('ready', () => {
+      const images = document.querySelectorAll('img');
+      images.forEach(img => {
+        img.onerror = () => {
+          img.style.display = 'none';
+          console.warn('Image non trouvée:', img.src);
+        };
+      });
+      console.log('Présentation prête avec', Reveal.getTotalSlides(), 'slides');
+    });
+  </script>
 </html>
