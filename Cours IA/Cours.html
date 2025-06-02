@@ -180,15 +180,24 @@
     // Export PDF button
     const exportBtn = document.querySelector('.export-pdf-btn');
     exportBtn.addEventListener('click', () => {
-      const opt = {
-        margin:       0.5,
-        filename:     'Formation_IA_Cours.pdf',
-        image:        { type: 'jpeg', quality: 0.98 },
-        html2canvas:  { scale: 2 },
-        jsPDF:        { unit: 'in', format: 'a4', orientation: 'landscape' }
-      };
-      const slides = document.querySelector('.reveal');
-      html2pdf().set(opt).from(slides).save();
+      // Use Reveal.js built-in PDF export if available
+      if (Reveal.isReady()) {
+        Reveal.toggleOverview(); // Exit overview if active
+        Reveal.toggleOverview(); // Enter overview to show all slides
+        setTimeout(() => {
+          window.print();
+        }, 500);
+      } else {
+        // Fallback to html2pdf export of all slides
+        const slides = document.querySelector('.reveal');
+        html2pdf().set({
+          margin: 0.5,
+          filename: 'Formation_IA_Cours.pdf',
+          image: { type: 'jpeg', quality: 0.98 },
+          html2canvas: { scale: 2 },
+          jsPDF: { unit: 'in', format: 'a4', orientation: 'landscape' }
+        }).from(slides).save();
+      }
     });
 
     // Menu toggle button
