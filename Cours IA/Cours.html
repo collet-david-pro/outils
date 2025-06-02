@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Formation IA – Présentation avec Remark.js</title>
+  <title>Formation IA – Présentation</title>
   <style>
     body {
       font-family: "Source Sans Pro", Helvetica, sans-serif;
@@ -43,43 +43,6 @@
     .controls button i {
       font-size: 16px;
     }
-    #menu {
-      position: fixed;
-      top: 60px;
-      left: 0;
-      width: 300px;
-      height: calc(100vh - 60px);
-      background: #e8e6d9;
-      border-right: 2px solid #398376;
-      padding: 20px;
-      box-sizing: border-box;
-      overflow-y: auto;
-      transform: translateX(-100%);
-      transition: transform 0.3s ease;
-      z-index: 900;
-    }
-    #menu.visible {
-      transform: translateX(0);
-    }
-    #menu h2 {
-      color: #398376;
-      margin-top: 0;
-      padding-bottom: 10px;
-      border-bottom: 2px solid #398376;
-    }
-    #menu ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-    #menu li {
-      padding: 8px 0;
-      cursor: pointer;
-      color: #52796f;
-    }
-    #menu li:hover {
-      color: #b85c38;
-    }
     .remark-container {
       background: #f7f5ec;
     }
@@ -108,7 +71,7 @@
       height: auto;
     }
     @media print {
-      .controls, #menu {
+      .controls {
         display: none !important;
       }
       .remark-slide-container {
@@ -135,18 +98,17 @@
     </button>
   </div>
 
-  <textarea id="source" style="display: none"></textarea>
+  <textarea id="source"></textarea>
 
-  <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+  <script src="remark-latest.min.js"></script>
   <script>
-    let slideshow;
-    
-    // Load and initialize
+    // Load markdown content
     fetch('slides.md')
       .then(response => response.text())
       .then(content => {
-        document.getElementById('source').textContent = content;
-        slideshow = remark.create({
+        document.getElementById('source').innerHTML = content;
+        // Initialize slideshow
+        var slideshow = remark.create({
           ratio: '16:9',
           highlightStyle: 'monokai',
           highlightLines: true,
@@ -156,46 +118,11 @@
             click: false
           }
         });
-        buildTOC(content);
       })
       .catch(error => {
         console.error('Error loading slides:', error);
         document.body.innerHTML = '<p>Error loading slides. Please try again.</p>';
       });
-
-    // Menu toggle
-    function toggleMenu() {
-      const menu = document.getElementById('menu');
-      menu.classList.toggle('visible');
-    }
-
-    // Build table of contents with only second-level titles
-    function buildTOC(content) {
-      const toc = document.getElementById('toc');
-      const lines = content.split('\n');
-      let slideIndex = 0;
-
-      lines.forEach(line => {
-        if (line.startsWith('## ') && !line.startsWith('###')) {
-          const title = line.replace(/^##\s*/, '');
-          
-          const item = document.createElement('li');
-          item.textContent = title;
-          item.style.paddingLeft = '15px';
-          item.style.fontSize = '16px';
-          
-          item.addEventListener('click', () => {
-            slideshow.gotoSlide(slideIndex + 1);
-            toggleMenu();
-          });
-          
-          toc.appendChild(item);
-        }
-        if (line.trim() === '---') {
-          slideIndex++;
-        }
-      });
-    }
 
     // PDF export
     function exportPDF() {
@@ -218,9 +145,7 @@
 
     // Keyboard shortcuts
     document.addEventListener('keydown', (e) => {
-      if (e.key === 'm' || e.key === 'M') {
-        toggleMenu();
-      } else if (e.key === 'f' || e.key === 'F') {
+      if (e.key === 'f' || e.key === 'F') {
         toggleFullscreen();
       }
     });
