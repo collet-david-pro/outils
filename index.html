@@ -3,24 +3,88 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hub</title>
+    <title>Hub des Projets</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <h1>Hub</h1>
+    <div class="theme-switch">
+        <input type="checkbox" id="theme-toggle">
+        <label for="theme-toggle" class="theme-label">
+            <i class="fas fa-sun"></i>
+            <i class="fas fa-moon"></i>
+        </label>
+    </div>
+
+    <header class="hero">
+        <h1 class="glitch" data-text="Hub des Projets">Hub des Projets</h1>
+        <p class="subtitle">Découvrez mes réalisations</p>
     </header>
-    <main>
-        <p>Bienvenue sur le Hub, votre espace centralisé pour accéder à mes projets.</p>
-        <h2>Projets</h2>
-        <ul>
-            <li><a href="./Duerp/index.html">Duerp</a></li>
-            <li><a href="./YCRINT/index.html">YCRINT</a></li>
-            <li><a href="./veille-photo-college/index.php">Veille photo Collège</a></li>
-        </ul>
+
+    <main class="projects-grid">
+        <div class="project-card" data-aos="fade-up">
+            <div class="card-content">
+                <i class="fas fa-shield-alt card-icon"></i>
+                <h2>DUERP</h2>
+                <p>Gestion des risques professionnels</p>
+                <a href="./Duerp/index.html" class="card-btn">Explorer <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+
+        <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="card-content">
+                <i class="fas fa-robot card-icon"></i>
+                <h2>Cours IA</h2>
+                <p>Formation à l'Intelligence Artificielle</p>
+                <a href="./Cours IA/Cours.html" class="card-btn">Découvrir <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+
+        <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="card-content">
+                <i class="fas fa-code card-icon"></i>
+                <h2>YCRINT</h2>
+                <p>Projet innovant YCRINT</p>
+                <a href="./YCRINT/index.html" class="card-btn">Voir plus <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+
+        <div class="project-card" data-aos="fade-up" data-aos-delay="300">
+            <div class="card-content">
+                <i class="fas fa-camera card-icon"></i>
+                <h2>Veille Photo</h2>
+                <p>Galerie photo du collège</p>
+                <a href="./veille-photo-college/index.php" class="card-btn">Visiter <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
     </main>
+
     <footer>
-        &copy; 2023 Hub. Tous droits réservés.
+        <p>&copy; 2024 Hub des Projets. Tous droits réservés.</p>
     </footer>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        // Initialisation des animations au scroll
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+
+        // Gestion du thème sombre/clair
+        const themeToggle = document.getElementById('theme-toggle');
+        themeToggle.addEventListener('change', () => {
+            document.body.classList.toggle('dark-theme');
+        });
+
+        // Vérification de la préférence système
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.body.classList.add('dark-theme');
+            themeToggle.checked = true;
+        }
+    </script>
 </body>
 </html>
