@@ -11,185 +11,237 @@
       color: #2d2a24;
       margin: 0;
       padding: 0;
-      overflow: hidden;
     }
-    #menuToggle {
+    .controls {
       position: fixed;
-      top: 10px;
-      left: 10px;
+      top: 0;
+      left: 0;
+      right: 0;
+      padding: 10px;
+      background: rgba(255, 255, 255, 0.9);
+      z-index: 1000;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      display: flex;
+      gap: 10px;
+    }
+    .controls button {
       background: #398376;
       color: white;
       border: none;
-      padding: 0.5rem 1rem;
-      font-size: 1rem;
+      padding: 8px 16px;
+      font-size: 14px;
       border-radius: 4px;
       cursor: pointer;
-      z-index: 1000;
+      transition: background-color 0.3s;
+      display: flex;
+      align-items: center;
+      gap: 5px;
     }
-    #exportPdfBtn {
-      position: fixed;
-      top: 10px;
-      left: 110px;
-      background: #398376;
-      color: white;
-      border: none;
-      padding: 0.5rem 1rem;
-      font-size: 1rem;
-      border-radius: 4px;
-      cursor: pointer;
-      z-index: 1000;
+    .controls button:hover {
+      background: #52796f;
     }
-    #toc {
+    .controls button i {
+      font-size: 16px;
+    }
+    #menu {
       position: fixed;
-      top: 50px;
-      left: 10px;
-      width: 280px;
-      max-height: 80vh;
-      overflow-y: auto;
+      top: 60px;
+      left: 0;
+      width: 300px;
+      height: calc(100vh - 60px);
       background: #e8e6d9;
-      border: 2px solid #398376;
-      border-radius: 6px;
-      padding: 1rem;
+      border-right: 2px solid #398376;
+      padding: 20px;
       box-sizing: border-box;
-      font-size: 0.9rem;
-      display: none;
-      z-index: 999;
+      overflow-y: auto;
+      transform: translateX(-100%);
+      transition: transform 0.3s ease;
+      z-index: 900;
     }
-    #toc h2 {
-      margin-top: 0;
+    #menu.visible {
+      transform: translateX(0);
+    }
+    #menu h2 {
       color: #398376;
-      font-weight: 700;
-      font-size: 1.2rem;
+      margin-top: 0;
+      padding-bottom: 10px;
       border-bottom: 2px solid #398376;
-      padding-bottom: 0.3rem;
     }
-    #toc ul {
+    #menu ul {
       list-style: none;
-      padding-left: 0;
-      margin-top: 0.5rem;
+      padding: 0;
+      margin: 0;
     }
-    #toc li {
-      margin-bottom: 0.4rem;
+    #menu li {
+      padding: 8px 0;
       cursor: pointer;
       color: #52796f;
     }
-    #toc li:hover {
+    #menu li:hover {
       color: #b85c38;
-      text-decoration: underline;
+    }
+    .remark-container {
+      background: #f7f5ec;
     }
     .remark-slide-content {
-      font-size: 1.6rem;
-      line-height: 1.5;
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 2rem;
-      box-sizing: border-box;
+      font-size: 24px;
+      line-height: 1.6;
+      padding: 1em 2em;
     }
-    .remark-slide-content h1, .remark-slide-content h2, .remark-slide-content h3 {
-      color: #398376;
-      margin-top: 1rem;
-      margin-bottom: 1rem;
-    }
+    .remark-slide-content h1 { font-size: 2.4em; color: #398376; }
+    .remark-slide-content h2 { font-size: 2em; color: #52796f; }
+    .remark-slide-content h3 { font-size: 1.6em; color: #b85c38; }
     .remark-slide-content ul, .remark-slide-content ol {
-      margin-left: 1.5rem;
-      margin-bottom: 1rem;
+      margin-left: 1.5em;
     }
     .remark-slide-content li {
-      margin-bottom: 0.5rem;
+      margin: 0.5em 0;
     }
     .remark-slide-content blockquote {
-      background: #e8e6d9;
       border-left: 4px solid #398376;
-      padding: 1rem;
-      margin: 1rem 0;
-      font-style: italic;
+      padding-left: 1em;
+      margin-left: 0;
+      background: #e8e6d9;
+    }
+    .remark-slide-content img {
+      max-width: 100%;
+      height: auto;
+    }
+    @media print {
+      .controls, #menu {
+        display: none !important;
+      }
+      .remark-slide-container {
+        break-inside: avoid;
+        page-break-inside: avoid;
+      }
+      .remark-slide-content {
+        font-size: 16pt;
+      }
+    }
+    :fullscreen, ::backdrop {
+      background: #f7f5ec;
     }
   </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-  <button id="menuToggle" aria-expanded="false" aria-controls="toc">Menu</button>
-  <button id="exportPdfBtn">Exporter PDF</button>
-  <nav id="toc" aria-label="Plan du cours">
+  <div class="controls">
+    <button onclick="toggleMenu()" title="Afficher/Masquer le menu">
+      <i class="fas fa-bars"></i> Menu
+    </button>
+    <button onclick="exportPDF()" title="Exporter en PDF">
+      <i class="fas fa-file-pdf"></i> PDF
+    </button>
+    <button onclick="toggleFullscreen()" title="Plein écran">
+      <i class="fas fa-expand"></i> Plein écran
+    </button>
+  </div>
+
+  <nav id="menu">
     <h2>Plan du cours</h2>
-    <ul id="tocList"></ul>
+    <ul id="toc"></ul>
   </nav>
 
-  <textarea id="source" style="display:none;"></textarea>
+  <textarea id="source" style="display: none"></textarea>
 
   <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
   <script>
-    // Fetch markdown content and initialize Remark
+    let slideshow;
+    
+    // Load and initialize
     fetch('slides.md')
       .then(response => response.text())
-      .then(md => {
-        document.getElementById('source').value = md;
-        window.slideshow = remark.create({
-          source: md,
+      .then(content => {
+        document.getElementById('source').textContent = content;
+        slideshow = remark.create({
+          ratio: '16:9',
           highlightStyle: 'monokai',
           highlightLines: true,
-          slideNumberFormat: '%current% / %total%',
           navigation: {
-            scroll: false
+            scroll: false,
+            touch: true,
+            click: false
           }
         });
-        buildTOC(md);
+        buildTOC(content);
       })
-      .catch(err => {
-        alert('Erreur lors du chargement du contenu markdown.');
-        console.error(err);
+      .catch(error => {
+        console.error('Error loading slides:', error);
+        document.body.innerHTML = '<p>Error loading slides. Please try again.</p>';
       });
 
-    // Build Table of Contents from markdown headings
-    function buildTOC(md) {
-      const tocList = document.getElementById('tocList');
-      tocList.innerHTML = '';
-      const lines = md.split('\n');
-      lines.forEach((line, index) => {
-        const match = line.match(/^(#{1,3})\s+(.*)/);
-        if (match) {
-          const level = match[1].length;
-          const text = match[2];
-          const li = document.createElement('li');
-          li.textContent = text;
-          li.style.marginLeft = (level - 1) * 15 + 'px';
-          li.tabIndex = 0;
-          li.setAttribute('role', 'link');
-          li.addEventListener('click', () => {
-            window.slideshow.gotoSlide(index);
-            toggleMenu(false);
+    // Menu toggle
+    function toggleMenu() {
+      const menu = document.getElementById('menu');
+      menu.classList.toggle('visible');
+    }
+
+    // Build table of contents
+    function buildTOC(content) {
+      const toc = document.getElementById('toc');
+      const lines = content.split('\n');
+      let slideIndex = 0;
+
+      lines.forEach(line => {
+        if (line.startsWith('#')) {
+          const level = line.match(/^#+/)[0].length;
+          const title = line.replace(/^#+\s*/, '');
+          
+          const item = document.createElement('li');
+          item.textContent = title;
+          item.style.paddingLeft = ((level - 1) * 20) + 'px';
+          item.style.fontSize = (18 - (level * 2)) + 'px';
+          
+          item.addEventListener('click', () => {
+            slideshow.gotoSlide(slideIndex + 1);
+            toggleMenu();
           });
-          li.addEventListener('keydown', (e) => {
-            if (e.key === 'Enter' || e.key === ' ') {
-              e.preventDefault();
-              li.click();
-            }
-          });
-          tocList.appendChild(li);
+          
+          toc.appendChild(item);
+        }
+        if (line.trim() === '---') {
+          slideIndex++;
         }
       });
     }
 
-    // Menu toggle
-    const menuToggle = document.getElementById('menuToggle');
-    const toc = document.getElementById('toc');
-    menuToggle.addEventListener('click', () => {
-      const expanded = menuToggle.getAttribute('aria-expanded') === 'true';
-      toggleMenu(!expanded);
-    });
-    function toggleMenu(show) {
-      if (show) {
-        toc.style.display = 'block';
-        menuToggle.setAttribute('aria-expanded', 'true');
+    // PDF export
+    function exportPDF() {
+      const originalTitle = document.title;
+      document.title = 'Formation_IA_' + new Date().toISOString().split('T')[0];
+      window.print();
+      document.title = originalTitle;
+    }
+
+    // Fullscreen toggle
+    function toggleFullscreen() {
+      if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen().catch(err => {
+          console.log(`Error attempting to enable fullscreen: ${err.message}`);
+        });
       } else {
-        toc.style.display = 'none';
-        menuToggle.setAttribute('aria-expanded', 'false');
+        document.exitFullscreen();
       }
     }
 
-    // Export PDF using browser print
-    const exportPdfBtn = document.getElementById('exportPdfBtn');
-    exportPdfBtn.addEventListener('click', () => {
-      window.print();
+    // Keyboard shortcuts
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'm' || e.key === 'M') {
+        toggleMenu();
+      } else if (e.key === 'f' || e.key === 'F') {
+        toggleFullscreen();
+      }
+    });
+
+    // Update fullscreen button icon
+    document.addEventListener('fullscreenchange', () => {
+      const fsButton = document.querySelector('button[title="Plein écran"] i');
+      if (document.fullscreenElement) {
+        fsButton.className = 'fas fa-compress';
+      } else {
+        fsButton.className = 'fas fa-expand';
+      }
     });
   </script>
 </body>
