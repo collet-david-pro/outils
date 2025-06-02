@@ -1,230 +1,134 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Formation IA - Cours Dynamique</title>
+  <title>Formation IA – Présentation dynamique</title>
+
+  <!-- Reveal.js core CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/dist/reveal.css" />
+  <!-- Theme -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/dist/theme/solarized.css" id="theme" />
+  <!-- Highlight.js for code -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/plugin/highlight/monokai.css" />
+
   <style>
-    :root {
-      --primary-color: #398376;
-      --secondary-color: #52796f;
-      --accent-color: #b85c38;
-      --background-color: #f7f5ec;
-      --font-family: "Source Sans Pro", Helvetica, sans-serif;
-    }
     body {
       margin: 0;
-      font-family: var(--font-family);
-      background-color: var(--background-color);
-      color: #2d2a24;
-      display: flex;
+      font-family: "Source Sans Pro", Helvetica, sans-serif;
+      background-color: #f7f5ec;
+    }
+    .reveal {
       height: 100vh;
-      overflow: hidden;
     }
-    #menu {
-      width: 300px;
-      background: #e8e6d9;
-      border-right: 2px solid var(--primary-color);
-      overflow-y: auto;
-      padding: 1rem;
-      box-sizing: border-box;
-      transition: transform 0.3s ease;
-    }
-    #menu.hidden {
-      transform: translateX(-100%);
-    }
-    #menu h2 {
-      color: var(--primary-color);
-      margin-top: 0;
-      font-weight: 700;
-      font-size: 1.5rem;
-      border-bottom: 2px solid var(--primary-color);
-      padding-bottom: 0.5rem;
-    }
-    #menu ul {
-      list-style: none;
-      padding-left: 0;
-      margin-top: 1rem;
-    }
-    #menu li {
-      margin-bottom: 0.5rem;
-      cursor: pointer;
-      color: var(--secondary-color);
-    }
-    #menu li:hover {
-      color: var(--accent-color);
-      text-decoration: underline;
-    }
-    #content {
-      flex: 1;
-      overflow-y: auto;
-      padding: 2rem;
-      box-sizing: border-box;
-      scroll-behavior: smooth;
-    }
-    #content h1, #content h2, #content h3 {
-      color: var(--primary-color);
-      margin-top: 2rem;
-      margin-bottom: 1rem;
-    }
-    #content img {
-      max-width: 100%;
-      height: auto;
-      margin: 1rem 0;
-    }
-    #content ul, #content ol {
-      margin-left: 1.5rem;
-      margin-bottom: 1rem;
-    }
-    #content li {
-      margin-bottom: 0.5rem;
-      line-height: 1.4;
-    }
-    #content blockquote {
-      background: #e8e6d9;
-      border-left: 4px solid var(--primary-color);
-      padding: 1rem;
-      margin: 1rem 0;
-      font-style: italic;
-    }
-    #toolbar {
+    .fullscreen-toggle {
       position: fixed;
       top: 10px;
-      left: 10px;
+      right: 10px;
       z-index: 1000;
-      display: flex;
-      gap: 10px;
-    }
-    #toolbar button {
-      background: var(--primary-color);
-      border: none;
+      background: #398376;
       color: white;
+      border: none;
       padding: 0.5rem 1rem;
       font-size: 1rem;
       border-radius: 4px;
       cursor: pointer;
       transition: background 0.3s ease;
     }
-    #toolbar button:hover {
-      background: var(--accent-color);
-    }
-    /* Scrollbar styling */
-    #menu::-webkit-scrollbar, #content::-webkit-scrollbar {
-      width: 8px;
-    }
-    #menu::-webkit-scrollbar-thumb, #content::-webkit-scrollbar-thumb {
-      background-color: var(--primary-color);
-      border-radius: 4px;
-    }
-    @media (max-width: 768px) {
-      #menu {
-        position: fixed;
-        height: 100%;
-        top: 0;
-        left: 0;
-        z-index: 999;
-        box-shadow: 2px 0 5px rgba(0,0,0,0.3);
-      }
-      #content {
-        padding: 1rem;
-      }
+    .fullscreen-toggle:hover {
+      background: #b85c38;
     }
   </style>
 </head>
 <body>
-  <div id="toolbar">
-    <button id="toggleMenuBtn" aria-label="Afficher/Masquer le menu">Menu</button>
-    <button id="exportPdfBtn" aria-label="Exporter en PDF">Exporter PDF</button>
+  <button class="fullscreen-toggle" aria-label="Basculer en plein écran">Plein écran</button>
+
+  <div class="reveal">
+    <div class="slides">
+      <section 
+        data-markdown="slides.md"
+        data-separator="^---$"
+        data-separator-vertical="^--$"
+        data-charset="utf-8"
+        data-separator-notes="^Note:"
+        data-background-color="#f7f5ec">
+      </section>
+    </div>
   </div>
-  <nav id="menu" aria-label="Plan du cours">
-    <h2>Plan du cours</h2>
-    <ul id="toc"></ul>
-  </nav>
-  <main id="content" tabindex="0" aria-live="polite" aria-atomic="true">
-    Chargement du contenu...
-  </main>
 
-  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <!-- Reveal.js scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/dist/reveal.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/plugin/markdown/markdown.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/plugin/highlight/highlight.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/plugin/notes/notes.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/plugin/search/search.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/plugin/zoom/zoom.js"></script>
+
   <script>
-    const contentEl = document.getElementById('content');
-    const tocEl = document.getElementById('toc');
-    const menuEl = document.getElementById('menu');
-    const toggleMenuBtn = document.getElementById('toggleMenuBtn');
-    const exportPdfBtn = document.getElementById('exportPdfBtn');
-
-    // Toggle menu visibility
-    toggleMenuBtn.addEventListener('click', () => {
-      menuEl.classList.toggle('hidden');
-    });
-
-    // Fetch and render markdown content
-    async function loadMarkdown() {
-      try {
-        const response = await fetch('slides.md');
-        if (!response.ok) throw new Error('Erreur de chargement du fichier markdown');
-        const markdown = await response.text();
-        renderContent(markdown);
-      } catch (error) {
-        contentEl.innerHTML = '<p style="color:red;">Erreur lors du chargement du contenu.</p>';
-        console.error(error);
+    Reveal.initialize({
+      hash: true,
+      slideNumber: 'c/t',
+      showSlideNumber: 'all',
+      controls: true,
+      progress: true,
+      center: false,
+      touch: true,
+      loop: false,
+      rtl: false,
+      transition: 'slide',
+      transitionSpeed: 'default',
+      backgroundTransition: 'fade',
+      width: 1024,
+      height: 768,
+      margin: 0.1,
+      minScale: 0.2,
+      maxScale: 2.0,
+      plugins: [ 
+        RevealMarkdown, 
+        RevealHighlight, 
+        RevealNotes,
+        RevealSearch,
+        RevealZoom
+      ],
+      markdown: {
+        smartypants: true,
+        breaks: true
+      },
+      highlight: {
+        highlightOnLoad: true,
+        tabReplace: '  '
+      },
+      keyboard: {
+        13: 'next',
+        27: function() {
+          if (document.fullscreenElement) {
+            document.exitFullscreen();
+          }
+        }
       }
-    }
-
-    // Render markdown to HTML and build TOC
-    function renderContent(markdown) {
-      // Convert markdown to HTML
-      const html = marked.parse(markdown, { 
-        headerIds: true,
-        mangle: false,
-        smartLists: true,
-        smartypants: true
-      });
-      contentEl.innerHTML = html;
-
-      // Build TOC from headings h1, h2, h3
-      const headings = contentEl.querySelectorAll('h1, h2, h3');
-      tocEl.innerHTML = '';
-      headings.forEach(heading => {
-        const li = document.createElement('li');
-        li.textContent = heading.textContent;
-        li.style.marginLeft = (parseInt(heading.tagName[1]) - 1) * 15 + 'px';
-        li.tabIndex = 0;
-        li.setAttribute('role', 'link');
-        li.addEventListener('click', () => {
-          heading.scrollIntoView({ behavior: 'smooth' });
-          // Close menu on small screens after click
-          if (window.innerWidth <= 768) {
-            menuEl.classList.add('hidden');
-          }
-        });
-        li.addEventListener('keydown', (e) => {
-          if (e.key === 'Enter' || e.key === ' ') {
-            e.preventDefault();
-            li.click();
-          }
-        });
-        tocEl.appendChild(li);
-      });
-    }
-
-    // Export content to PDF
-    exportPdfBtn.addEventListener('click', () => {
-      const opt = {
-        margin:       0.5,
-        filename:     'Formation_IA_Cours.pdf',
-        image:        { type: 'jpeg', quality: 0.98 },
-        html2canvas:  { scale: 2 },
-        jsPDF:        { unit: 'in', format: 'a4', orientation: 'portrait' }
-      };
-      // Clone content to avoid UI elements in PDF
-      const clone = contentEl.cloneNode(true);
-      // Remove any interactive elements if needed
-      html2pdf().set(opt).from(clone).save();
     });
 
-    // Initial load
-    loadMarkdown();
+    // Fullscreen toggle button
+    const fsBtn = document.querySelector('.fullscreen-toggle');
+    fsBtn.addEventListener('click', () => {
+      if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen();
+      } else {
+        document.exitFullscreen();
+      }
+    });
+
+    // Handle image load errors gracefully
+    Reveal.addEventListener('ready', () => {
+      const images = document.querySelectorAll('img');
+      images.forEach(img => {
+        img.onerror = () => {
+          img.style.display = 'none';
+          console.warn('Image non trouvée:', img.src);
+        };
+      });
+      console.log('Présentation prête avec', Reveal.getTotalSlides(), 'slides');
+    });
   </script>
 </body>
 </html>
