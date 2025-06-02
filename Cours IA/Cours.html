@@ -6,70 +6,251 @@
   <title>Formation IA – Présentation</title>
 
   <!-- Reveal.js core CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/dist/reveal.css">
   <!-- Thème light, minimaliste -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/theme/simple.css" id="theme">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/dist/theme/simple.css" id="theme">
+  <!-- Plugin CSS pour le code highlighting -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/plugin/highlight/monokai.css">
 
   <style>
-  .reveal { background-color: #f7f5ec; }
-  .reveal .slides section {
-    color: #2d2a24;
-    font-size: 8vmin;        /* Augmenté ici */
-    padding: 2vw 4vw;
-    line-height: 1.6;
-    box-sizing: border-box;
-  }
-  .reveal h1 {
-    font-size: clamp(3rem, 6vw, 5rem);   /* Titres plus grands */
-    color: #398376;
-    margin-bottom: 0.4em;
-  }
-  .reveal h2 {
-    font-size: clamp(2.2rem, 4vw, 3rem);
-    color: #52796f;
-    margin-bottom: 0.3em;
-  }
-  .reveal h3 {
-    font-size: clamp(1.6rem, 3vw, 2.2rem);
-    color: #b85c38;
-    margin-bottom: 0.2em;
-  }
-  .reveal a { color: #b85c38; text-decoration: underline; }
-  .reveal strong { color: #ca431d; }
-  .reveal ul, .reveal ol { margin-left: 2vw; }
-  .reveal li { margin-bottom: 0.35em; }
-  @media (min-width:1200px) {
-    .reveal .slides section { font-size: 2.5vmin; }
-  }
-</style>
+    .reveal { 
+      background-color: #f7f5ec; 
+      font-family: "Source Sans Pro", Helvetica, sans-serif;
+    }
+    
+    .reveal .slides section {
+      color: #2d2a24;
+      font-size: 1.8rem;
+      padding: 2rem;
+      line-height: 1.6;
+      box-sizing: border-box;
+      text-align: left;
+    }
+    
+    .reveal h1 {
+      font-size: 2.8rem;
+      color: #398376;
+      margin-bottom: 0.5em;
+      text-align: center;
+      font-weight: 600;
+    }
+    
+    .reveal h2 {
+      font-size: 2.2rem;
+      color: #52796f;
+      margin-bottom: 0.4em;
+      font-weight: 600;
+    }
+    
+    .reveal h3 {
+      font-size: 1.8rem;
+      color: #b85c38;
+      margin-bottom: 0.3em;
+      font-weight: 600;
+    }
+    
+    .reveal a { 
+      color: #b85c38; 
+      text-decoration: underline; 
+    }
+    
+    .reveal strong { 
+      color: #ca431d; 
+      font-weight: 700;
+    }
+    
+    .reveal ul, .reveal ol { 
+      margin-left: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    
+    .reveal li { 
+      margin-bottom: 0.5em; 
+      line-height: 1.4;
+    }
+    
+    .reveal blockquote {
+      background: #e8e6d9;
+      border-left: 4px solid #398376;
+      padding: 1rem;
+      margin: 1rem 0;
+      font-style: italic;
+    }
+    
+    .reveal img {
+      max-width: 100%;
+      height: auto;
+      border: none;
+      box-shadow: none;
+    }
+    
+    .reveal .logo-container {
+      text-align: right;
+      margin-bottom: 2rem;
+    }
+    
+    .reveal .logo-container img {
+      height: 60px;
+      margin-left: 15px;
+      vertical-align: middle;
+    }
+    
+    .reveal .progress {
+      color: #398376;
+    }
+    
+    .reveal .controls {
+      color: #398376;
+    }
+    
+    /* Responsive design */
+    @media (max-width: 768px) {
+      .reveal .slides section {
+        font-size: 1.4rem;
+        padding: 1rem;
+      }
+      
+      .reveal h1 {
+        font-size: 2.2rem;
+      }
+      
+      .reveal h2 {
+        font-size: 1.8rem;
+      }
+      
+      .reveal h3 {
+        font-size: 1.5rem;
+      }
+      
+      .reveal .logo-container img {
+        height: 40px;
+        margin-left: 10px;
+      }
+    }
+    
+    /* Navigation hints */
+    .reveal .navigate-right,
+    .reveal .navigate-left,
+    .reveal .navigate-up,
+    .reveal .navigate-down {
+      display: block;
+    }
+    
+    /* Slide number styling */
+    .reveal .slide-number {
+      background-color: rgba(57, 131, 118, 0.8);
+      color: white;
+      padding: 5px 10px;
+      border-radius: 3px;
+    }
+  </style>
 </head>
 <body>
   <div class="reveal">
     <div class="slides">
-      <!-- Ton slides.md sera chargé ici -->
-      <section
+      <!-- Le contenu Markdown sera chargé ici -->
+      <section 
         data-markdown="slides.md"
         data-separator="^---$"
         data-separator-vertical="^--$"
-        data-charset="utf-8">
+        data-charset="utf-8"
+        data-separator-notes="^Note:"
+        data-background-color="#f7f5ec">
       </section>
     </div>
   </div>
 
   <!-- Scripts Reveal.js -->
-  <script src="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/reveal.js/plugin/markdown/markdown.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/reveal.js/plugin/highlight/highlight.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/dist/reveal.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/plugin/markdown/markdown.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/plugin/highlight/highlight.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/plugin/notes/notes.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/plugin/search/search.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/plugin/zoom/zoom.js"></script>
+
   <script>
+    // Configuration et initialisation de Reveal.js
     Reveal.initialize({
+      // Configuration de base
       hash: true,
-      slideNumber: true,
-      plugins: [ RevealMarkdown, RevealHighlight ],
-      width: "100%",
-      height: "100%",
+      slideNumber: 'c/t',
+      showSlideNumber: 'all',
+      
+      // Navigation
+      controls: true,
+      progress: true,
+      center: false,
+      touch: true,
+      loop: false,
+      rtl: false,
+      
+      // Transitions
+      transition: 'slide',
+      transitionSpeed: 'default',
+      backgroundTransition: 'fade',
+      
+      // Dimensions
+      width: 1024,
+      height: 768,
       margin: 0.1,
       minScale: 0.2,
-      maxScale: 2.0
+      maxScale: 2.0,
+      
+      // Plugins
+      plugins: [ 
+        RevealMarkdown, 
+        RevealHighlight, 
+        RevealNotes,
+        RevealSearch,
+        RevealZoom
+      ],
+      
+      // Configuration du plugin Markdown
+      markdown: {
+        smartypants: true,
+        breaks: true
+      },
+      
+      // Configuration du highlighting de code
+      highlight: {
+        highlightOnLoad: true,
+        tabReplace: '  '
+      },
+      
+      // Raccourcis clavier
+      keyboard: {
+        13: 'next', // Entrée pour slide suivante
+        27: function() { // Échap pour sortir du mode plein écran
+          if (document.fullscreenElement) {
+            document.exitFullscreen();
+          }
+        }
+      }
+    });
+
+    // Gestion des erreurs de chargement d'images
+    Reveal.addEventListener('ready', function(event) {
+      // Remplacer les images manquantes par un placeholder
+      const images = document.querySelectorAll('img');
+      images.forEach(img => {
+        img.onerror = function() {
+          this.style.display = 'none';
+          console.warn('Image non trouvée:', this.src);
+        };
+      });
+      
+      console.log('Présentation prête avec', Reveal.getTotalSlides(), 'slides');
+    });
+
+    // Navigation au clavier améliorée
+    Reveal.addEventListener('slidechanged', function(event) {
+      // Log pour debug
+      console.log('Slide actuelle:', event.indexh + 1, '/', Reveal.getTotalSlides());
+    });
+
+    // Gestion du redimensionnement
+    window.addEventListener('resize', function() {
+      Reveal.layout();
     });
   </script>
 </body>
