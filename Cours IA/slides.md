@@ -28,6 +28,8 @@ Version 2 juin 2025
 - *Pause* 
 - Cas concrets d’application dans l’administration
 
+--- 
+
 ### Après-midi
 - Pratique de l’IA conversationnelle
 - *Pause*
