@@ -1,164 +1,39 @@
 <!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Formation IA – Présentation</title>
-  <style>
-    body {
-      font-family: "Source Sans Pro", Helvetica, sans-serif;
-      background-color: #f7f5ec;
-      color: #2d2a24;
-      margin: 0;
-      padding: 0;
-    }
-    .controls {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      padding: 10px;
-      background: rgba(255, 255, 255, 0.9);
-      z-index: 1000;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      display: flex;
-      gap: 10px;
-    }
-    .controls button {
-      background: #398376;
-      color: white;
-      border: none;
-      padding: 8px 16px;
-      font-size: 14px;
-      border-radius: 4px;
-      cursor: pointer;
-      transition: background-color 0.3s;
-      display: flex;
-      align-items: center;
-      gap: 5px;
-    }
-    .controls button:hover {
-      background: #52796f;
-    }
-    .controls button i {
-      font-size: 16px;
-    }
-    .remark-container {
-      background: #f7f5ec;
-    }
-    .remark-slide-content {
-      font-size: 24px;
-      line-height: 1.6;
-      padding: 1em 2em;
-    }
-    .remark-slide-content h1 { font-size: 2.4em; color: #398376; }
-    .remark-slide-content h2 { font-size: 2em; color: #52796f; }
-    .remark-slide-content h3 { font-size: 1.6em; color: #b85c38; }
-    .remark-slide-content ul, .remark-slide-content ol {
-      margin-left: 1.5em;
-    }
-    .remark-slide-content li {
-      margin: 0.5em 0;
-    }
-    .remark-slide-content blockquote {
-      border-left: 4px solid #398376;
-      padding-left: 1em;
-      margin-left: 0;
-      background: #e8e6d9;
-    }
-    .remark-slide-content img {
-      max-width: 100%;
-      height: auto;
-    }
-    @media print {
-      .controls {
-        display: none !important;
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Présentation Reveal.js</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/theme/solarized.min.css">
+    <style>
+      /* Custom style to harmonize slide titles */
+      .reveal h1 {
+        font-size: 2.5em;
+        line-height: 1.2;
       }
-      .remark-slide-container {
-        break-inside: avoid;
-        page-break-inside: avoid;
+      .reveal h2 {
+        font-size: 2em;
+        line-height: 1.2;
       }
-      .remark-slide-content {
-        font-size: 16pt;
-      }
-    }
-    :fullscreen, ::backdrop {
-      background: #f7f5ec;
-    }
-  </style>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-</head>
-<body>
-  <div class="controls">
-    <button onclick="exportPDF()" title="Exporter en PDF">
-      <i class="fas fa-file-pdf"></i> PDF
-    </button>
-    <button onclick="toggleFullscreen()" title="Plein écran">
-      <i class="fas fa-expand"></i> Plein écran
-    </button>
-  </div>
-
-  <textarea id="source"></textarea>
-
-  <script src="remark-latest.min.js"></script>
-  <script>
-    // Load markdown content
-    fetch('slides.md')
-      .then(response => response.text())
-      .then(content => {
-        document.getElementById('source').innerHTML = content;
-        // Initialize slideshow
-        var slideshow = remark.create({
-          ratio: '16:9',
-          highlightStyle: 'monokai',
-          highlightLines: true,
-          navigation: {
-            scroll: false,
-            touch: true,
-            click: false
-          }
-        });
-      })
-      .catch(error => {
-        console.error('Error loading slides:', error);
-        document.body.innerHTML = '<p>Error loading slides. Please try again.</p>';
+    </style>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section data-markdown="slides.md"
+                 data-separator="^---"
+                 data-vertical-separator="^--"
+                 data-notes="notes">
+        </section>
+      </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/plugin/markdown/markdown.min.js"></script>
+    <script>
+      Reveal.initialize({
+        hash: true,
+        plugins: [ RevealMarkdown ]
       });
-
-    // PDF export
-    function exportPDF() {
-      const originalTitle = document.title;
-      document.title = 'Formation_IA_' + new Date().toISOString().split('T')[0];
-      window.print();
-      document.title = originalTitle;
-    }
-
-    // Fullscreen toggle
-    function toggleFullscreen() {
-      if (!document.fullscreenElement) {
-        document.documentElement.requestFullscreen().catch(err => {
-          console.log(`Error attempting to enable fullscreen: ${err.message}`);
-        });
-      } else {
-        document.exitFullscreen();
-      }
-    }
-
-    // Keyboard shortcuts
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'f' || e.key === 'F') {
-        toggleFullscreen();
-      }
-    });
-
-    // Update fullscreen button icon
-    document.addEventListener('fullscreenchange', () => {
-      const fsButton = document.querySelector('button[title="Plein écran"] i');
-      if (document.fullscreenElement) {
-        fsButton.className = 'fas fa-compress';
-      } else {
-        fsButton.className = 'fas fa-expand';
-      }
-    });
-  </script>
-</body>
+    </script>
+  </body>
 </html>
