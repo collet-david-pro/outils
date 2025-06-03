@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Mini Hub - Exercices IA Mails</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 2rem;
+    background-color: #f9f9f9;
+    color: #333;
+  }
+  h1, h2 {
+    color: #005a9c;
+  }
+  section {
+    margin-bottom: 2rem;
+    padding: 1rem;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 8px rgba(0,0,0,0.1);
+  }
+  ul {
+    list-style-type: none;
+    padding-left: 0;
+  }
+  li {
+    margin: 0.5rem 0;
+  }
+  a {
+    color: #007acc;
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+  details {
+    margin: 1rem 0;
+    padding: 1rem;
+    background: #f5f5f5;
+    border-radius: 4px;
+  }
+  summary {
+    cursor: pointer;
+    color: #005a9c;
+    font-weight: bold;
+  }
+  summary:hover {
+    color: #007acc;
+  }
+  .exercise-goal {
+    font-size: 1.1em;
+    line-height: 1.5;
+    margin: 1rem 0;
+    padding: 1rem;
+    background: #e8f4f8;
+    border-radius: 4px;
+    border-left: 4px solid #005a9c;
+  }
+</style>
+</head>
+<body>
+  <nav style="margin-bottom: 1rem;">
+    <a href="../../../index.html">Retour au hub principal</a>
+  </nav>
+  <h1>Mini Hub - Exercices IA Mails</h1>
+
+  <section id="exercice-explication">
+    <h2>Objectif de l'exercice</h2>
+    <div class="exercise-goal">
+      Le but de cet exercice est d'analyser des mails fictifs en ASCII. Vous devrez développer un prompt qui permet d'extraire efficacement les informations pertinentes des mails fournis.
+    </div>
+
+    <details>
+      <summary>Voir un exemple de prompt (solution)</summary>
+      <div class="prompt-example">
+        <p>Tu es un assistant spécialisé dans l'analyse de mails ASCII. Pour chaque mail que je t'envoie, extrais les informations principales et présente-les dans un tableau clair avec les colonnes suivantes :</p>
+        <ul>
+          <li>Expéditeur</li>
+          <li>Destinataire</li>
+          <li>Date</li>
+          <li>Objet</li>
+          <li>Corps du message résumé</li>
+        </ul>
+        <p>Analyse uniquement les informations présentes dans le mail, ne complète rien d'inventé. Sois synthétique dans le résumé.</p>
+      </div>
+    </details>
+  </section>
+
+  <section id="liens-pdfs">
+    <h2>Mails à analyser</h2>
+    <ul>
+      <li><a href="mail_fictif_ascii_1.pdf" target="_blank" rel="noopener noreferrer">mail_fictif_ascii_1.pdf</a></li>
+      <li><a href="mail_fictif_ascii_2.pdf" target="_blank" rel="noopener noreferrer">mail_fictif_ascii_2.pdf</a></li>
+      <li><a href="mail_fictif_ascii_3.pdf" target="_blank" rel="noopener noreferrer">mail_fictif_ascii_3.pdf</a></li>
+      <li><a href="mail_fictif_ascii_4.pdf" target="_blank" rel="noopener noreferrer">mail_fictif_ascii_4.pdf</a></li>
+      <li><a href="mail_fictif_ascii_5.pdf" target="_blank" rel="noopener noreferrer">mail_fictif_ascii_5.pdf</a></li>
+      <li><a href="mail_fictif_ascii_6.pdf" target="_blank" rel="noopener noreferrer">mail_fictif_ascii_6.pdf</a></li>
+      <li><a href="mail_fictif_ascii_7.pdf" target="_blank" rel="noopener noreferrer">mail_fictif_ascii_7.pdf</a></li>
+      <li><a href="mail_fictif_ascii_8.pdf" target="_blank" rel="noopener noreferrer">mail_fictif_ascii_8.pdf</a></li>
+      <li><a href="mail_fictif_ascii_9.pdf" target="_blank" rel="noopener noreferrer">mail_fictif_ascii_9.pdf</a></li>
+      <li><a href="mail_fictif_ascii_10.pdf" target="_blank" rel="noopener noreferrer">mail_fictif_ascii_10.pdf</a></li>
+      <li><a href="mail_fictif_ascii_11.pdf" target="_blank" rel="noopener noreferrer">mail_fictif_ascii_11.pdf</a></li>
+      <li><a href="mail_fictif_ascii_12.pdf" target="_blank" rel="noopener noreferrer">mail_fictif_ascii_12.pdf</a></li>
+      <li><a href="mail_fictif_ascii_13.pdf" target="_blank" rel="noopener noreferrer">mail_fictif_ascii_13.pdf</a></li>
+      <li><a href="mail_fictif_ascii_14.pdf" target="_blank" rel="noopener noreferrer">mail_fictif_ascii_14.pdf</a></li>
+      <li><a href="mail_fictif_ascii_15.pdf" target="_blank" rel="noopener noreferrer">mail_fictif_ascii_15.pdf</a></li>
+      <li><a href="mail_fictif_ascii_16.pdf" target="_blank" rel="noopener noreferrer">mail_fictif_ascii_16.pdf</a></li>
+      <li><a href="mail_fictif_ascii_17.pdf" target="_blank" rel="noopener noreferrer">mail_fictif_ascii_17.pdf</a></li>
+      <li><a href="mail_fictif_ascii_18.pdf" target="_blank" rel="noopener noreferrer">mail_fictif_ascii_18.pdf</a></li>
+      <li><a href="mail_fictif_ascii_19.pdf" target="_blank" rel="noopener noreferrer">mail_fictif_ascii_19.pdf</a></li>
+      <li><a href="mail_fictif_ascii_20.pdf" target="_blank" rel="noopener noreferrer">mail_fictif_ascii_20.pdf</a></li>
+      <li><a href="mail_fictif_ascii_21.pdf" target="_blank" rel="noopener noreferrer">mail_fictif_ascii_21.pdf</a></li>
+      <li><a href="mail_fictif_ascii_22.pdf" target="_blank" rel="noopener noreferrer">mail_fictif_ascii_22.pdf</a></li>
+      <li><a href="mail_fictif_ascii_23.pdf" target="_blank" rel="noopener noreferrer">mail_fictif_ascii_23.pdf</a></li>
+      <li><a href="mail_fictif_ascii_24.pdf" target="_blank" rel="noopener noreferrer">mail_fictif_ascii_24.pdf</a></li>
+      <li><a href="mail_fictif_ascii_25.pdf" target="_blank" rel="noopener noreferrer">mail_fictif_ascii_25.pdf</a></li>
+      <li><a href="mail_fictif_ascii_26.pdf" target="_blank" rel="noopener noreferrer">mail_fictif_ascii_26.pdf</a></li>
+      <li><a href="mail_fictif_ascii_27.pdf" target="_blank" rel="noopener noreferrer">mail_fictif_ascii_27.pdf</a></li>
+      <li><a href="mail_fictif_ascii_28.pdf" target="_blank" rel="noopener noreferrer">mail_fictif_ascii_28.pdf</a></li>
+      <li><a href="mail_fictif_ascii_29.pdf" target="_blank" rel="noopener noreferrer">mail_fictif_ascii_29.pdf</a></li>
+      <li><a href="mail_fictif_ascii_30.pdf" target="_blank" rel="noopener noreferrer">mail_fictif_ascii_30.pdf</a></li>
+      <li><a href="mail_fictif_ascii_31.pdf" target="_blank" rel="noopener noreferrer">mail_fictif_ascii_31.pdf</a></li>
+      <li><a href="mail_fictif_ascii_32.pdf" target="_blank" rel="noopener noreferrer">mail_fictif_ascii_32.pdf</a></li>
+      <li><a href="mail_fictif_ascii_33.pdf" target="_blank" rel="noopener noreferrer">mail_fictif_ascii_33.pdf</a></li>
+      <li><a href="mail_fictif_ascii_34.pdf" target="_blank" rel="noopener noreferrer">mail_fictif_ascii_34.pdf</a></li>
+      <li><a href="mail_fictif_ascii_35.pdf" target="_blank" rel="noopener noreferrer">mail_fictif_ascii_35.pdf</a></li>
+      <li><a href="mail_fictif_ascii_36.pdf" target="_blank" rel="noopener noreferrer">mail_fictif_ascii_36.pdf</a></li>
+      <li><a href="mail_fictif_ascii_37.pdf" target="_blank" rel="noopener noreferrer">mail_fictif_ascii_37.pdf</a></li>
+      <li><a href="mail_fictif_ascii_38.pdf" target="_blank" rel="noopener noreferrer">mail_fictif_ascii_38.pdf</a></li>
+      <li><a href="mail_fictif_ascii_39.pdf" target="_blank" rel="noopener noreferrer">mail_fictif_ascii_39.pdf</a></li>
+      <li><a href="mail_fictif_ascii_40.pdf" target="_blank" rel="noopener noreferrer">mail_fictif_ascii_40.pdf</a></li>
+      <li><a href="mail_fictif_ascii_41.pdf" target="_blank" rel="noopener noreferrer">mail_fictif_ascii_41.pdf</a></li>
+      <li><a href="mail_fictif_ascii_42.pdf" target="_blank" rel="noopener noreferrer">mail_fictif_ascii_42.pdf</a></li>
+      <li><a href="mail_fictif_ascii_43.pdf" target="_blank" rel="noopener noreferrer">mail_fictif_ascii_43.pdf</a></li>
+      <li><a href="mail_fictif_ascii_44.pdf" target="_blank" rel="noopener noreferrer">mail_fictif_ascii_44.pdf</a></li>
+      <li><a href="mail_fictif_ascii_45.pdf" target="_blank" rel="noopener noreferrer">mail_fictif_ascii_45.pdf</a></li>
+      <li><a href="mail_fictif_ascii_46.pdf" target="_blank" rel="noopener noreferrer">mail_fictif_ascii_46.pdf</a></li>
+      <li><a href="mail_fictif_ascii_47.pdf" target="_blank" rel="noopener noreferrer">mail_fictif_ascii_47.pdf</a></li>
+      <li><a href="mail_fictif_ascii_48.pdf" target="_blank" rel="noopener noreferrer">mail_fictif_ascii_48.pdf</a></li>
+      <li><a href="mail_fictif_ascii_49.pdf" target="_blank" rel="noopener noreferrer">mail_fictif_ascii_49.pdf</a></li>
+      <li><a href="mail_fictif_ascii_50.pdf" target="_blank" rel="noopener noreferrer">mail_fictif_ascii_50.pdf</a></li>
+    </ul>
+  </section>
+</body>
+</html>
