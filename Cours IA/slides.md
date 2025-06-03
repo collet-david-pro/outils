@@ -8,7 +8,6 @@ Version 2 juin 2025
 <img src="men.png" alt="Logo MENJ" style="height:80px; float:right; margin-left: 20px;" witdh="200px"/>
 <img src="ira.png" alt="Logo IRA Lille" style="height:80px; float:right;" witdh="200px"/>
 
----
 
 ---
 # Introduction à l’Intelligence Artificielle
