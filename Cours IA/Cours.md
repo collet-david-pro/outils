@@ -1,3 +1,23 @@
+---
+marp: true
+theme: default
+paginate: true
+header: "Formation à l’Intelligence Artificielle - IRA Lille"
+footer: "David Collet - Juin 2025 | Page $slideNumber / $totalSlides"
+style: |
+  section {
+    font-family: 'Arial', sans-serif;
+    font-size: 24px;
+  }
+  header, footer {
+    color: #555;
+    font-size: 16px;
+  }
+  h1, h2, h3 {
+    color: #2E86AB;
+  }
+---
+
 # Formation à l'Intelligence Artificielle  
 ### Pour les élèves de l'IRA Lille
 
@@ -5,8 +25,8 @@ Formateur : David Collet
 Secrétaire Général d’EPLE – Collège Victor Hugo (Chauny)  
 Version 2 juin 2025
 
-<img src="men.png" alt="Logo MENJ" style="height:80px; float:right; margin-left: 20px;" witdh="200px"/>
-<img src="ira.png" alt="Logo IRA Lille" style="height:80px; float:right;" witdh="200px"/>
+![Logo MENJ](men.png){ height="80px" float="right" margin-left="20px" }
+![Logo IRA Lille](ira.png){ height="80px" float="right" }
 
 
 ---
@@ -73,7 +93,7 @@ Pour prolonger la formation, plusieurs ressources seront mises à disposition :
 
 ---
 
-<img src="https://upload.wikimedia.org/wikipedia/commons/1/1f/Artificial_Intelligence_%26_AI_%26_Machine_Learning_-_30212411048.jpg" alt="IA Illustration" style="width:600px; margin:auto; display:block;">
+![IA Illustration](https://upload.wikimedia.org/wikipedia/commons/1/1f/Artificial_Intelligence_%26_AI_%26_Machine_Learning_-_30212411048.jpg){ width="600px" margin="auto" display="block" }
 
 
 ---
@@ -129,7 +149,7 @@ Il est important de souligner que l’IA ne pense pas comme un humain. Elle **si
 
 # Illustration
 
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/AI_in_Workplace.png/800px-AI_in_Workplace.png" alt="IA workplace" style="width:600px; margin:auto; display:block;">
+![IA workplace](https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/AI_in_Workplace.png/800px-AI_in_Workplace.png){ width="600px" margin="auto" display="block" }
 
 ---
 
@@ -202,7 +222,7 @@ L’intelligence artificielle poursuit un but fondamental : permettre aux machin
 - **Accroître la qualité de service** (réactivité, clarté, équité)
 - **Renforcer la stratégie de données** de l’administration
 
-<img src="https://cdn.pixabay.com/photo/2023/07/03/12/15/ai-8104454_1280.jpg" alt="IA et objectifs" style="width:600px; margin:auto; display:block;">
+![IA et objectifs](https://cdn.pixabay.com/photo/2023/07/03/12/15/ai-8104454_1280.jpg){ width="600px" margin="auto" display="block" }
 
 ---
 # Historique bref de l’IA  
@@ -317,7 +337,7 @@ Ces deux notions décrivent des niveaux de capacités très différents.
 
 ## Illustration
 
-<img src="https://miro.medium.com/v2/resize:fit:800/format:webp/1*X4U1sKzD1nM15tprb0ux7Q.png" alt="IA faible vs IA forte" style="width:600px; display:block; margin:auto;">
+![IA faible vs IA forte](https://miro.medium.com/v2/resize:fit:800/format:webp/1*X4U1sKzD1nM15tprb0ux7Q.png){ width="600px" display="block" margin="auto" }
 
 ---
 # Les piliers techniques de l’IA  
@@ -385,7 +405,7 @@ Ces composantes sont indispensables à tout système d’IA performant.
 
 ## Illustration : les trois piliers
 
-<img src="https://miro.medium.com/v2/resize:fit:1000/format:webp/1*KBLWfsfnmIm-YZov8To8QA.png" alt="Trois piliers IA" style="width:700px; display:block; margin:auto;">
+![Trois piliers IA](https://miro.medium.com/v2/resize:fit:1000/format:webp/1*KBLWfsfnmIm-YZov8To8QA.png){ width="700px" display="block" margin="auto" }
 
 
 ---
@@ -436,7 +456,7 @@ Ils reposent sur des principes similaires (l’apprentissage à partir de donné
 
 ## Illustration schématique
 
-<img src="https://miro.medium.com/v2/resize:fit:1000/format:webp/1*F4hY88MEmKpC1BGVKPPnYw.png" alt="ML vs DL" style="width:700px; display:block; margin:auto;">
+![ML vs DL](https://miro.medium.com/v2/resize:fit:1000/format:webp/1*F4hY88MEmKpC1BGVKPPnYw.png){ width="700px" display="block" margin="auto" }
 
 ---
 
@@ -506,7 +526,7 @@ Focus sur quatre domaines clés.
 
 ## Illustration multi-sectorielle
 
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/AI_domains_pie_chart.svg/1024px-AI_domains_pie_chart.svg.png" alt="Domaines IA" style="width:600px; display:block; margin:auto;">
+![Domaines IA](https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/AI_domains_pie_chart.svg/1024px-AI_domains_pie_chart.svg.png){ width="600px" display="block" margin="auto" }
 
 ---
 # Cas pratiques détaillés  
@@ -571,7 +591,7 @@ Lors des recrutements, certaines collectivités reçoivent des dizaines, voire d
 
 ## Illustration complémentaire
 
-<img src="https://www.turing.com/blog/content/images/2023/06/applications-of-AI-in-real-life.png" alt="Cas pratiques IA" style="width:700px; display:block; margin:auto;">
+![Cas pratiques IA](https://www.turing.com/blog/content/images/2023/06/applications-of-AI-in-real-life.png){ width="700px" display="block" margin="auto" }
 
 ---
 # Prise en main d’un outil d’IA générative  
@@ -677,7 +697,7 @@ Elle est aussi capable de **classifier**, **extraire**, **résumer**, et **préd
 
 ## Illustration
 
-<img src="https://miro.medium.com/v2/resize:fit:1200/format:webp/1*PYHjM5T7aSeyR0VGpKVaXg.png" alt="Analyse IA" style="width:650px; display:block; margin:auto;">
+![Analyse IA](https://miro.medium.com/v2/resize:fit:1200/format:webp/1*PYHjM5T7aSeyR0VGpKVaXg.png){ width="650px" display="block" margin="auto" }
 
 ---
 
@@ -705,7 +725,7 @@ Les grands éditeurs intègrent désormais l’IA à leurs suites bureautiques.
 
 ## Illustration
 
-<img src="https://learn.microsoft.com/fr-fr/microsoft-365/images/m365-copilot-hero-1920.png" alt="Copilot Microsoft" style="width:700px; display:block; margin:auto;">
+![Copilot Microsoft](https://learn.microsoft.com/fr-fr/microsoft-365/images/m365-copilot-hero-1920.png){ width="700px" display="block" margin="auto" }
 
 ---
 # Le prompt : définition et enjeux  
@@ -767,7 +787,7 @@ Résultat attendu : un courriel complet, bien rédigé, utilisable immédiatemen
 
 ## Illustration
 
-<img src="https://www.promptingguide.ai/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fprompting.3ba4c527.png&w=1080&q=75" alt="Exemple prompt efficace" style="width:650px; display:block; margin:auto;">
+![Exemple prompt efficace](https://www.promptingguide.ai/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fprompting.3ba4c527.png&w=1080&q=75){ width="650px" display="block" margin="auto" }
 
 ---
 # Exercice pratique  
@@ -832,7 +852,7 @@ Choisissez une tâche professionnelle que vous réalisez régulièrement :
 
 ## Illustration : usage en contexte professionnel
 
-<img src="https://cdn.pixabay.com/photo/2023/06/07/18/03/artificial-intelligence-8047711_1280.png" alt="IA au travail" style="width:600px; display:block; margin:auto;">
+![IA au travail](https://cdn.pixabay.com/photo/2023/06/07/18/03/artificial-intelligence-8047711_1280.png){ width="600px" display="block" margin="auto" }
 
 ---
 # Les avantages de l’IA  
@@ -894,7 +914,7 @@ L’intégration de l’IA dans les pratiques professionnelles peut produire des
 
 ## Illustration synthétique
 
-<img src="https://www.mdpi.com/information/information-12-00218/article_deploy/html/images/information-12-00218-g003.png" alt="Bénéfices IA" style="width:700px; display:block; margin:auto;">
+![Bénéfices IA](https://www.mdpi.com/information/information-12-00218/article_deploy/html/images/information-12-00218-g003.png){ width="700px" display="block" margin="auto" }
 
 ---
 # Les limites et risques de l’IA  
@@ -957,7 +977,7 @@ Il est essentiel de connaître ces limites pour un usage éclairé.
 
 ## Illustration : vigilance sur les risques
 
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/AI_Ethics_risks_mindmap.svg/1024px-AI_Ethics_risks_mindmap.svg.png" alt="Risques IA" style="width:680px; display:block; margin:auto;">
+![Risques IA](https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/AI_Ethics_risks_mindmap.svg/1024px-AI_Ethics_risks_mindmap.svg.png){ width="680px" display="block" margin="auto" }
 
 ---
 # Perspectives et enjeux éthiques  
@@ -1010,7 +1030,7 @@ Elle interroge les cadres juridiques, éthiques, organisationnels… mais aussi 
 
 ## Illustration : un cadre éthique structurant
 
-<img src="https://assets.weforum.org/editor/Nk_WeAAGaP13a62JrbIOb9W4O2BqLkbL2sVwDMIw1L0.png" alt="Ethique IA" style="width:700px; display:block; margin:auto;">
+![Ethique IA](https://assets.weforum.org/editor/Nk_WeAAGaP13a62JrbIOb9W4O2BqLkbL2sVwDMIw1L0.png){ width="700px" display="block" margin="auto" }
 
 ---
 # Une conversation plutôt qu’une requête  
@@ -1059,7 +1079,7 @@ Chaque échange peut affiner la réponse, en intégrant le **contexte des messag
 
 ## Illustration
 
-<img src="https://miro.medium.com/v2/resize:fit:1200/format:webp/1*iNYyZJFSXtK1MB3XW0NY7g.png" alt="IA conversationnelle" style="width:680px; display:block; margin:auto;">
+![IA conversationnelle](https://miro.medium.com/v2/resize:fit:1200/format:webp/1*iNYyZJFSXtK1MB3XW0NY7g.png){ width="680px" display="block" margin="auto" }
 
 ---
 # Aller plus loin…  
@@ -1113,7 +1133,7 @@ Voici comment poursuivre l’exploration au-delà de cette formation.
 
 ## Illustration : dynamique de transformation
 
-<img src="https://cdn.pixabay.com/photo/2023/05/08/10/35/digital-transformation-7977333_1280.png" alt="Transformation numérique IA" style="width:650px; display:block; margin:auto;">
+![Transformation numérique IA](https://cdn.pixabay.com/photo/2023/05/08/10/35/digital-transformation-7977333_1280.png){ width="650px" display="block" margin="auto" }
 
 ---
 # Bilan de la journée  
@@ -1146,6 +1166,6 @@ Et surtout : testez, doutez, échangez, recommencez.
 
 ---
 
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Artificial_Intelligence_AI_%26_Machine_Learning_-_Muncie%2C_Indiana_USA_%2848665726901%29.jpg/1280px-Artificial_Intelligence_AI_%26_Machine_Learning_-_Muncie%2C_Indiana_USA_%2848665726901%29.jpg" alt="IA et avenir" style="width:700px; display:block; margin:auto;">
+![IA et avenir](https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Artificial_Intelligence_AI_%26_Machine_Learning_-_Muncie%2C_Indiana_USA_%2848665726901%29.jpg/1280px-Artificial_Intelligence_AI_%26_Machine_Learning_-_Muncie%2C_Indiana_USA_%2848665726901%29.jpg){ width="700px" display="block" margin="auto" }
 
 ---
