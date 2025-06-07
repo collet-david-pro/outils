@@ -1,9 +1,10 @@
 ---
 marp: true
 theme: default
-paginate: true
-header: "Formation à l’Intelligence Artificielle - IRA Lille"
-footer: "David Collet - Juin 2025 | Page $slideNumber / $totalSlides"
+paginate: false
+header: "<h2>Formation à l’Intelligence Artificielle – IRA Lille – Juin 2025</h2>"
+    
+footer: "<h2> David COLLET </h2>"
 style: |
   section {
     font-family: 'Arial', sans-serif;
@@ -11,30 +12,32 @@ style: |
   }
   header, footer {
     color: #555;
-    font-size: 16px;
+    font-size: 14px;
   }
   h1, h2, h3 {
     color: #2E86AB;
   }
+
 ---
 
-# Formation à l'Intelligence Artificielle  
-### Pour les élèves de l'IRA Lille
+> « Avec l’intelligence artificielle, nous invoquons le démon. »  
+> **Elon Musk**, 2014
 
-Formateur : David Collet  
-Secrétaire Général d’EPLE – Collège Victor Hugo (Chauny)  
-Version 2 juin 2025
+> « Le développement d’une intelligence artificielle complète pourrait mettre fin à la civilisation humaine. »  
+> **Stephen Hawking**, 2014
 
-![Logo MENJ](men.png){ height="80px" float="right" margin-left="20px" }
-![Logo IRA Lille](ira.png){ height="80px" float="right" }
+> « L’intelligence artificielle reflète toujours les choix et biais de ceux qui l’ont créée. »  
+> **Kate Crawford**, 2016
 
+> « L’intelligence artificielle est la nouvelle électricité. »  
+> **Andrew Ng**, 2017
 
 ---
 # Introduction à l’Intelligence Artificielle
 
 L'intelligence artificielle (IA) constitue une révolution technologique majeure impactant profondément tous les secteurs d'activités, dont l'administration publique.
 
-Cette formation propose une immersion dans l'univers de l'IA avec une approche pratique et professionnelle.
+Cette formation propose une immersion dans l'univers de l'IA.
 
 ---
 
@@ -56,21 +59,11 @@ Cette formation propose une immersion dans l'univers de l'IA avec une approche p
 
 ---
 
-# Objectifs pédagogiques détaillés
 
-- **Compréhension théorique** : Acquérir les bases théoriques nécessaires (Machine Learning, Deep Learning, etc.).
-- **Applications pratiques** : Identifier des cas concrets et pertinents d'application de l'IA dans l’administration.
-- **Outils opérationnels** : Être capable de manipuler concrètement des outils génératifs comme ChatGPT ou Mistral.
-- **Réflexion critique** : Développer une capacité d’analyse critique sur les enjeux et les implications éthiques et organisationnelles de l'IA.
+# Prérequis
 
----
+Je considérerai comme acquises certaines connaissances de base en informatique et nouvelles technologies, notament sur internet ou le fonctionnement de base d'un ordinateur; n’hésitez pas à m’interrompre pour que je sois plus clair sur toute notion.
 
-# Public cible et prérequis
-
-- **Public cible** : Élèves de l'IRA Lille, futurs cadres de l'administration publique.
-- **Prérequis** :
-  - Bonne maîtrise des outils bureautiques courants (Word, Excel, PowerPoint)
-  - Intérêt pour les nouvelles technologies et l’innovation dans le secteur public
 
 ---
 
@@ -81,19 +74,6 @@ Cette formation propose une immersion dans l'univers de l'IA avec une approche p
 - Études de cas spécifiques à l'administration publique
 - Échanges interactifs et discussions pour approfondir les aspects pratiques et éthiques
 
----
-
-# Ressources complémentaires
-
-Pour prolonger la formation, plusieurs ressources seront mises à disposition :
-
-- Documentation détaillée sur les outils IA présentés
-- Liste des plateformes et services IA recommandés
-- Accès à des communautés professionnelles d’échange sur l’IA
-
----
-
-![IA Illustration](https://upload.wikimedia.org/wikipedia/commons/1/1f/Artificial_Intelligence_%26_AI_%26_Machine_Learning_-_30212411048.jpg){ width="600px" margin="auto" display="block" }
 
 
 ---
@@ -102,9 +82,10 @@ Pour prolonger la formation, plusieurs ressources seront mises à disposition :
 
 ### Matinée
 - Introduction et concepts fondamentaux
-- Exemples de Machine Learning et Deep Learning
+- Théorie autour de l'IA, principe de fonctionnement
 - *Pause* 
 - Cas concrets d’application dans l’administration
+- Présentation d'un exemple personnel complet 
 
 --- 
 
@@ -116,7 +97,7 @@ Pour prolonger la formation, plusieurs ressources seront mises à disposition :
 ---
 # Qu’est-ce que l’intelligence artificielle ?
 
-L’intelligence artificielle (IA) désigne l’ensemble des techniques visant à permettre aux machines d’imiter certaines capacités humaines telles que :
+L’intelligence artificielle (IA) désigne l’ensemble des techniques visant à permettre aux machines **d’imiter** certaines capacités humaines telles que :
 
 - le raisonnement logique,
 - l’apprentissage,
@@ -147,25 +128,7 @@ Il est important de souligner que l’IA ne pense pas comme un humain. Elle **si
 
 ---
 
-# Illustration
 
-![IA workplace](https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/AI_in_Workplace.png/800px-AI_in_Workplace.png){ width="600px" margin="auto" display="block" }
-
----
-
-# Résumé visuel
-
-| Aspect humain          | IA équivalente                             |
-|------------------------|--------------------------------------------|
-| Parole / écoute        | Synthèse vocale, reconnaissance vocale     |
-| Lecture / écriture     | Traitement automatique du langage naturel  |
-| Vision / reconnaissance| Analyse d’images, reconnaissance faciale   |
-| Prise de décision      | Algorithmes prédictifs, systèmes experts   |
-| Apprentissage          | Machine learning, réseaux de neurones      |
-
----
-
-# Définition synthétique
 
 > **L’IA est un domaine de l’informatique qui vise à créer des systèmes capables de reproduire des fonctions cognitives humaines pour automatiser, améliorer ou assister certaines tâches.**
 
@@ -216,13 +179,12 @@ L’intelligence artificielle poursuit un but fondamental : permettre aux machin
 
 ---
 
-## Une IA… pour quoi faire dans la sphère publique ?
+## Une IA... pour quoi faire dans la sphère publique ?
 
 - **Optimiser les ressources** (temps, personnel, budget)
 - **Accroître la qualité de service** (réactivité, clarté, équité)
-- **Renforcer la stratégie de données** de l’administration
+- **Renforcer la stratégie de données** de l’administration, en permétant le traitement de volumes de données mpossibles à faire pour une humain
 
-![IA et objectifs](https://cdn.pixabay.com/photo/2023/07/03/12/15/ai-8104454_1280.jpg){ width="600px" margin="auto" display="block" }
 
 ---
 # Historique bref de l’IA  
@@ -245,8 +207,7 @@ Mais c’est au XXe siècle que les bases théoriques de l’IA sont posées.
 
 ## 1956 : naissance officielle du terme « IA »
 
-- **Conférence de Dartmouth College (États-Unis)**  
-- Proposée par **John McCarthy**, Marvin Minsky, Claude Shannon, Alan Newell…
+- **Conférence de Dartmouth (États-Unis)**  
 - Acte fondateur du domaine : on parle pour la première fois d’**artificial intelligence**
 - Objectif : reproduire les capacités humaines par des machines
 
@@ -263,19 +224,7 @@ Mais c’est au XXe siècle que les bases théoriques de l’IA sont posées.
 | 2016  | **AlphaGo** de Google DeepMind bat un champion de Go |
 | 2022  | Explosion des IA génératives (DALL·E, ChatGPT…)     |
 
----
 
-## Périodes d’essor et de stagnation
-
-- **Années 70-80** : désillusion → manque de puissance et données → ralentissement (« AI winter »)
-- **Années 2000** : retour en force avec le big data, la puissance de calcul et l’apprentissage profond
-- Aujourd’hui : généralisation des usages, nouvelles frontières (IA générative, bio-IA, IA embarquée…)
-
----
-
-## Illustration : évolution de l’IA dans le temps
-
-<img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/AI-history-timeline.png" alt="Timeline IA" style="width:700px; display:block; margin:auto;">
 ---
 # IA faible vs IA forte  
 ## Deux visions très différentes de l’intelligence artificielle
@@ -288,7 +237,7 @@ Ces deux notions décrivent des niveaux de capacités très différents.
 
 ---
 
-## L’IA faible (narrow AI)
+## L’IA faible 
 
 - Spécialisée dans une tâche unique ou très limitée
 - Incapable de sortir de son domaine programmé
@@ -313,17 +262,6 @@ Ces deux notions décrivent des niveaux de capacités très différents.
 - Capables de jugement moral
 - Autonomes dans des contextes variés
 
----
-
-## IA faible vs IA forte : tableau comparatif
-
-| Caractéristique         | IA faible                     | IA forte                       |
-|-------------------------|-------------------------------|--------------------------------|
-| Objectif                | Résoudre une tâche précise    | Imiter l’intelligence humaine globale |
-| Autonomie               | Faible                        | Très élevée                    |
-| Compréhension           | Absente                       | Présumée complète              |
-| Exemples concrets       | ChatGPT, GPS, Siri            | Hypothétique (non réalisée)    |
-| Risques éthiques        | Limité aux usages             | Très élevés (responsabilité, conscience) |
 
 ---
 
@@ -332,12 +270,6 @@ Ces deux notions décrivent des niveaux de capacités très différents.
 - L’administration utilise aujourd’hui exclusivement des **IA faibles**
 - L’éthique et le droit anticipent toutefois des situations **potentielles** liées à l’IA forte
 - La distinction est essentielle pour ne pas **surestimer les capacités actuelles** des outils
-
----
-
-## Illustration
-
-![IA faible vs IA forte](https://miro.medium.com/v2/resize:fit:800/format:webp/1*X4U1sKzD1nM15tprb0ux7Q.png){ width="600px" display="block" margin="auto" }
 
 ---
 # Les piliers techniques de l’IA  
@@ -357,12 +289,8 @@ Ces composantes sont indispensables à tout système d’IA performant.
 
 - Les données sont la **matière première** de l’IA
 - Plus elles sont nombreuses, variées et de qualité, meilleur est le résultat
-- Données structurées (tableaux, bases SQL) ou non structurées (texte, son, images)
-
-**Enjeux :**
-- Nettoyage et préparation des données
-- Sécurité et confidentialité
-- Représentativité (éviter les biais)
+  
+>Une IA va baser toutes ses réponses sur ses données, il s'agit d'entrainement, une IA avec une base de dopnnée restreinte, aura des réponses restreintes, ChatGPT 4o possède une base de donnée bien plus grande que ChatGPT3, ce qui explique sa performance accrue par exemple. 
 
 ---
 
@@ -371,11 +299,7 @@ Ces composantes sont indispensables à tout système d’IA performant.
 - Un algorithme est une **suite d’instructions logiques** que la machine suit pour résoudre un problème
 - En IA, les algorithmes apprennent des **modèles statistiques** à partir des données
 
-**Exemples d’algorithmes :**
-- Régressions
-- Réseaux de neurones
-- Arbres de décision
-- K-means, SVM
+> L'optimisation de ces algorithmes permet soit d'optimiser la vitesse d'execution de l'IA, soit d'augmenter sa précision. 
 
 ---
 
@@ -387,25 +311,36 @@ Ces composantes sont indispensables à tout système d’IA performant.
   - Cloud computing
   - Centres de données haute performance
 
-**Progrès récents :**
-- Accessibilité des ressources via Internet
-- Optimisation énergétique des serveurs IA
+---
+### Roméo 6 : Supercalculateur de Reims
+
+**Université de Reims Champagne-Ardenne (URCA)**  
+**Centre de Calcul Régional ROMEO**
 
 ---
 
-## Interaction entre les piliers
+#### Contexte et historique
 
-| Élément           | Rôle essentiel                                     |
-|-------------------|----------------------------------------------------|
-| Données           | Nourrissent l’apprentissage                        |
-| Algorithmes       | Déduisent des modèles et des prédictions           |
-| Puissance de calcul | Permet le traitement massif et rapide des données |
-
+- Le Centre de Calcul Régional ROMEO accompagne chercheurs et étudiants depuis 2002.  
+- Roméo 6 marque la 6e génération de ce supercalculateur régional.  
+- Inauguration officielle de Roméo 6 : 23 mai 2025, sur le campus de l’URCA.  
 ---
 
-## Illustration : les trois piliers
+#### Caractéristiques techniques
 
-![Trois piliers IA](https://miro.medium.com/v2/resize:fit:1000/format:webp/1*KBLWfsfnmIm-YZov8To8QA.png){ width="700px" display="block" margin="auto" }
+- **Architecture** : nœuds équipés de processeurs NVIDIA 
+- **Capacité de calcul** :  
+  - 9,863 petaflops (1 petaflop = 1 000 000 000 000 000 opérations/seconde).  
+  - Classé 1er parmi les universités françaises et 6e au niveau national. 
+- **Ecoefficacité** :  
+  - 2e au classement Green500 mondial (juin 2025), grâce à une consommation divisée par 4 par rapport à la version précédente. 
+---
+
+#### Domaines d’utilisation
+
+- **Recherche fondamentale** : physique, modélisation de l’univers, bioinformatique. 
+- **Bioéconomie et environnement** : simulation de la dispersion de polluants, modélisation agronomique.   
+- **Intelligence artificielle** : entraînement de modèles de deep learning, analyse de données massives.  
 
 
 ---
@@ -444,27 +379,8 @@ Ils reposent sur des principes similaires (l’apprentissage à partir de donné
 
 ## Différences clés
 
-| Caractéristique         | Machine Learning                  | Deep Learning                        |
-|-------------------------|------------------------------------|--------------------------------------|
-| Données nécessaires     | Modérées                           | Très grandes quantités               |
-| Temps de traitement     | Relativement rapide                | Plus long, très dépendant du matériel |
-| Complexité              | Modérée                            | Élevée                               |
-| Intervention humaine    | Paramétrage, sélection de variables| Faible (apprentissage automatique)   |
-| Exemples d’outils       | Arbres de décision, SVM            | Réseaux de neurones, CNN, RNN        |
+Quand vous laisser une IA apprendre de vos conversations passées, c’est le Machine Learning. L'IA va être spécialisé pour vous, cela ne change pas profondément son fonctionnement, alors que lorsqu'un nouveau modèle d'IA sort, son entrainement s'est fait sur des données beaucoup plus importantes et plus diversifiées que la version précédente, c'est le Deep Learning.
 
----
-
-## Illustration schématique
-
-![ML vs DL](https://miro.medium.com/v2/resize:fit:1000/format:webp/1*F4hY88MEmKpC1BGVKPPnYw.png){ width="700px" display="block" margin="auto" }
-
----
-
-## En résumé
-
-- Le **Machine Learning** est adapté à des problèmes avec des données structurées et bien définies.
-- Le **Deep Learning** excelle dans le traitement de données complexes et non structurées.
-- Les deux approches sont **complémentaires** et souvent utilisées conjointement.
 
 ---
 # Domaines d'application de l’IA  
@@ -472,7 +388,6 @@ Ils reposent sur des principes similaires (l’apprentissage à partir de donné
 
 L’intelligence artificielle s’intègre progressivement dans de nombreux secteurs, transformant les pratiques, les outils et les décisions.
 
-Focus sur quatre domaines clés.
 
 ---
 
@@ -484,8 +399,6 @@ Focus sur quatre domaines clés.
 - Surveillance de patients en temps réel
 - Prévision d’épidémies ou de besoins en lits
 
-**Impact :** précision accrue, réduction des délais, amélioration du suivi patient
-
 ---
 
 ## Éducation
@@ -496,7 +409,6 @@ Focus sur quatre domaines clés.
 - Synthèse de contenus pédagogiques
 - Accessibilité (traduction, lecture vocale, adaptation dys)
 
-**Impact :** enseignement différencié, meilleure inclusion, appui aux enseignants
 
 ---
 
@@ -508,7 +420,6 @@ Focus sur quatre domaines clés.
 - Conduite autonome
 - Optimisation des itinéraires et du carburant
 
-**Impact :** mobilité optimisée, sécurité accrue, économies d’énergie
 
 ---
 
@@ -520,79 +431,6 @@ Focus sur quatre domaines clés.
 - Analyse prédictive pour la planification budgétaire
 - Assistants virtuels pour les usagers
 
-**Impact :** gain de temps, amélioration du service public, meilleure gestion des données
-
----
-
-## Illustration multi-sectorielle
-
-![Domaines IA](https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/AI_domains_pie_chart.svg/1024px-AI_domains_pie_chart.svg.png){ width="600px" display="block" margin="auto" }
-
----
-# Cas pratiques détaillés  
-## IA et usages réels dans la sphère publique
-
-L’IA n’est pas une technologie abstraite : elle est déjà utilisée dans de nombreuses administrations et services publics.
-
-Voici trois cas concrets.
-
----
-
-## 1. Préfecture : gestion automatisée des courriers entrants
-
-**Contexte :**  
-Les préfectures reçoivent chaque jour des centaines de courriers papier ou numériques (demandes, signalements, doléances…).
-
-**Usage de l’IA :**  
-- Reconnaissance automatique du contenu (OCR + NLP)
-- Classement selon le thème (logement, immigration, sécurité…)
-- Réponse automatique ou semi-automatique à certaines demandes
-
-**Bénéfices :**  
-- Délai de traitement réduit  
-- Amélioration de la traçabilité et du suivi  
-- Libération de temps pour les dossiers complexes
-
----
-
-## 2. Hôpital : diagnostic assisté par IA (mammographies)
-
-**Contexte :**  
-Le dépistage du cancer du sein repose sur l’analyse d’images (mammographies) par des radiologues.
-
-**Usage de l’IA :**  
-- Algorithmes d’analyse d’images médicales  
-- Détection de microcalcifications ou d’anomalies suspectes  
-- Aide à la décision, sans remplacer le médecin
-
-**Bénéfices :**  
-- Détection plus précoce  
-- Réduction du taux d’erreurs de lecture  
-- Soutien aux zones sous-dotées en radiologues
-
----
-
-## 3. Collectivité territoriale : analyse automatique de CV
-
-**Contexte :**  
-Lors des recrutements, certaines collectivités reçoivent des dizaines, voire des centaines de candidatures.
-
-**Usage de l’IA :**  
-- Tri automatisé des CV selon critères (expérience, compétences clés)  
-- Extraction des données structurées  
-- Identification des profils les plus pertinents pour les RH
-
-**Bénéfices :**  
-- Gain de temps pour les services RH  
-- Évaluation plus objective et systématique  
-- Amélioration de la transparence du recrutement
-
----
-
-## Illustration complémentaire
-
-![Cas pratiques IA](https://www.turing.com/blog/content/images/2023/06/applications-of-AI-in-real-life.png){ width="700px" display="block" margin="auto" }
-
 ---
 # Prise en main d’un outil d’IA générative  
 ## Introduction
@@ -603,16 +441,17 @@ Apprendre à dialoguer efficacement avec ces outils est une **compétence numér
 
 ---
 
-## Objectifs pédagogiques
+# Mistral / ChatGPT / Gemini / Grok / Claude ?
 
-À l’issue de cette séquence, vous serez en mesure de :
 
-- Formuler un prompt clair, efficace et adapté à votre besoin
-- Obtenir un contenu structuré, réutilisable dans un cadre professionnel
-- Identifier les limites, erreurs ou approximations de l’IA
-- Intégrer progressivement ces outils dans vos tâches courantes
+À partir de ce point, les exemples et méthodes présentés ne sont pas spécifiques à un outil d’IA particulier.
+
+Ils sont applicables à **toutes les IA génératives** disponibles.
+
+
 
 ---
+
 
 ## Pourquoi apprendre à utiliser un outil d’IA générative ?
 
@@ -623,85 +462,189 @@ Apprendre à dialoguer efficacement avec ces outils est une **compétence numér
 
 ---
 
-## Types de tâches réalisables
-
-| Type de tâche                 | Exemples avec IA générative                   |
-|------------------------------|-----------------------------------------------|
-| Rédaction                    | Courriers, synthèses, invitations, discours   |
-| Reformulation                | Mise au clair, ton plus formel ou neutre      |
-| Résumé                       | D’un article, d’un rapport, d’un PV           |
-| Traduction / correction      | Relecture orthographique, adaptation linguistique |
-| Idéation                     | Brainstorming, suggestions d’actions ou d’outils |
-
----
-
-## Illustration
-
-<img src="https://miro.medium.com/v2/resize:fit:1200/format:webp/1*wKrdIdA0IR9L7OVR7rblEQ.png" alt="Utilisation ChatGPT" style="width:650px; display:block; margin:auto;">
-
----
 # Les outils d’IA générative  
 ## Panorama des principales plateformes
 
 Ces outils produisent du contenu à partir d’une consigne rédigée en langage naturel.  
 Ils peuvent générer du texte, des images, du son, ou du code.
 
+
 ---
 
-## Quelques éditeurs majeurs
+# “Dis moi ce que tu es”
 
-- **OpenAI**  
-  - ChatGPT (texte), DALL·E (image), Whisper (transcription)
-- **Meta**  
-  - LLaMA : modèle open source
-- **Anthropic**  
-  - Claude : IA conversationnelle à visée éthique
-- **Google**  
-  - Gemini (anciennement Bard) : IA intégrée à l’écosystème Google
+>Je suis un modèle de traitement du langage basé sur l’architecture transformer, une forme avancée de deep learning.  
+>Mon fonctionnement repose sur des réseaux de neurones profonds, entraînés sur d’immenses volumes de textes.  
+>Grâce à des couches d’attention multi-têtes, je modélise des dépendances complexes sans contrainte de position.  
+>Mon apprentissage est auto-supervisé : j’ai été entraîné à prédire le mot suivant dans une phrase.  
+>Je suis optimisé pour des tâches de NLP : génération, traduction, synthèse, classification...
+
+---
+
+# Les acteurs
+
+- **OpenAI** : ChatGPT, DALL·E, Whisper, Copilot  
+- **Google** : Gemini  
+- **Meta** : LLaMA  
+- **Anthropic** : Claude  
 - **Mistral**  
-  - Modèles français, open source, compatibles RGPD
-- **Autres outils**  
-  - ElevenLabs (voix), MidJourney (image artistique), Notion AI (productivité)
+- **xAI** : Grok  
+- Autres : Amazon, Apple, Alibaba, Huawei...
 
 ---
 
-## Tableau comparatif
+# IA de génération de contenu
 
-| Outil          | Fonction principale        | Particularité                        |
-|----------------|-----------------------------|--------------------------------------|
-| ChatGPT        | Texte, code, dialogue       | Interface intuitive, multilingue     |
-| Claude         | Dialogue, sécurité accrue   | Conçu autour de principes éthiques   |
-| Gemini         | Multimodal (texte + image)  | Intégré à Google Workspace           |
-| Mistral        | Modèles européens           | Transparence, souveraineté numérique |
-| DALL·E         | Génération d’images         | Par OpenAI, via texte descriptif     |
-| Whisper        | Transcription audio         | Reconnaissance vocale multilingue    |
-
----
-
-# IA d’analyse et de décision  
-## Des outils pour comprendre, prédire, orienter
-
-L’IA n’est pas seulement générative.  
-Elle est aussi capable de **classifier**, **extraire**, **résumer**, et **prédire** à partir de données complexes.
+- **ChatGPT** – texte, code, image  
+- **Claude** – texte long, structuration  
+- **Gemini** – texte + multimodalité  
+- **Mistral** – texte (open source)  
+- **LLaMA** – texte (open source)  
+- **Suno / Udio / ElevenLabs** – musique, voix  
+- **DALL·E / MidJourney / Stable Diffusion** – images
 
 ---
 
-## Exemples d’outils spécialisés
+# IA d’analyse et de décision
 
-- **Whisper (OpenAI)** : transcription automatique d’audio
-- **Cohere** : résumé de textes, détection de thèmes ou intentions
-- **IBM WatsonX** : traitement du langage (NLP), analyse sémantique, détection d’émotions
-- **AlphaFold (DeepMind)** : prédiction de structures de protéines (santé, biologie)
-
----
-
-## Illustration
-
-![Analyse IA](https://miro.medium.com/v2/resize:fit:1200/format:webp/1*PYHjM5T7aSeyR0VGpKVaXg.png){ width="650px" display="block" margin="auto" }
+- **Whisper** – transcription automatique  
+- **Perplexity AI** – moteur IA avec sources  
+- **Cohere** – résumé, classification, sémantique  
+- **WatsonX** – NLP et analyse de données  
+- **Haystack / Qdrant** – recherche sémantique (open source)  
+- **AlphaFold** – biologie et prédiction moléculaire
 
 ---
 
+# IA d’assistance intégrée
+
+- **Microsoft Copilot** : Word, Excel, Outlook...  
+- **Google Duet / Gemini** : Docs, Gmail  
+- **Notion AI** : écriture, gestion de projet  
+- **x.ai (Grok)** : chatbot intégré à X  
+- **GitHub Copilot** : aide à la programmation  
+- **Assistants vocaux** : Alexa, Siri, Google Assistant
+
+---
+
+# Comment ça marche ?  
+## 1. Compréhension du texte
+
+Texte → tokens → représentations numériques.  
+Chaque mot ou fragment est encodé pour traitement.
+
+---
+
+## 2. Traitement par le modèle
+
+Réseau de neurones → couches successives → prédiction  
+Analyse du contexte et de la logique.
+
+---
+
+## 3. Génération de la réponse
+
+Mot par mot, avec intégration du contexte précédent.  
+Inclusion de variation pour éviter le style mécanique.
+
+---
+
+## 4. Affichage
+
+Texte généré reconverti pour être lisible et fluide.
+
+---
+
+# Quel modèle choisir ?
+
+Peu importe !  
+Tous (ChatGPT, Mistral, Claude…) suivent le même cycle :  
+**Prompt → Traitement → Réponse mot à mot**
+
+---
+
+# Le prompt
+
+Un prompt est **l’instruction** qui guide l’IA.  
+Il conditionne la qualité de la réponse.
+
+---
+
+## Trois éléments clés
+
+1. **Contexte** : « Je prépare une réunion sur le numérique. »  
+2. **Action attendue** : « Rédige un mail d’invitation. »  
+3. **Contraintes** : « Ton formel, <10 lignes, 12 juin à 14h »
+
+---
+
+## Exemple de prompt complet
+
+> « Je prépare une réunion sur le numérique au collège.  
+Rédige un mail d’invitation professionnel, ton formel, <10 lignes, 12 juin à 14h. »
+
+---
+
+## Réponse obtenue
+
+> Objet : Invitation – Réunion numérique  
+Madame, Monsieur,  
+Une réunion se tiendra le 12 juin à 14h en salle de réunion.  
+Merci de confirmer votre présence.  
+Cordialement, [Nom]
+
+---
+
+## Faire évoluer le prompt
+
+> Ajoute : “Un rafraîchissement sera servi à la fin.”  
+> Refais pour les parents d’élèves.
+
+---
+
+# À vous !  
+**Formule simple : contexte + action + limites**
+
+---
+
+# Plan – Après-midi
+
+- Conversation ≠ requête  
+- Affiner une demande  
+- Analyse de documents  
+- *Pause*  
+- Limites  
+- Aller plus loin…  
+- Bilan
+
+---
+
+# L’IA conversationnelle
+
+> Une IA conçue pour **interagir en langage naturel**  
+> Dialogue évolutif, contextualisé
+
+---
+
+## Exemple d’échange
+
+**Vous** : Rédige une note sur l’absentéisme  
+**IA** : Voici une première version  
+**Vous** : Réduis à une demi-page  
+**IA** : Version courte  
+**Vous** : Mets un ton plus formel  
+**IA** : Version finale
+
+---
+
+## Test en ligne
+
+[chat.mistral.ai](https://chat.mistral.ai/chat/aa8549e7-ce0d-4c88-896f-3470cbff45ec)
+
+---
 # IA intégrée au quotidien professionnel  
+
+
 ## L’IA dans les outils que vous utilisez déjà
 
 Les grands éditeurs intègrent désormais l’IA à leurs suites bureautiques.
