@@ -1,18 +1,19 @@
 ---
 marp: true
-theme: default
-paginate: false
-header: "<h2>Formation à l’Intelligence Artificielle – IRA Lille – Juin 2025</h2>"
+theme: gaia
+paginate: true
+header: "<h2>Formation à l’Intelligence Artificielle – IRA Lille – Juin 2025 - David COLLET </h2>"
     
-footer: "<h2> David COLLET </h2>"
+footer: '<img src="ira.png" width="50">'
 style: |
   section {
     font-family: 'Arial', sans-serif;
-    font-size: 24px;
+    font-size: 28px;
+    align-content:center;
   }
   header, footer {
     color: #555;
-    font-size: 14px;
+    font-size: 10px;
   }
   h1, h2, h3 {
     color: #2E86AB;
@@ -20,17 +21,26 @@ style: |
 
 ---
 
-> « Avec l’intelligence artificielle, nous invoquons le démon. »  
-> **Elon Musk**, 2014
+AJOUT DES EXERCICES MAIL ET CV EN PLUS DE CEUX PREVUS
+PENSER A INTERER LES N8N 
 
-> « Le développement d’une intelligence artificielle complète pourrait mettre fin à la civilisation humaine. »  
-> **Stephen Hawking**, 2014
+---
 
-> « L’intelligence artificielle reflète toujours les choix et biais de ceux qui l’ont créée. »  
-> **Kate Crawford**, 2016
+> Avec l’intelligence artificielle, nous invoquons le démon. 
 
-> « L’intelligence artificielle est la nouvelle électricité. »  
-> **Andrew Ng**, 2017
+**Elon Musk**, 2014
+
+> Le développement d’une intelligence artificielle complète pourrait mettre fin à la civilisation humaine.  
+
+**Stephen Hawking**, 2014
+
+> L’intelligence artificielle reflète toujours les choix et biais de ceux qui l’ont créée.  
+
+**Kate Crawford**, 2016
+
+> L’intelligence artificielle est la nouvelle électricité. 
+
+**Andrew Ng**, 2017
 
 ---
 # Introduction à l’Intelligence Artificielle
@@ -65,16 +75,6 @@ Cette formation propose une immersion dans l'univers de l'IA.
 Je considérerai comme acquises certaines connaissances de base en informatique et nouvelles technologies, notament sur internet ou le fonctionnement de base d'un ordinateur; n’hésitez pas à m’interrompre pour que je sois plus clair sur toute notion.
 
 
----
-
-# Déroulement pédagogique
-
-- Exposés théoriques et illustrations concrètes
-- Démonstrations interactives et utilisation directe d’outils numériques
-- Études de cas spécifiques à l'administration publique
-- Échanges interactifs et discussions pour approfondir les aspects pratiques et éthiques
-
-
 
 ---
 
@@ -85,7 +85,7 @@ Je considérerai comme acquises certaines connaissances de base en informatique 
 - Théorie autour de l'IA, principe de fonctionnement
 - *Pause* 
 - Cas concrets d’application dans l’administration
-- Présentation d'un exemple personnel complet 
+- Présentation d'exemples personnels complets 
 
 --- 
 
@@ -251,7 +251,7 @@ Ces deux notions décrivent des niveaux de capacités très différents.
 
 ---
 
-## L’IA forte (strong AI)
+## L’IA forte 
 
 - Théorique à ce jour : intelligence équivalente à celle d’un humain
 - Capacité à raisonner, apprendre, s’auto-corriger, ressentir ?
@@ -267,7 +267,7 @@ Ces deux notions décrivent des niveaux de capacités très différents.
 
 ## Pourquoi cela nous concerne-t-il ?
 
-- L’administration utilise aujourd’hui exclusivement des **IA faibles**
+- L’administration utilise aujourd’hui de plus en plus l'IA
 - L’éthique et le droit anticipent toutefois des situations **potentielles** liées à l’IA forte
 - La distinction est essentielle pour ne pas **surestimer les capacités actuelles** des outils
 
@@ -290,7 +290,7 @@ Ces composantes sont indispensables à tout système d’IA performant.
 - Les données sont la **matière première** de l’IA
 - Plus elles sont nombreuses, variées et de qualité, meilleur est le résultat
   
->Une IA va baser toutes ses réponses sur ses données, il s'agit d'entrainement, une IA avec une base de dopnnée restreinte, aura des réponses restreintes, ChatGPT 4o possède une base de donnée bien plus grande que ChatGPT3, ce qui explique sa performance accrue par exemple. 
+>Une IA va baser toutes ses réponses sur ses données, il s'agit d'entrainement, une IA avec une base de dopnnée restreinte, aura des réponses restreintes, ChatGPT 4o possède une base de donnée bien plus grande que ChatGPT 3, ce qui explique sa performance accrue par exemple. 
 
 ---
 
@@ -441,7 +441,7 @@ Apprendre à dialoguer efficacement avec ces outils est une **compétence numér
 
 ---
 
-# Mistral / ChatGPT / Gemini / Grok / Claude ?
+## Mistral / ChatGPT / Gemini / Grok / Claude ?
 
 
 À partir de ce point, les exemples et méthodes présentés ne sont pas spécifiques à un outil d’IA particulier.
@@ -471,7 +471,7 @@ Ils peuvent générer du texte, des images, du son, ou du code.
 
 ---
 
-# “Dis moi ce que tu es”
+## “Dis moi ce que tu es”
 
 >Je suis un modèle de traitement du langage basé sur l’architecture transformer, une forme avancée de deep learning.  
 >Mon fonctionnement repose sur des réseaux de neurones profonds, entraînés sur d’immenses volumes de textes.  
@@ -481,7 +481,7 @@ Ils peuvent générer du texte, des images, du son, ou du code.
 
 ---
 
-# Les acteurs
+## Les acteurs
 
 - **OpenAI** : ChatGPT, DALL·E, Whisper, Copilot  
 - **Google** : Gemini  
@@ -493,7 +493,7 @@ Ils peuvent générer du texte, des images, du son, ou du code.
 
 ---
 
-# IA de génération de contenu
+## IA de génération de contenu
 
 - **ChatGPT** – texte, code, image  
 - **Claude** – texte long, structuration  
@@ -505,7 +505,7 @@ Ils peuvent générer du texte, des images, du son, ou du code.
 
 ---
 
-# IA d’analyse et de décision
+## IA d’analyse et de décision
 
 - **Whisper** – transcription automatique  
 - **Perplexity AI** – moteur IA avec sources  
@@ -516,7 +516,7 @@ Ils peuvent générer du texte, des images, du son, ou du code.
 
 ---
 
-# IA d’assistance intégrée
+## IA d’assistance intégrée
 
 - **Microsoft Copilot** : Word, Excel, Outlook...  
 - **Google Duet / Gemini** : Docs, Gmail  
@@ -525,26 +525,27 @@ Ils peuvent générer du texte, des images, du son, ou du code.
 - **GitHub Copilot** : aide à la programmation  
 - **Assistants vocaux** : Alexa, Siri, Google Assistant
 
+
 ---
 
 # Comment ça marche ?  
 ## 1. Compréhension du texte
 
-Texte → tokens → représentations numériques.  
+>Texte → tokens → représentations numériques.  
 Chaque mot ou fragment est encodé pour traitement.
 
 ---
 
 ## 2. Traitement par le modèle
 
-Réseau de neurones → couches successives → prédiction  
+>Réseau de neurones → couches successives → prédiction  
 Analyse du contexte et de la logique.
 
 ---
 
 ## 3. Génération de la réponse
 
-Mot par mot, avec intégration du contexte précédent.  
+>Mot par mot, avec intégration du contexte précédent.  
 Inclusion de variation pour éviter le style mécanique.
 
 ---
@@ -563,114 +564,6 @@ Tous (ChatGPT, Mistral, Claude…) suivent le même cycle :
 
 ---
 
-# Le prompt
-
-Un prompt est **l’instruction** qui guide l’IA.  
-Il conditionne la qualité de la réponse.
-
----
-
-## Trois éléments clés
-
-1. **Contexte** : « Je prépare une réunion sur le numérique. »  
-2. **Action attendue** : « Rédige un mail d’invitation. »  
-3. **Contraintes** : « Ton formel, <10 lignes, 12 juin à 14h »
-
----
-
-## Exemple de prompt complet
-
-> « Je prépare une réunion sur le numérique au collège.  
-Rédige un mail d’invitation professionnel, ton formel, <10 lignes, 12 juin à 14h. »
-
----
-
-## Réponse obtenue
-
-> Objet : Invitation – Réunion numérique  
-Madame, Monsieur,  
-Une réunion se tiendra le 12 juin à 14h en salle de réunion.  
-Merci de confirmer votre présence.  
-Cordialement, [Nom]
-
----
-
-## Faire évoluer le prompt
-
-> Ajoute : “Un rafraîchissement sera servi à la fin.”  
-> Refais pour les parents d’élèves.
-
----
-
-# À vous !  
-**Formule simple : contexte + action + limites**
-
----
-
-# Plan – Après-midi
-
-- Conversation ≠ requête  
-- Affiner une demande  
-- Analyse de documents  
-- *Pause*  
-- Limites  
-- Aller plus loin…  
-- Bilan
-
----
-
-# L’IA conversationnelle
-
-> Une IA conçue pour **interagir en langage naturel**  
-> Dialogue évolutif, contextualisé
-
----
-
-## Exemple d’échange
-
-**Vous** : Rédige une note sur l’absentéisme  
-**IA** : Voici une première version  
-**Vous** : Réduis à une demi-page  
-**IA** : Version courte  
-**Vous** : Mets un ton plus formel  
-**IA** : Version finale
-
----
-
-## Test en ligne
-
-[chat.mistral.ai](https://chat.mistral.ai/chat/aa8549e7-ce0d-4c88-896f-3470cbff45ec)
-
----
-# IA intégrée au quotidien professionnel  
-
-
-## L’IA dans les outils que vous utilisez déjà
-
-Les grands éditeurs intègrent désormais l’IA à leurs suites bureautiques.
-
-**Objectif :** vous assister dans vos tâches quotidiennes.
-
----
-
-## Outils disponibles
-
-- **Microsoft Copilot (Office 365)** :  
-  - Génération de PowerPoint, résumé de mails, automatisation Excel
-- **Google Duet (Docs, Sheets)** :  
-  - Rédaction assistée, synthèse de données, complétion
-- **GitHub Copilot** :  
-  - Aide à la programmation, génération de fonctions en temps réel
-- **Assistants vocaux** :  
-  - Siri, Alexa, Google Assistant pour l’interaction vocale et la domotique
-
----
-
-## Illustration
-
-![Copilot Microsoft](https://learn.microsoft.com/fr-fr/microsoft-365/images/m365-copilot-hero-1920.png){ width="700px" display="block" margin="auto" }
-
----
 # Le prompt : définition et enjeux  
 ## Le cœur de l’IA conversationnelle
 
@@ -690,9 +583,8 @@ La qualité du résultat dépend fortement de la **formulation** du prompt.
 
 ---
 
-## Exemple comparatif
 
-| Prompt faible                       | Résultat                                |
+| Prompt                        | Résultat                                |
 |------------------------------------|------------------------------------------|
 | « Fais un résumé »                 | Résumé imprécis, ton flou                |
 | « Résume ce texte en 5 lignes,     | Résumé synthétique,                      |
@@ -705,7 +597,7 @@ La qualité du résultat dépend fortement de la **formulation** du prompt.
 
 1. **Le contexte** : expliquer la situation ou le besoin
 2. **L’action attendue** : que doit faire l’IA ?
-3. **Les contraintes** : format, ton, longueur, cible…
+3. **Les contraintes** : format, ton, longueur, cible...
 
 ---
 
@@ -722,15 +614,10 @@ Résultat attendu : un courriel complet, bien rédigé, utilisable immédiatemen
 ## Bonnes pratiques
 
 - Utiliser des formulations explicites :  
-  *“Rédige”, “Explique”, “Résume”, “Propose”, “Corrige”…*
+  *“Rédige”, “Explique”, “Résume”, “Propose”, “Corrige”...*
 - Préciser le type de destinataire ou le niveau de langage
 - Tester plusieurs formulations et comparer les réponses
 
----
-
-## Illustration
-
-![Exemple prompt efficace](https://www.promptingguide.ai/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fprompting.3ba4c527.png&w=1080&q=75){ width="650px" display="block" margin="auto" }
 
 ---
 # Exercice pratique  
@@ -778,6 +665,8 @@ Formuler un prompt permettant à l’IA de produire une synthèse :
 - Style administratif neutre  
 - Structure en paragraphes ou tirets
 
+>*Vous trouverez des exemples de fichiers dans le cloud*
+
 ---
 
 ## Variante libre (pour les plus rapides)
@@ -791,13 +680,58 @@ Choisissez une tâche professionnelle que vous réalisez régulièrement :
 
 > Formulez un prompt adapté et testez-le avec l’IA de votre choix.
 
----
-
-## Illustration : usage en contexte professionnel
-
-![IA au travail](https://cdn.pixabay.com/photo/2023/06/07/18/03/artificial-intelligence-8047711_1280.png){ width="600px" display="block" margin="auto" }
 
 ---
+# Une conversation plutôt qu’une requête  
+## L’IA conversationnelle : un changement de paradigme
+
+Contrairement à un moteur de recherche, une IA conversationnelle permet d’établir un **dialogue évolutif** avec l’utilisateur.
+
+Chaque échange peut affiner la réponse, en intégrant le **contexte des messages précédents**.
+
+---
+
+## De la requête à la conversation
+
+| Approche traditionnelle       | Approche IA conversationnelle               |
+|------------------------------|---------------------------------------------|
+| Une question = une réponse   | Une série d’échanges contextuels            |
+| Pas de mémoire               | Conserve le fil de la discussion            |
+| Résultat figé                | Réponses ajustées en fonction du dialogue   |
+
+**Cela permet :** un accompagnement, une clarification, une reformulation continue
+
+---
+
+## Exemple concret
+
+> **Vous :** Je dois rédiger une note synthétique sur l’absentéisme.  
+> **IA :** Voici une première version.  
+> **Vous :** Peux-tu la faire tenir en une demi-page ?  
+> **IA :** Voici la version raccourcie.  
+> **Vous :** Ajoute un ton plus formel et une citation officielle.  
+> **IA :** Version finale ajustée.
+
+**Résultat :** un contenu sur mesure, ajusté étape par étape
+
+---
+
+## Ce que cela change pour l’utilisateur
+
+- Possibilité de **co-construction** du contenu
+- Démarche progressive, plus naturelle et efficace
+- Réduction des itérations humaines dans les relectures
+
+**Mais :** cela nécessite d’apprendre à interagir avec précision et méthode
+
+---
+
+## Test en ligne
+
+[chat.mistral.ai](https://chat.mistral.ai/chat/aa8549e7-ce0d-4c88-896f-3470cbff45ec)
+
+---
+
 # Les avantages de l’IA  
 ## Pourquoi utiliser l’intelligence artificielle ?
 
@@ -837,7 +771,7 @@ L’intégration de l’IA dans les pratiques professionnelles peut produire des
 
 ## 4. Aide à la décision
 
-- Analyse prédictive (flux, risques, performances)
+- Analyse prédictive 
 - Croisement de données pour établir des tendances
 - Scénarios d’aide à l’arbitrage
 
@@ -855,13 +789,8 @@ L’intégration de l’IA dans les pratiques professionnelles peut produire des
 
 ---
 
-## Illustration synthétique
-
-![Bénéfices IA](https://www.mdpi.com/information/information-12-00218/article_deploy/html/images/information-12-00218-g003.png){ width="700px" display="block" margin="auto" }
-
----
 # Les limites et risques de l’IA  
-## Un outil puissant… mais imparfait
+## Un outil puissant... mais imparfait
 
 L’IA présente des avantages considérables, mais elle soulève également des **risques techniques, éthiques, sociaux et juridiques**.  
 Il est essentiel de connaître ces limites pour un usage éclairé.
@@ -918,16 +847,13 @@ Il est essentiel de connaître ces limites pour un usage éclairé.
 
 ---
 
-## Illustration : vigilance sur les risques
-
-![Risques IA](https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/AI_Ethics_risks_mindmap.svg/1024px-AI_Ethics_risks_mindmap.svg.png){ width="680px" display="block" margin="auto" }
-
----
 # Perspectives et enjeux éthiques  
 ## Une technologie à encadrer et à humaniser
 
 L’IA impose une réflexion sur nos responsabilités, nos valeurs et nos choix collectifs.  
-Elle interroge les cadres juridiques, éthiques, organisationnels… mais aussi les usages quotidiens.
+Elle interroge les cadres juridiques, éthiques, organisationnels... mais aussi les usages quotidiens.
+
+Feriez vous confiance à l'IA pour une recette de cuisine ? et pour l'identification d'un champignon comestible ou non ? 
 
 ---
 
@@ -971,61 +897,8 @@ Elle interroge les cadres juridiques, éthiques, organisationnels… mais aussi 
 
 ---
 
-## Illustration : un cadre éthique structurant
 
-![Ethique IA](https://assets.weforum.org/editor/Nk_WeAAGaP13a62JrbIOb9W4O2BqLkbL2sVwDMIw1L0.png){ width="700px" display="block" margin="auto" }
-
----
-# Une conversation plutôt qu’une requête  
-## L’IA conversationnelle : un changement de paradigme
-
-Contrairement à un moteur de recherche, une IA conversationnelle permet d’établir un **dialogue évolutif** avec l’utilisateur.
-
-Chaque échange peut affiner la réponse, en intégrant le **contexte des messages précédents**.
-
----
-
-## De la requête à la conversation
-
-| Approche traditionnelle       | Approche IA conversationnelle               |
-|------------------------------|---------------------------------------------|
-| Une question = une réponse   | Une série d’échanges contextuels            |
-| Pas de mémoire               | Conserve le fil de la discussion            |
-| Résultat figé                | Réponses ajustées en fonction du dialogue   |
-
-**Cela permet :** un accompagnement, une clarification, une reformulation continue
-
----
-
-## Exemple concret
-
-> **Vous :** Je dois rédiger une note synthétique sur l’absentéisme.  
-> **IA :** Voici une première version.  
-> **Vous :** Peux-tu la faire tenir en une demi-page ?  
-> **IA :** Voici la version raccourcie.  
-> **Vous :** Ajoute un ton plus formel et une citation officielle.  
-> **IA :** Version finale ajustée.
-
-**Résultat :** un contenu sur mesure, ajusté étape par étape
-
----
-
-## Ce que cela change pour l’utilisateur
-
-- Possibilité de **co-construction** du contenu
-- Démarche progressive, plus naturelle et efficace
-- Réduction des itérations humaines dans les relectures
-
-**Mais :** cela nécessite d’apprendre à interagir avec précision et méthode
-
----
-
-## Illustration
-
-![IA conversationnelle](https://miro.medium.com/v2/resize:fit:1200/format:webp/1*iNYyZJFSXtK1MB3XW0NY7g.png){ width="680px" display="block" margin="auto" }
-
----
-# Aller plus loin…  
+# Aller plus loin...
 ## Intégrer l’IA de manière durable et maîtrisée
 
 L’IA n’est pas un effet de mode.  
@@ -1050,7 +923,6 @@ Voici comment poursuivre l’exploration au-delà de cette formation.
 - Participer à des webinaires, parcours en ligne, ateliers internes  
 - Partager vos retours d’usage avec vos collègues
 
-**Ressources utiles :** FUN-MOOC, CNIL, Etalab, France Travail, plateformes ministérielles
 
 ---
 
@@ -1062,31 +934,23 @@ Voici comment poursuivre l’exploration au-delà de cette formation.
 
 **Objectif :** ne pas réinventer seul ce qui a été testé ailleurs
 
+
+> En tant que formateur, je n'ai pas forcément de réponses, mais je peux vous aider à les trouver.
 ---
 
 ## 4. Réflexion collective dans les services
 
-- Intégrer l’IA dans la stratégie numérique de l’établissement
+- Intégrer l’IA dans la stratégie numérique de l’établissement, du service
 - Impliquer les agents dans la réflexion éthique
 - Clarifier les usages autorisés / déconseillés
 
 **Enjeu :** construire un cadre sécurisé, partagé et évolutif
 
----
 
-## Illustration : dynamique de transformation
-
-![Transformation numérique IA](https://cdn.pixabay.com/photo/2023/05/08/10/35/digital-transformation-7977333_1280.png){ width="650px" display="block" margin="auto" }
 
 ---
+
 # Bilan de la journée  
-## Ce que vous emportez…
-
-- Une **grille de lecture claire** sur ce qu’est (et n’est pas) l’IA
-- Des **exemples concrets** pour l’administration publique
-- Des **outils pratiques** que vous pouvez tester dès demain
-- Une **méthode de dialogue** avec les IA génératives
-- Une **capacité critique** face aux enjeux éthiques et organisationnels
 
 ---
 
@@ -1106,9 +970,5 @@ Voici comment poursuivre l’exploration au-delà de cette formation.
 
 Merci pour votre attention.  
 Et surtout : testez, doutez, échangez, recommencez.
-
----
-
-![IA et avenir](https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Artificial_Intelligence_AI_%26_Machine_Learning_-_Muncie%2C_Indiana_USA_%2848665726901%29.jpg/1280px-Artificial_Intelligence_AI_%26_Machine_Learning_-_Muncie%2C_Indiana_USA_%2848665726901%29.jpg){ width="700px" display="block" margin="auto" }
 
 ---
