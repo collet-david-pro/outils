@@ -661,7 +661,7 @@ Vous devez extraire les points essentiels d’un rapport de 4 pages pour une not
 **Tâche :**  
 Formuler un prompt permettant à l’IA de produire une synthèse :
 
-- Longueur : 10 lignes max  
+- Longueur : 10 lignes max (ou plus) 
 - Style administratif neutre  
 - Structure en paragraphes ou tirets
 
@@ -786,6 +786,15 @@ L’intégration de l’IA dans les pratiques professionnelles peut produire des
 - Support aux agents sur des tâches simples ou de premier niveau
 
 **Effet :** réactivité accrue et extension du service rendu
+
+---
+
+# Exercices pratiques
+
+- Le tri des CV
+- Traitement de gros volume de donnée
+
+>*Vous trouverez les fichiers dans le cloud*
 
 ---
 

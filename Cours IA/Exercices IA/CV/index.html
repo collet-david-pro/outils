@@ -1,120 +1,31 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Exercices IA CV</title>
-<style>
-  body {
-    font-family: Arial, sans-serif;
-    margin: 2rem;
-    background-color: #f9f9f9;
-    color: #333;
-  }
-  h1, h2 {
-    color: #005a9c;
-  }
-  section {
-    margin-bottom: 2rem;
-    padding: 1rem;
-    background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 0 8px rgba(0,0,0,0.1);
-  }
-  ul {
-    list-style-type: none;
-    padding-left: 0;
-  }
-  li {
-    margin: 0.5rem 0;
-  }
-  a {
-    color: #007acc;
-    text-decoration: none;
-  }
-  a:hover {
-    text-decoration: underline;
-  }
-  details {
-    margin: 1rem 0;
-    padding: 1rem;
-    background: #f5f5f5;
-    border-radius: 4px;
-  }
-  summary {
-    cursor: pointer;
-    color: #005a9c;
-    font-weight: bold;
-  }
-  summary:hover {
-    color: #007acc;
-  }
-  .exercise-goal {
-    font-size: 1.1em;
-    line-height: 1.5;
-    margin: 1rem 0;
-    padding: 1rem;
-    background: #e8f4f8;
-    border-radius: 4px;
-    border-left: 4px solid #005a9c;
-  }
-</style>
+  <meta charset="UTF-8" />
+  <title>Liste des fichiers</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 2em; }
+    h1 { color: #333; }
+    ul { list-style: none; padding-left: 0; }
+    li { margin-bottom: 0.5em; }
+    a { text-decoration: none; color: #1a0dab; }
+    a:hover { text-decoration: underline; }
+  </style>
 </head>
 <body>
-  <nav style="margin-bottom: 1rem;">
-    <a href="../../../../index.html">Retour au hub principal</a>
-  </nav>
-  <h1>Mini Hub - Exercices IA CV</h1>
+  <h1>Liste des fichiers</h1>
+  <ul>
+    <li><a href="CV_Antoine_Leroy.pdf">CV_Antoine_Leroy.pdf</a></li>
+    <li><a href="CV_Claire_Dupont.pdf">CV_Claire_Dupont.pdf</a></li>
+    <li><a href="CV_David_Morel.pdf">CV_David_Morel.pdf</a></li>
+    <li><a href="CV_Elodie_Garnier.pdf">CV_Elodie_Garnier.pdf</a></li>
+    <li><a href="CV_Julien_Martin_final.pdf">CV_Julien_Martin_final.pdf</a></li>
+    <li><a href="CV_Karim_Haddad.pdf">CV_Karim_Haddad.pdf</a></li>
+    <li><a href="CV_Marc_Fabre.pdf">CV_Marc_Fabre.pdf</a></li>
+    <li><a href="CV_Pauline_Roche.pdf">CV_Pauline_Roche.pdf</a></li>
+    <li><a href="CV_Sophie_Bernard.pdf">CV_Sophie_Bernard.pdf</a></li>
+    <li><a href="prompt.md">prompt.md</a></li>
+  </ul>
 
-  <section id="exercice-explication">
-    <h2>Objectif de l'exercice</h2>
-    <div class="exercise-goal">
-      Le but de cet exercice est d'utiliser l'Intelligence Artificielle pour trier et analyser des CV. Vous devrez développer un prompt qui permet d'extraire efficacement les informations pertinentes des CV fournis.
-    </div>
-
-    <details>
-      <summary>Voir un exemple de prompt (solution)</summary>
-      <div class="prompt-example">
-        <p>Tu es un assistant spécialisé dans l'analyse de CV. Pour chaque CV que je t'envoie, extrais les informations principales et présente-les dans un tableau clair avec les colonnes suivantes :</p>
-        <ul>
-          <li>Nom</li>
-          <li>Prénom</li>
-          <li>Adresse complète (rue, ville, code postal)</li>
-          <li>e-mail</li>
-          <li>numéro de téléphone</li>
-          <li>Domaine professionnel principal (ex : informatique, gestion, enseignement, commercial, etc.)</li>
-          <li>Résumé synthétique des compétences clés (en 1 ou 2 phrases)</li>
-        </ul>
-        <p>Analyse uniquement les informations présentes dans le CV, ne complète rien d'inventé. Sois synthétique dans le résumé.</p>
-        <p><strong>Bonus prompt :</strong> Exporte le tableau sous format Excel.</p>
-      </div>
-    </details>
-  </section>
-
-  <section id="liens-pdfs">
-    <h2>CV à analyser</h2>
-    <ul>
-      <li><a href="cv_fictif_realiste_1.pdf" target="_blank" rel="noopener noreferrer">cv_fictif_realiste_1.pdf</a></li>
-      <li><a href="cv_fictif_realiste_2.pdf" target="_blank" rel="noopener noreferrer">cv_fictif_realiste_2.pdf</a></li>
-      <li><a href="cv_fictif_realiste_3.pdf" target="_blank" rel="noopener noreferrer">cv_fictif_realiste_3.pdf</a></li>
-      <li><a href="cv_fictif_realiste_4.pdf" target="_blank" rel="noopener noreferrer">cv_fictif_realiste_4.pdf</a></li>
-      <li><a href="cv_fictif_realiste_5.pdf" target="_blank" rel="noopener noreferrer">cv_fictif_realiste_5.pdf</a></li>
-      <li><a href="cv_fictif_realiste_6.pdf" target="_blank" rel="noopener noreferrer">cv_fictif_realiste_6.pdf</a></li>
-      <li><a href="cv_fictif_realiste_7.pdf" target="_blank" rel="noopener noreferrer">cv_fictif_realiste_7.pdf</a></li>
-      <li><a href="cv_fictif_realiste_8.pdf" target="_blank" rel="noopener noreferrer">cv_fictif_realiste_8.pdf</a></li>
-      <li><a href="cv_fictif_realiste_9.pdf" target="_blank" rel="noopener noreferrer">cv_fictif_realiste_9.pdf</a></li>
-      <li><a href="cv_fictif_realiste_10.pdf" target="_blank" rel="noopener noreferrer">cv_fictif_realiste_10.pdf</a></li>
-      <li><a href="cv_fictif_realiste_11.pdf" target="_blank" rel="noopener noreferrer">cv_fictif_realiste_11.pdf</a></li>
-      <li><a href="cv_fictif_realiste_12.pdf" target="_blank" rel="noopener noreferrer">cv_fictif_realiste_12.pdf</a></li>
-      <li><a href="cv_fictif_realiste_13.pdf" target="_blank" rel="noopener noreferrer">cv_fictif_realiste_13.pdf</a></li>
-      <li><a href="cv_fictif_realiste_14.pdf" target="_blank" rel="noopener noreferrer">cv_fictif_realiste_14.pdf</a></li>
-      <li><a href="cv_fictif_realiste_15.pdf" target="_blank" rel="noopener noreferrer">cv_fictif_realiste_15.pdf</a></li>
-      <li><a href="cv_fictif_realiste_16.pdf" target="_blank" rel="noopener noreferrer">cv_fictif_realiste_16.pdf</a></li>
-      <li><a href="cv_fictif_realiste_17.pdf" target="_blank" rel="noopener noreferrer">cv_fictif_realiste_17.pdf</a></li>
-      <li><a href="cv_fictif_realiste_18.pdf" target="_blank" rel="noopener noreferrer">cv_fictif_realiste_18.pdf</a></li>
-      <li><a href="cv_fictif_realiste_19.pdf" target="_blank" rel="noopener noreferrer">cv_fictif_realiste_19.pdf</a></li>
-      <li><a href="cv_fictif_realiste_20.pdf" target="_blank" rel="noopener noreferrer">cv_fictif_realiste_20.pdf</a></li>
-    </ul>
-  </section>
 </body>
 </html>
