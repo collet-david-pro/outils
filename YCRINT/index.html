@@ -113,6 +113,9 @@
         <h2>Présentation du projet</h2>
         <p>Bienvenue sur la page du projet YCRINT.</p>
         <a href="ycrint.html" class="button-link">Voir la page YCRINT</a>
+        <a href="ycrintold.html" class="button-link">Voir l'ancienne version</a>
+        <button id="showOldSourceBtn" class="button-link" aria-expanded="false" aria-controls="old-source-code">Afficher le code source (ancienne version)</button>
+        <pre id="old-source-code" class="code" hidden></pre>
         <button id="showSourceBtn" class="button-link" aria-expanded="false" aria-controls="source-code">Afficher le code source</button>
         <pre id="source-code" class="code" hidden></pre>
       </div>
@@ -126,6 +129,9 @@
   <script>
     const showSourceBtn = document.getElementById('showSourceBtn');
     const sourceCodePre = document.getElementById('source-code');
+
+    const showOldSourceBtn = document.getElementById('showOldSourceBtn');
+    const oldSourceCodePre = document.getElementById('old-source-code');
 
     showSourceBtn.addEventListener('click', () => {
       if (sourceCodePre.hidden) {
@@ -145,6 +151,27 @@
         sourceCodePre.hidden = true;
         showSourceBtn.setAttribute('aria-expanded', 'false');
         showSourceBtn.textContent = 'Afficher le code source';
+      }
+    });
+
+    showOldSourceBtn.addEventListener('click', () => {
+      if (oldSourceCodePre.hidden) {
+        fetch('ycrintold.html')
+          .then(response => response.text())
+          .then(data => {
+            oldSourceCodePre.textContent = data;
+            oldSourceCodePre.hidden = false;
+            showOldSourceBtn.setAttribute('aria-expanded', 'true');
+            showOldSourceBtn.textContent = 'Masquer le code source (ancienne version)';
+          })
+          .catch(error => {
+            oldSourceCodePre.textContent = 'Erreur lors du chargement du code source.';
+            oldSourceCodePre.hidden = false;
+          });
+      } else {
+        oldSourceCodePre.hidden = true;
+        showOldSourceBtn.setAttribute('aria-expanded', 'false');
+        showOldSourceBtn.textContent = 'Afficher le code source (ancienne version)';
       }
     });
   </script>

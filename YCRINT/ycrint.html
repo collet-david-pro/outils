@@ -5,6 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Filtrage de Logs</title>
     <style>
+        :root {
+            --main-bg: #ece9e6;
+            --container-bg: #ffffff;
+            --shadow: rgba(0,0,0,0.1);
+            --highlight: rgba(0, 150, 255, 0.5);
+            --text-color: #333;
+        }
+
         /* Simple reset */
         * {
             margin: 0;
@@ -14,24 +22,26 @@
 
         body {
             font-family: 'Segoe UI', Tahoma, sans-serif;
+            background: linear-gradient(to right, var(--main-bg), #ffffff);
+            color: var(--text-color);
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: flex-start;
             min-height: 100vh;
-            padding: 20px;
-            background: linear-gradient(to right, #ece9e6, #ffffff);
+            padding: 30px 20px;
         }
 
-        h2 {
-            margin-bottom: 1rem;
+        h1 {
+            margin-bottom: 1.5rem;
+            font-weight: 700;
         }
 
         .container {
-            background: #fff;
+            background: var(--container-bg);
             border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            padding: 20px;
+            box-shadow: 0 4px 6px var(--shadow);
+            padding: 25px;
             width: 75%; /* 75% de la fenêtre */
             margin-bottom: 20px;
             animation: fadeIn 1s ease forwards;
@@ -41,48 +51,62 @@
             width: 100%;
             height: 150px;
             resize: vertical;
-            padding: 10px;
+            padding: 12px;
             border: 1px solid #ccc;
             border-radius: 4px;
             outline: none;
             font-family: monospace;
-            transition: box-shadow 0.3s ease;
+            font-size: 1rem;
+            transition: box-shadow 0.3s ease, border-color 0.3s ease;
+            color: var(--text-color);
+            background-color: #fafafa;
         }
         textarea:focus {
-            box-shadow: 0 0 5px rgba(0, 150, 255, 0.5);
+            box-shadow: 0 0 8px var(--highlight);
+            border-color: var(--highlight);
+            background-color: #fff;
         }
 
         .buttons {
             display: flex;
-            gap: 10px;
-            margin-top: 10px;
+            gap: 15px;
+            margin-top: 15px;
         }
 
         button {
-            padding: 10px 15px;
+            padding: 10px 18px;
             border: none;
             border-radius: 4px;
             cursor: pointer;
             font-size: 1rem;
-            transition: background-color 0.3s ease;
+            background-color: var(--highlight);
+            color: #fff;
+            font-weight: 600;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 2px 4px rgba(0, 150, 255, 0.4);
         }
 
         button:hover {
-            background-color: #f0f0f0;
+            background-color: #007acc;
+            box-shadow: 0 4px 8px rgba(0, 122, 204, 0.7);
         }
 
         h3 {
-            margin-top: 1rem;
+            margin-top: 1.5rem;
+            font-weight: 600;
         }
 
         pre {
             background: #f4f4f4;
-            padding: 10px;
+            padding: 12px;
             white-space: pre-wrap;
             border-radius: 4px;
             min-height: 80px;
             margin-top: 10px;
+            color: var(--text-color);
+            font-size: 1rem;
             animation: fadeIn 0.5s ease forwards;
+            box-shadow: inset 0 0 5px #ddd;
         }
 
         /* Keyframe for fade-in animation */
@@ -100,11 +124,12 @@
 </head>
 <body>
     <div class="container">
-        <h2>Coller vos logs ici :</h2>
+        <h1>Analyseur de Logs</h1>
         <textarea id="logInput" placeholder="Collez ici vos logs..."></textarea>
         <div class="buttons">
             <button onclick="filterLogs()">Filtrer Logs</button>
             <button onclick="downloadLogs()">Télécharger Logs Filtrés</button>
+            <button onclick="exportPDF()">Exporter en PDF</button>
         </div>
         <h3>Résultats :</h3>
         <pre id="filteredLogs"></pre>
@@ -112,38 +137,47 @@
 
     <script>
         function filterLogs() {
-            const logInput = document.getElementById('logInput').value;
-            const lines = logInput.split('\n');
-
-            // Ne garder que les lignes qui contiennent [WARN] ou [ERROR] (insensible à la casse)
-            const filteredLines = lines.filter(line => {
-                const upperLine = line.toUpperCase();
-                return upperLine.includes('[ WARN]') || upperLine.includes('[ERROR]');
-            });
-
-            const outputElem = document.getElementById('filteredLogs');
-
-            if (filteredLines.length === 0) {
-                outputElem.textContent = "Aucune ligne [WARN] ou [ERROR] trouvée.";
-            } else {
-                outputElem.textContent = filteredLines.join('\n');
-            }
+            const input = document.getElementById('logInput').value;
+            const filtered = input.split('\n').filter(line =>
+                /\[ ?(?:WARN|ERROR)\]/i.test(line)
+            );
+            const output = document.getElementById('filteredLogs');
+            output.textContent = filtered.length
+                ? filtered.join('\n')
+                : "Aucune ligne [WARN] ou [ERROR] trouvée.";
         }
 
         function downloadLogs() {
-            const text = document.getElementById('filteredLogs').textContent;
-            if (!text || text.startsWith("Aucune ligne ")) {
+            const content = document.getElementById('filteredLogs').textContent;
+            if (!content || content.startsWith("Aucune ligne ")) {
                 alert("Aucun log filtré à télécharger.");
                 return;
             }
-            const blob = new Blob([text], { type: 'text/plain' });
-            const link = document.createElement('a');
-            link.href = URL.createObjectURL(blob);
-            link.download = 'filtered_logs.txt';
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
+            const blob = new Blob([content], { type: 'text/plain' });
+            const a = Object.assign(document.createElement('a'), {
+                href: URL.createObjectURL(blob),
+                download: 'filtered_logs.txt'
+            });
+            document.body.appendChild(a);
+            a.click();
+            a.remove();
+        }
+
+        async function exportPDF() {
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+            const content = document.getElementById('filteredLogs').textContent;
+
+            if (!content || content.startsWith("Aucune ligne")) {
+                alert("Aucun log filtré à exporter.");
+                return;
+            }
+
+            const lines = doc.splitTextToSize(content, 180);
+            doc.text(lines, 10, 10);
+            doc.save("logs_filtrés.pdf");
         }
     </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 </body>
 </html>

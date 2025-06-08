@@ -1,31 +1,26 @@
-# Plan du cours
+# Introduction à l'IA générative
+Bref historique, définitions et différence entre IA générative et IA traditionnelle.
 
-- Introduction à l’Intelligence Artificielle
-- Pourquoi une formation à l’IA ?
-- Objectifs généraux de la formation
-- Prérequis
-- Plan détaillé de la journée
-- Qu’est-ce que l’intelligence artificielle ?
-- IA : une imitation ou une simulation ?
-- Exemples concrets d’IA dans la vie courante
-- Objectifs de l’IA
-- Une IA... pour quoi faire dans la sphère publique ?
-- Historique bref de l’IA
-- IA faible vs IA forte
-- Les piliers techniques de l’IA
-- Roméo 6 : Supercalculateur de Reims
-- Machine Learning vs Deep Learning
-- Domaines d'application de l’IA
-- Prise en main d’un outil d’IA générative
-- Les outils d’IA générative
-- Comment ça marche ?
-- Quel modèle choisir ?
-- Le prompt : définition et enjeux
-- Construire un bon prompt
-- Exercice pratique
-- Une conversation plutôt qu’une requête
-- Les avantages de l’IA
-- Les limites et risques de l’IA
-- Perspectives et enjeux éthiques
-- Aller plus loin...
-- Bilan de la journée
+# Fonctionnement technique
+Présentation des modèles Transformers, réseaux de neurones, pré-entraînement, fine-tuning.
+
+# Panorama des outils
+Vue d’ensemble des principaux acteurs (OpenAI, Google, Meta, etc.) et outils (ChatGPT, Gemini, Llama…).
+
+# Utilisations professionnelles
+Cas d’usage dans différents secteurs : éducation, santé, administration, etc.
+
+# Prompt engineering
+Comment rédiger un prompt efficace, avec exemples.
+
+# Études de cas
+Exercices pratiques simulant des contextes réels : préfecture, hôpital, etc.
+
+# Limites et risques
+Biais, hallucinations, RGPD, propriété intellectuelle…
+
+# Perspectives et avenir
+Évolutions à venir et impacts potentiels sur les métiers.
+
+# Ressources complémentaires
+Lectures, sites, outils pour aller plus loin.
