@@ -19,10 +19,6 @@ style: |
     color: #2E86AB;
   }
 
----
-
-AJOUT DES EXERCICES MAIL ET CV EN PLUS DE CEUX PREVUS
-PENSER A INTERER LES N8N 
 
 ---
 
