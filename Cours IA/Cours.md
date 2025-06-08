@@ -46,6 +46,15 @@ L'intelligence artificielle (IA) constitue une révolution technologique majeure
 Cette formation propose une immersion dans l'univers de l'IA.
 
 ---
+# Avant toute chose
+
+
+[Accéder à la ressource en ligne](https://urlr.me/!IRA-IA)
+
+<img src="qr.png" width="200" height="200" alt="QR CODE">
+
+
+---
 
 # Pourquoi une formation à l'IA ?
 
@@ -791,6 +800,15 @@ L’intégration de l’IA dans les pratiques professionnelles peut produire des
 - Traitement de gros volume de donnée
 
 >*Vous trouverez les fichiers dans le cloud*
+
+---
+
+# Mes projets
+
+- Le projet DUERP
+- Le projet YCRINT (ceux qui n'ont pas op@le, désolé mais ça ne vous parlera pas)
+- Le "site" qui va avec ce cour
+  
 
 ---
 
