@@ -56,6 +56,8 @@ Cette formation propose une immersion dans l'univers de l'IA.
 https://urlr.me/!IRA-IA 
 
 
+V1.02
+
 ---
 
 # Pourquoi une formation à l'IA ?
