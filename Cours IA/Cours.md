@@ -50,8 +50,10 @@ Cette formation propose une immersion dans l'univers de l'IA.
 
 
 [Accéder à la ressource en ligne](https://urlr.me/!IRA-IA)
-
+<br>
 <img src="qr.png" width="200" height="200" alt="QR CODE">
+<br>
+https://urlr.me/!IRA-IA 
 
 
 ---
