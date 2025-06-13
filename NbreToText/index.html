@@ -16,28 +16,29 @@
         <button id="copyBtn" style="display:none;">Copier dans le presse-papier</button>
         <br>
         <a href="../index.html" class="hub-link">Retour au HUB</a>
+        <br>
+        <div class="source-codes">
+            <div class="source-buttons">
+                <button onclick="toggleSource('html')">Afficher le code HTML</button>
+                <button onclick="toggleSource('css')">Afficher le code CSS</button>
+                <button onclick="toggleSource('js')">Afficher le code JS</button>
+            </div>
+            <form class="source-form" id="source-html" style="display:none">
+                <label>Code HTML</label>
+                <textarea readonly></textarea>
+            </form>
+            <form class="source-form" id="source-css" style="display:none">
+                <label>Code CSS</label>
+                <textarea readonly></textarea>
+            </form>
+            <form class="source-form" id="source-js" style="display:none">
+                <label>Code JS</label>
+                <textarea readonly></textarea>
+            </form>
+        </div>
     </div>
     <script src="script.js"></script>
-    <br>
-    <div class="source-codes">
-        <div class="source-buttons">
-            <button onclick="toggleSource('html')">Afficher le code HTML</button>
-            <button onclick="toggleSource('css')">Afficher le code CSS</button>
-            <button onclick="toggleSource('js')">Afficher le code JS</button>
-        </div>
-        <form class="source-form" id="source-html" style="display:none">
-            <label>Code HTML</label>
-            <textarea readonly></textarea>
-        </form>
-        <form class="source-form" id="source-css" style="display:none">
-            <label>Code CSS</label>
-            <textarea readonly></textarea>
-        </form>
-        <form class="source-form" id="source-js" style="display:none">
-            <label>Code JS</label>
-            <textarea readonly></textarea>
-        </form>
-    </div>
+    
     <script>
     function toggleSource(type) {
         const forms = ['html', 'css', 'js'];
