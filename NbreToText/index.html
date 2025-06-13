@@ -9,11 +9,60 @@
 <body>
     <div class="container">
         <h1>Convertisseur Euro en mots</h1>
+        <a href="../index.html" class="hub-link">Retour au HUB</a>
         <label for="amount">Montant en euros :</label>
         <input type="text" id="amount" placeholder="ex: 452.25" />
         <button id="convertBtn">Convertir</button>
         <div id="result" aria-live="polite"></div>
     </div>
     <script src="script.js"></script>
+    <div class="source-codes">
+        <button onclick="toggleSource('html')">Afficher le code HTML</button>
+        <button onclick="toggleSource('css')">Afficher le code CSS</button>
+        <button onclick="toggleSource('js')">Afficher le code JS</button>
+        <pre id="source-html" style="display:none"></pre>
+        <pre id="source-css" style="display:none"></pre>
+        <pre id="source-js" style="display:none"></pre>
+    </div>
+    <script>
+    function toggleSource(type) {
+        document.getElementById('source-html').style.display = 'none';
+        document.getElementById('source-css').style.display = 'none';
+        document.getElementById('source-js').style.display = 'none';
+        if(type === 'html') {
+            document.getElementById('source-html').style.display = 'block';
+        } else if(type === 'css') {
+            document.getElementById('source-css').style.display = 'block';
+        } else if(type === 'js') {
+            document.getElementById('source-js').style.display = 'block';
+        }
+    }
+    // Code source statique (mettre à jour selon les derniers fichiers si besoin)
+    document.addEventListener('DOMContentLoaded', function() {
+        document.getElementById('source-html').textContent = `<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversion Nombre en Texte</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Convertisseur Euro en mots</h1>
+        <a href="../index.html" class="hub-link">Retour au HUB</a>
+        <label for="amount">Montant en euros :</label>
+        <input type="text" id="amount" placeholder="ex: 452.25" />
+        <button id="convertBtn">Convertir</button>
+        <div id="result" aria-live="polite"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+`;
+        fetch('style.css').then(r=>r.text()).then(t=>document.getElementById('source-css').textContent=t);
+        fetch('script.js').then(r=>r.text()).then(t=>document.getElementById('source-js').textContent=t);
+    });
+    </script>
 </body>
 </html>
