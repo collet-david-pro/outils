@@ -45,3 +45,24 @@ button:hover {
     margin-top: 1rem;
     font-weight: bold;
 }
+
+.source-codes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.source-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+    max-width: 260px;
+}
+.source-codes button {
+    width: 100%;
+}
+.source-form {
+    margin-bottom: 16px;
+    width: 100%;
+    max-width: 700px;
+}
