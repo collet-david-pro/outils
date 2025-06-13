@@ -90,3 +90,31 @@ document.getElementById("convertBtn").addEventListener("click", function() {
     const text = amountToText(input);
     document.getElementById("result").textContent = text;
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    var resultDiv = document.getElementById('result');
+    var copyBtn = document.getElementById('copyBtn');
+    if (copyBtn) {
+        copyBtn.addEventListener('click', function() {
+            if (resultDiv.textContent.trim() !== '') {
+                navigator.clipboard.writeText(resultDiv.textContent.trim());
+                copyBtn.textContent = 'Copié !';
+                setTimeout(function() {
+                    copyBtn.textContent = 'Copier dans le presse-papier';
+                }, 1500);
+            }
+        });
+    }
+    var convertBtn = document.getElementById('convertBtn');
+    if (convertBtn) {
+        convertBtn.addEventListener('click', function() {
+            setTimeout(function() {
+                if (resultDiv.textContent.trim() !== '') {
+                    copyBtn.style.display = '';
+                } else {
+                    copyBtn.style.display = 'none';
+                }
+            }, 50);
+        });
+    }
+});
