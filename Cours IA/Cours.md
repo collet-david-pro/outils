@@ -23,19 +23,15 @@ style: |
 ---
 
 > Avec l’intelligence artificielle, nous invoquons le démon. 
-
 **Elon Musk**, 2014
 
 > Le développement d’une intelligence artificielle complète pourrait mettre fin à la civilisation humaine.  
-
 **Stephen Hawking**, 2014
 
 > L’intelligence artificielle reflète toujours les choix et biais de ceux qui l’ont créée.  
-
 **Kate Crawford**, 2016
 
 > L’intelligence artificielle est la nouvelle électricité. 
-
 **Andrew Ng**, 2017
 
 ---
@@ -49,14 +45,14 @@ Cette formation propose une immersion dans l'univers de l'IA.
 # Avant toute chose
 
 
-[Accéder à la ressource en ligne](https://urlr.me/!IRA-IA)
+Accéder à la ressource en ligne
 <br>
 <img src="qr.png" width="200" height="200" alt="QR CODE">
 <br>
 https://urlr.me/!IRA-IA 
 
 
-V1.02
+V1.03
 
 ---
 
@@ -82,26 +78,6 @@ V1.02
 # Prérequis
 
 Je considérerai comme acquises certaines connaissances de base en informatique et nouvelles technologies, notament sur internet ou le fonctionnement de base d'un ordinateur; n’hésitez pas à m’interrompre pour que je sois plus clair sur toute notion.
-
-
-
----
-
-## Plan détaillé de la journée
-
-### Matinée
-- Introduction et concepts fondamentaux
-- Théorie autour de l'IA, principe de fonctionnement
-- *Pause* 
-- Cas concrets d’application dans l’administration
-- Présentation d'exemples personnels complets 
-
---- 
-
-### Après-midi
-- Pratique de l’IA conversationnelle
-- *Pause*
-- Limites, éthique et perspectives
 
 ---
 # Qu’est-ce que l’intelligence artificielle ?
@@ -137,11 +113,7 @@ Il est important de souligner que l’IA ne pense pas comme un humain. Elle **si
 
 ---
 
-
-
 > **L’IA est un domaine de l’informatique qui vise à créer des systèmes capables de reproduire des fonctions cognitives humaines pour automatiser, améliorer ou assister certaines tâches.**
-
-
 
 ---
 # Objectifs de l’IA
@@ -457,8 +429,6 @@ Apprendre à dialoguer efficacement avec ces outils est une **compétence numér
 
 Ils sont applicables à **toutes les IA génératives** disponibles.
 
-
-
 ---
 
 
@@ -477,16 +447,6 @@ Ils sont applicables à **toutes les IA génératives** disponibles.
 Ces outils produisent du contenu à partir d’une consigne rédigée en langage naturel.  
 Ils peuvent générer du texte, des images, du son, ou du code.
 
-
----
-
-## “Dis moi ce que tu es”
-
->Je suis un modèle de traitement du langage basé sur l’architecture transformer, une forme avancée de deep learning.  
->Mon fonctionnement repose sur des réseaux de neurones profonds, entraînés sur d’immenses volumes de textes.  
->Grâce à des couches d’attention multi-têtes, je modélise des dépendances complexes sans contrainte de position.  
->Mon apprentissage est auto-supervisé : j’ai été entraîné à prédire le mot suivant dans une phrase.  
->Je suis optimisé pour des tâches de NLP : génération, traduction, synthèse, classification...
 
 ---
 
@@ -570,6 +530,34 @@ Texte généré reconverti pour être lisible et fluide.
 Peu importe !  
 Tous (ChatGPT, Mistral, Claude…) suivent le même cycle :  
 **Prompt → Traitement → Réponse mot à mot**
+
+
+---
+
+# Mistral AI : une solution européenne
+
+- Développée en France, avec un hébergement des données en Europe.
+- Respect des réglementations européennes (RGPD, souveraineté numérique).
+- Transparence sur les modèles et possibilité d'accès open source.
+- Site officiel : [https://mistral.ai](https://mistral.ai)
+- Accès à la version en ligne : [https://chat.mistral.ai](https://chat.mistral.ai)
+- Création de compte : [https://accounts.mistral.ai/signup](https://accounts.mistral.ai/signup)
+
+> Un acteur aligné avec les enjeux de la fonction publique française.
+
+---
+
+# Atouts de Mistral pour l'administration
+
+- **Confidentialité accrue** : hébergement possible sur serveurs internes ou cloud souverain.
+- **Adaptabilité** : spécialisation possible des modèles sur des corpus administratifs.
+- **Coût maîtrisé** : open source, moins de dépendance aux solutions propriétaires.
+- **Interopérabilité** : intégration facilitée aux systèmes d'information existants via API.
+- **Modèles ouverts** : Mistral 7B, Mixtral 8x7B utilisables librement.
+
+> Une IA au service de l’intérêt général, compatible avec les exigences publiques.
+
+
 
 ---
 
@@ -811,6 +799,7 @@ L’intégration de l’IA dans les pratiques professionnelles peut produire des
 
 - Le projet DUERP
 - Le projet YCRINT (ceux qui n'ont pas op@le, désolé mais ça ne vous parlera pas)
+- Le mini projet Nombre en texte
 - Le "site" qui va avec ce cour
   
 
@@ -974,12 +963,18 @@ Voici comment poursuivre l’exploration au-delà de cette formation.
 **Enjeu :** construire un cadre sécurisé, partagé et évolutif
 
 
+---
+
+# Bilan de la journée 
+
+<img src="qrcode-urlr.me-!AVIS-IA.png">
 
 ---
 
-# Bilan de la journée  
+https://docs.google.com/document/d/e/2PACX-1vRCvFgAiMtkdw9L4KJJYW7z7tH20wTFrWZasS7VqpR21MwRPKuc1UfiCL0RbB1JSRgdriDJ3k9Tvzai/pub?embedded=true
 
----
+
+--- 
 
 ## Ce qu’il reste à faire…
 
