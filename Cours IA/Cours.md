@@ -77,7 +77,8 @@ V1.03
 
 # Prérequis
 
-Je considérerai comme acquises certaines connaissances de base en informatique et nouvelles technologies, notament sur internet ou le fonctionnement de base d'un ordinateur; n’hésitez pas à m’interrompre pour que je sois plus clair sur toute notion.
+Je considérerai comme acquises certaines connaissances de base en informatique et nouvelles technologies, notament sur internet ou le fonctionnement de base d'un ordinateur.
+N’hésitez pas à m’interrompre pour que je sois plus clair sur toute notion.
 
 ---
 # Qu’est-ce que l’intelligence artificielle ?
@@ -164,7 +165,7 @@ L’intelligence artificielle poursuit un but fondamental : permettre aux machin
 
 - **Optimiser les ressources** (temps, personnel, budget)
 - **Accroître la qualité de service** (réactivité, clarté, équité)
-- **Renforcer la stratégie de données** de l’administration, en permétant le traitement de volumes de données mpossibles à faire pour une humain
+- **Renforcer la stratégie de données** de l’administration, en permétant le traitement de volumes de données impossibles à faire pour une humain
 
 
 ---
