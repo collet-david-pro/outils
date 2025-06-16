@@ -658,12 +658,12 @@ Le mail doit comporter une formule d’introduction et une formule de clôture p
 ## Consigne 2 : synthèse d’un rapport
 
 **Contexte :**  
-Vous devez extraire les points essentiels d’un rapport de 4 pages pour une note interne.
+Vous devez extraire les points essentiels d’un rapport pour une note interne.
 
 **Tâche :**  
 Formuler un prompt permettant à l’IA de produire une synthèse :
 
-- Longueur : 10 lignes max (ou plus) 
+- Longueur : à définir
 - Style administratif neutre  
 - Structure en paragraphes ou tirets
 
