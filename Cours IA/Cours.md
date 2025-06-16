@@ -22,6 +22,10 @@ style: |
 
 ---
 
+![bg](./trombone.png)
+
+---
+
 > Avec l’intelligence artificielle, nous invoquons le démon. 
 **Elon Musk**, 2014
 
@@ -52,7 +56,7 @@ Accéder à la ressource en ligne
 https://urlr.me/!IRA-IA 
 
 
-V1.03
+V1.04
 
 ---
 
