@@ -972,7 +972,7 @@ Voici comment poursuivre l’exploration au-delà de cette formation.
 
 ---
 
-https://docs.google.com/document/d/e/2PACX-1vRCvFgAiMtkdw9L4KJJYW7z7tH20wTFrWZasS7VqpR21MwRPKuc1UfiCL0RbB1JSRgdriDJ3k9Tvzai/pub?embedded=true
+https://www.notion.so/2226b80be0a580bebdaeefc97345eca8?v=2226b80be0a58002ad04000c1d8e6268&source=copy_link
 
 
 --- 
