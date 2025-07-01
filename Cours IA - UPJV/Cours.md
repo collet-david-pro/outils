@@ -175,9 +175,6 @@ L’intelligence artificielle poursuit un but fondamental : permettre aux machin
 L’idée que des machines puissent « penser » remonte à l’Antiquité (mythes d’automates, logique d’Aristote).  
 Mais c’est au XXe siècle que les bases théoriques de l’IA sont posées.
 
---- 
-
-![bg](./img/1.png)
 
 
 ---
